@@ -46,7 +46,7 @@ public partial class MainWindow : Window
 	public MainWindow()
 	{
 		InitializeComponent();
-		InitTimer(0*3600, 24*3600);
+		InitTimer(19*3600, 20*3600);
 	}
 
 	DispatcherTimer dispatcherTimer = new();
@@ -56,7 +56,7 @@ public partial class MainWindow : Window
 		// Get the current time
 		DateTime now = DateTime.Now;
 		// Get the start of the day
-		DateTime startOfDay = now.Date;
+		DateTime startOfDay = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startHour/3600, 0, 0);
 		// Get the difference as a TimeSpan
 		TimeSpan elapsed = now - startOfDay;
 		// Get the total number of seconds
@@ -66,6 +66,15 @@ public partial class MainWindow : Window
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
+			// Get the current time
+			DateTime now = DateTime.Now;
+			// Get the start of the day
+			DateTime startOfDay = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startHour / 3600, 0, 0);
+			// Get the difference as a TimeSpan
+			TimeSpan elapsed = now - startOfDay;
+			// Get the total number of seconds
+			int seconds = (int)elapsed.TotalSeconds;
+			c = seconds * 100 / (endHour - startHour);
 			SetNotifyIcon(ref c);
 		};
 
