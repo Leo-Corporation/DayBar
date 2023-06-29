@@ -53,8 +53,6 @@ public partial class MainWindow : Window
 	
 	private void InitTimer(int startHour, int endHour)
 	{
-		int c = 0;
-
 		// Get the current time
 		DateTime now = DateTime.Now;
 		// Get the start of the day
@@ -63,24 +61,26 @@ public partial class MainWindow : Window
 		TimeSpan elapsed = now - startOfDay;
 		// Get the total number of seconds
 		int seconds = (int)elapsed.TotalSeconds;
-		c = seconds * 100 / (endHour - startHour);
+		int c = seconds * 100 / (endHour - startHour);
 
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
-			if (c > 100)
-			{
-				c = 100;
-			}
-			myNotifyIcon.IconSource = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/{c}.ico"));
+			SetNotifyIcon(ref c);
 		};
-		if (c > 100)
-		{
-			c = 100;
-		}
-		myNotifyIcon.IconSource = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/{c}.ico"));
 
+		SetNotifyIcon(ref c);
 		dispatcherTimer.Start();
+	}
+
+	private void SetNotifyIcon(ref int progress)
+	{
+		if (progress > 100)
+		{
+			progress = 100;
+		}
+		myNotifyIcon.IconSource = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/{progress}.ico"));
+		myNotifyIcon.ToolTipText = $"{Properties.Resources.DayBar} ({progress}%)";
 	}
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)
