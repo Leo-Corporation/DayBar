@@ -46,7 +46,7 @@ public partial class MainWindow : Window
 	public MainWindow()
 	{
 		InitializeComponent();
-		InitTimer(19*3600, 20*3600);
+		InitTimer(0*3600, 24*3600);
 	}
 
 	DispatcherTimer dispatcherTimer = new();
