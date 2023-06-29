@@ -53,33 +53,31 @@ public partial class MainWindow : Window
 	
 	private void InitTimer(int startHour, int endHour)
 	{
-		// Get the current time
-		DateTime now = DateTime.Now;
-		// Get the start of the day
-		DateTime startOfDay = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startHour/3600, 0, 0);
-		// Get the difference as a TimeSpan
-		TimeSpan elapsed = now - startOfDay;
-		// Get the total number of seconds
-		int seconds = (int)elapsed.TotalSeconds;
-		int c = seconds * 100 / (endHour - startHour);
+
+		int c = CalculatePercentage(startHour, endHour);
 
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
-			// Get the current time
-			DateTime now = DateTime.Now;
-			// Get the start of the day
-			DateTime startOfDay = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startHour / 3600, 0, 0);
-			// Get the difference as a TimeSpan
-			TimeSpan elapsed = now - startOfDay;
-			// Get the total number of seconds
-			int seconds = (int)elapsed.TotalSeconds;
-			c = seconds * 100 / (endHour - startHour);
+			c = CalculatePercentage(startHour, endHour);
 			SetNotifyIcon(ref c);
 		};
 
 		SetNotifyIcon(ref c);
 		dispatcherTimer.Start();
+	}
+
+	private int CalculatePercentage(int startHour, int endHour)
+	{
+		// Get the current time
+		DateTime now = DateTime.Now;
+		// Get the start of the day
+		DateTime startOfDay = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startHour / 3600, 0, 0);
+		// Get the difference as a TimeSpan
+		TimeSpan elapsed = now - startOfDay;
+		// Get the total number of seconds
+		int seconds = (int)elapsed.TotalSeconds;
+		return seconds * 100 / (endHour - startHour);
 	}
 
 	private void SetNotifyIcon(ref int progress)
