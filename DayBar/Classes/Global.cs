@@ -35,6 +35,8 @@ namespace DayBar.Classes
     public static class Global
     {
 		public static HomePage HomePage { get; set; }
+		public static NotificationsPage NotificationsPage { get; set; }
+		public static AboutPage AboutPage { get; set; }
 
 		public static string GetHiSentence
 		{

@@ -135,15 +135,18 @@ public partial class MainWindow : Window
 	private void HomeBtn_Click(object sender, RoutedEventArgs e)
 	{
 		CheckButton(HomeBtn);
+		PageContent.Navigate(Global.HomePage);
 	}
 
 	private void NotificationsBtn_Click(object sender, RoutedEventArgs e)
 	{
 		CheckButton(NotificationsBtn);
+		PageContent.Navigate(Global.NotificationsPage);
 	}
 
 	private void SettingsBtn_Click(object sender, RoutedEventArgs e)
 	{
 		CheckButton(SettingsBtn);
+		PageContent.Navigate(Global.AboutPage);
 	}
 }
