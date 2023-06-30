@@ -12,5 +12,9 @@
     <StackPanel>
         <TextBlock Margin="5 10" Text="{x:Static lang:Resources.About}" FontWeight="Bold" FontSize="14"/>
 
+        <Image Source="../Assets/Images/Logo.png" Width="100"/>
+        <TextBlock x:Name="ProgressTxt" Text="{x:Static lang:Resources.DayBar}" FontWeight="ExtraBold" FontSize="32" HorizontalAlignment="Center" Margin="5"/>
+        <TextBlock x:Name="VerTxt" d:Text="1.0.0.2307" HorizontalAlignment="Center"/>
+
     </StackPanel>
 </Page>

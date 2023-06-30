@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using DayBar.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,5 +46,11 @@ public partial class AboutPage : Page
 	public AboutPage()
 	{
 		InitializeComponent();
+		InitUI();
+	}
+
+	private void InitUI()
+	{
+		VerTxt.Text = Global.Version;
 	}
 }
