@@ -57,6 +57,7 @@ public partial class MainWindow : Window
 
 		UnCheckAll();
 		CheckButton(HomeBtn);
+		PageContent.Navigate(Global.HomePage);
 	}
 
 	DispatcherTimer dispatcherTimer = new();
@@ -69,7 +70,7 @@ public partial class MainWindow : Window
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
-			c = CalculatePercentage(startHour, endHour);
+			c = CalculatePercentage(startHour, endHour);			
 			SetNotifyIcon(ref c);
 		};
 
@@ -98,6 +99,9 @@ public partial class MainWindow : Window
 		}
 		myNotifyIcon.IconSource = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/{progress}.ico"));
 		myNotifyIcon.ToolTipText = $"{Properties.Resources.DayBar} ({progress}%)";
+
+		Global.HomePage.ProgressTxt.Text = $"{progress}%";
+		Global.HomePage.ProgressBar.Value = progress;
 	}
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)

@@ -1,0 +1,26 @@
+﻿<Page x:Class="DayBar.Pages.HomePage"
+	  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+	  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	  xmlns:local="clr-namespace:DayBar.Pages"
+	  xmlns:lang="clr-namespace:DayBar.Properties"
+	  mc:Ignorable="d" FontFamily="..\Fonts\#Hauora" Foreground="{DynamicResource Foreground1}"
+	  d:DesignHeight="450" d:DesignWidth="800"
+	  Title="HomePage" d:Background="#fff">
+
+    <StackPanel>
+        <TextBlock Margin="5 10" Text="{x:Static lang:Resources.Progress}" FontWeight="Bold" FontSize="14"/>
+        <TextBlock x:Name="ProgressTxt" d:Text="95%" FontWeight="ExtraBold" FontSize="48" HorizontalAlignment="Center" Margin="10"/>
+        <ProgressBar x:Name="ProgressBar" Style="{DynamicResource RoundedProgressBar}" BorderThickness="0" Height="10" Width="300" Value="100">
+            <ProgressBar.Foreground>
+                <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                    <GradientStop Color="#9DFF00" Offset="0" />
+                    <GradientStop Color="#11F814" Offset="1" />
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
+        </ProgressBar>
+        <TextBlock Margin="5 10" Text="{x:Static lang:Resources.Settings}" FontWeight="Bold" FontSize="14"/>
+
+    </StackPanel>
+</Page>

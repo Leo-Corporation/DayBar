@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using DayBar.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +34,7 @@ namespace DayBar.Classes
 {
     public static class Global
     {
-		public static SolidColorBrush GetSolidColor(string resource) => (SolidColorBrush)Application.Current.Resources[resource];
+		public static HomePage HomePage { get; set; }
 
 		public static string GetHiSentence
 		{
@@ -61,6 +62,7 @@ namespace DayBar.Classes
 				}
 			}
 		}
+		public static SolidColorBrush GetSolidColor(string resource) => (SolidColorBrush)Application.Current.Resources[resource];
 
 	}
 }
