@@ -6,10 +6,10 @@
 		xmlns:local="clr-namespace:DayBar"
 		xmlns:tb="http://www.hardcodet.net/taskbar"
 		xmlns:lang="clr-namespace:DayBar.Properties"
-		mc:Ignorable="d"
+		mc:Ignorable="d" Icon="DayBar.ico"
 		FontFamily="/Fonts/#Hauora"
 		Foreground="{Binding Source={StaticResource Foreground1}}"
-		Title="MainWindow"  Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
+		Title="{x:Static lang:Resources.DayBar}"  Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10" />
 	</WindowChrome.WindowChrome>
@@ -159,30 +159,30 @@
 
 							</Button>
 
-                            <Button Click="NotificationsBtn_Click" Padding="5" x:Name="NotificationsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF115;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
-                                    <TextBlock Text="{x:Static lang:Resources.Notifications}" />
-                                </StackPanel>
+							<Button Click="NotificationsBtn_Click" Padding="5" x:Name="NotificationsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+									<TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF115;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
+									<TextBlock Text="{x:Static lang:Resources.Notifications}" />
+								</StackPanel>
 
-                                <Button.ToolTip>
-                                    <ToolTip Content="{x:Static lang:Resources.Notifications}" Background="{DynamicResource Background1}" Foreground="{DynamicResource Foreground1}" />
-                                </Button.ToolTip>
+								<Button.ToolTip>
+									<ToolTip Content="{x:Static lang:Resources.Notifications}" Background="{DynamicResource Background1}" Foreground="{DynamicResource Foreground1}" />
+								</Button.ToolTip>
 
-                            </Button>
+							</Button>
 
-                            <Button Click="SettingsBtn_Click" Padding="5" x:Name="SettingsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                    <TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF4A4;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
-                                    <TextBlock Text="{x:Static lang:Resources.About}" />
-                                </StackPanel>
+							<Button Click="SettingsBtn_Click" Padding="5" x:Name="SettingsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
+								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+									<TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF4A4;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
+									<TextBlock Text="{x:Static lang:Resources.About}" />
+								</StackPanel>
 
-                                <Button.ToolTip>
-                                    <ToolTip Content="{x:Static lang:Resources.About}" Background="{DynamicResource Background1}" Foreground="{DynamicResource Foreground1}" />
-                                </Button.ToolTip>
+								<Button.ToolTip>
+									<ToolTip Content="{x:Static lang:Resources.About}" Background="{DynamicResource Background1}" Foreground="{DynamicResource Foreground1}" />
+								</Button.ToolTip>
 
-                            </Button>
-                        </StackPanel>
+							</Button>
+						</StackPanel>
 
 						<Frame Name="PageContent" Grid.Column="1" NavigationUIVisibility="Hidden" />
 					</Grid>

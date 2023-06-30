@@ -5,6 +5,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>DayBar.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -114,6 +115,12 @@
     <None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
     <None Remove="Fonts\Hauora-ExtraBold.ttf" />
     <None Remove="Fonts\Hauora-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="DayBar.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
