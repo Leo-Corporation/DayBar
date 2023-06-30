@@ -126,6 +126,18 @@
   <data name="DayCompletedFormat" xml:space="preserve">
     <value>{0}% de la journée écoulée</value>
   </data>
+  <data name="GoodAfternoon" xml:space="preserve">
+    <value>Bonne après-midi</value>
+  </data>
+  <data name="GoodEvening" xml:space="preserve">
+    <value>Bonne soirée</value>
+  </data>
+  <data name="GoodNight" xml:space="preserve">
+    <value>Bonne nuit</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Bonjour</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Accueil</value>
   </data>

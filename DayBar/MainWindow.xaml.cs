@@ -53,6 +53,8 @@ public partial class MainWindow : Window
 
 	private void InitUI()
 	{
+		HelloTxt.Text = Global.GetHiSentence;
+
 		UnCheckAll();
 		CheckButton(HomeBtn);
 	}

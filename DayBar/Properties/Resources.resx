@@ -106,6 +106,18 @@
   <data name="DayCompletedFormat" xml:space="preserve">
     <value>{0}% of day completed</value>
   </data>
+  <data name="GoodAfternoon" xml:space="preserve">
+    <value>Good afternoon</value>
+  </data>
+  <data name="GoodEvening" xml:space="preserve">
+    <value>Good evening</value>
+  </data>
+  <data name="GoodNight" xml:space="preserve">
+    <value>Good night</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Hi</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
