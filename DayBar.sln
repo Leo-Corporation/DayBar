@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DayBar", "DayBar\DayBar.csproj", "{CC04445E-6FB4-43D2-9C7E-7F0B9813D244}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DayBar", "DayBar\DayBar.csproj", "{CC04445E-6FB4-43D2-9C7E-7F0B9813D244}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_SortFileContentOnSave = True
 		SolutionGuid = {7FD05CBF-89B4-4FF4-848A-8BFF70331405}
 	EndGlobalSection
 EndGlobal
