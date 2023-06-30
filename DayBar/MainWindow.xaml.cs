@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using DayBar.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +47,14 @@ public partial class MainWindow : Window
 	public MainWindow()
 	{
 		InitializeComponent();
+		InitUI();
 		InitTimer(0*3600, 24*3600);
+	}
+
+	private void InitUI()
+	{
+		UnCheckAll();
+		CheckButton(HomeBtn);
 	}
 
 	DispatcherTimer dispatcherTimer = new();
@@ -98,5 +106,38 @@ public partial class MainWindow : Window
 	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
 	{
 		WindowState = WindowState.Minimized;
+	}
+
+	private void UnCheckAll()
+	{
+		HomeBtn.Background = Brushes.Transparent;
+		NotificationsBtn.Background = Brushes.Transparent;
+		SettingsBtn.Background = Brushes.Transparent;
+
+		HomeBtn.BorderBrush = Brushes.Transparent;
+		NotificationsBtn.BorderBrush = Brushes.Transparent;
+		SettingsBtn.BorderBrush = Brushes.Transparent;
+	}
+
+	private void CheckButton(Button btn)
+	{
+		UnCheckAll();
+		btn.Background = Global.GetSolidColor("Background2");
+		btn.BorderBrush = Global.GetSolidColor("Accent");
+	}
+
+	private void HomeBtn_Click(object sender, RoutedEventArgs e)
+	{
+		CheckButton(HomeBtn);
+	}
+
+	private void NotificationsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		CheckButton(NotificationsBtn);
+	}
+
+	private void SettingsBtn_Click(object sender, RoutedEventArgs e)
+	{
+		CheckButton(SettingsBtn);
 	}
 }

@@ -6,4 +6,5 @@
     <SolidColorBrush x:Key="WindowButtonsHover1" Color="#E5E5E5"/>
     <SolidColorBrush x:Key="WindowButtonsPressed1" Color="#DBDBDB"/>
     <SolidColorBrush x:Key="WindowButtonsHoverForeground1" Color="#FFFFFF"/>
+    <SolidColorBrush x:Key="Accent" Color="#11F814"/>
 </ResourceDictionary>
