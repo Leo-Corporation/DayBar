@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,6 +55,8 @@ public partial class HomePage : Page
 	{
 		FromTxt.Text = Global.Settings.StartHour.ToString();
 		ToTxt.Text = Global.Settings.EndHour.ToString();
+
+		LaunchOnStartChk.IsChecked = Global.Settings.LaunchOnStart;
 	}
 
 	private void ValidateTxt_Click(object sender, RoutedEventArgs e)
@@ -77,5 +80,17 @@ public partial class HomePage : Page
 	{
 		Regex regex = new("[^0-9]+");
 		e.Handled = regex.IsMatch(e.Text);
+	}
+
+	private void CheckBox_Checked(object sender, RoutedEventArgs e)
+	{
+		var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+		key?.SetValue("DayBar", Environment.ProcessPath ?? $@"{AppContext.BaseDirectory}\DayBar.exe");
+	}
+
+	private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
+	{
+		var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+		key?.DeleteValue("DayBar", false);
 	}
 }

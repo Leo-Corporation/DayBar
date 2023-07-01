@@ -52,8 +52,8 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock FontFamily="..\Fonts\#FluentSystemIcons-Regular" FontSize="28" Text="&#xF608;" Margin="3" VerticalAlignment="Center"/>
                 <StackPanel Grid.Column="1">
-                    <TextBlock Text="{x:Static lang:Resources.WorkHours}" FontWeight="ExtraBold"/>
-                    <CheckBox Content="{x:Static lang:Resources.LaunchOnStart}" Style="{DynamicResource CheckBoxStyle1}"/>
+                    <TextBlock Text="{x:Static lang:Resources.Startup}" FontWeight="ExtraBold"/>
+                    <CheckBox x:Name="LaunchOnStartChk" Content="{x:Static lang:Resources.LaunchOnStart}" Style="{DynamicResource CheckBoxStyle1}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
                 </StackPanel>
             </Grid>
         </Border>
