@@ -51,6 +51,7 @@ public partial class MainWindow : Window
 		Global.MainWindow = this;
 		InitUI();
 		InitTimer(Global.Settings.StartHour*3600, Global.Settings.EndHour*3600);
+		Hide();
 	}
 
 	private void InitUI()
