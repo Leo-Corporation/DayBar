@@ -108,7 +108,7 @@ public partial class MainWindow : Window
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)
 	{
-		Application.Current.Shutdown(); // Close the application
+		Hide();
 	}
 
 	private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
@@ -150,5 +150,21 @@ public partial class MainWindow : Window
 	{
 		CheckButton(SettingsBtn);
 		PageContent.Navigate(Global.AboutPage);
+	}
+
+	private void SettingsMenu_Click(object sender, RoutedEventArgs e)
+	{
+		Show();
+	}
+
+	private void AboutMenu_Click(object sender, RoutedEventArgs e)
+	{
+		CheckButton(SettingsBtn);
+		PageContent.Navigate(Global.AboutPage);
+	}
+
+	private void QuitMenu_Click(object sender, RoutedEventArgs e)
+	{
+		Application.Current.Shutdown(); // Close the application
 	}
 }

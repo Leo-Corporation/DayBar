@@ -108,10 +108,10 @@
 								</Border>
 							</ControlTemplate>
 						</ContextMenu.Template>
-						<MenuItem Header="{x:Static lang:Resources.Settings}" Style="{DynamicResource MenuStyle}"/>
-						<MenuItem Header="{x:Static lang:Resources.About}" Style="{DynamicResource MenuStyle}"/>
+						<MenuItem Header="{x:Static lang:Resources.Settings}" Style="{DynamicResource MenuStyle}" x:Name="SettingsMenu" Click="SettingsMenu_Click"/>
+						<MenuItem x:Name="AboutMenu" Header="{x:Static lang:Resources.About}" Style="{DynamicResource MenuStyle}" Click="AboutMenu_Click"/>
 						<Separator/>
-						<MenuItem Header="{x:Static lang:Resources.Quit}" Style="{DynamicResource MenuStyle}"/>
+						<MenuItem x:Name="QuitMenu" Header="{x:Static lang:Resources.Quit}" Style="{DynamicResource MenuStyle}" Click="QuitMenu_Click"/>
 					</ContextMenu>
 				</tb:TaskbarIcon.ContextMenu>
 			</tb:TaskbarIcon>
