@@ -151,6 +151,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Launch DayBar when Windows starts..
+        /// </summary>
+        public static string LaunchOnStart {
+            get {
+                return ResourceManager.GetString("LaunchOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minimize.
         /// </summary>
         public static string Minimize {
@@ -192,6 +201,15 @@ namespace DayBar.Properties {
         public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Startup.
+        /// </summary>
+        public static string Startup {
+            get {
+                return ResourceManager.GetString("Startup", resourceCulture);
             }
         }
         

@@ -147,6 +147,9 @@
   <data name="Home" xml:space="preserve">
     <value>Accueil</value>
   </data>
+  <data name="LaunchOnStart" xml:space="preserve">
+    <value>Lancer DayBar lorsque Windows démarre.</value>
+  </data>
   <data name="Minimize" xml:space="preserve">
     <value>Minimiser</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Paramètres</value>
+  </data>
+  <data name="Startup" xml:space="preserve">
+    <value>Démarrage</value>
   </data>
   <data name="To" xml:space="preserve">
     <value>À</value>

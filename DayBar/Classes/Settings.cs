@@ -28,39 +28,45 @@ using System.Xml.Serialization;
 namespace DayBar.Classes
 {
 	public class Settings
-    {
-        /// <summary>
-        /// The Working start hour.
-        /// </summary>
-        public int StartHour { get; set; }
+	{
+		/// <summary>
+		/// The Working start hour.
+		/// </summary>
+		public int StartHour { get; set; }
 
-        /// <summary>
-        /// The Working end hour.
-        /// </summary>
-        public int EndHour { get; set; }
+		/// <summary>
+		/// The Working end hour.
+		/// </summary>
+		public int EndHour { get; set; }
 
-        /// <summary>
-        /// <see langword="true"/> if the app should display a banner when an update is available.
-        /// </summary>
-        public bool NotifyUpdate { get; set; }
+		/// <summary>
+		/// <see langword="true"/> if the app should launch on start.
+		/// </summary>
+		public bool LaunchOnStart { get; set; }
 
-        /// <summary>
-        /// <see langword="true"/> if the app should display a banner when half of the day has been reached.
-        /// </summary>
-        public bool NotifyHalfDay { get; set; }
+		/// <summary>
+		/// <see langword="true"/> if the app should display a banner when an update is available.
+		/// </summary>
+		public bool NotifyUpdate { get; set; }
 
-        public Settings()
-        {
-            // Default configuration
-            StartHour = 0;
-            EndHour = 24;
-            NotifyUpdate = true;
-            NotifyHalfDay = false;
-        }
-    }
+		/// <summary>
+		/// <see langword="true"/> if the app should display a banner when half of the day has been reached.
+		/// </summary>
+		public bool NotifyHalfDay { get; set; }
 
-    public static class SettingsManager
-    {
+		public Settings()
+		{
+			// Default configuration
+			StartHour = 0;
+			EndHour = 24;
+			NotifyUpdate = true;
+			NotifyHalfDay = false;
+			LaunchOnStart = true;
+		}
+	}
+
+	public static class SettingsManager
+	{
 		private static string SettingsPath => $@"{FileSys.AppDataPath}\Léo Corporation\DayBar\Settings.xml";
 		public static Settings Load()
 		{
