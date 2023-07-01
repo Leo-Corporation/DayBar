@@ -58,10 +58,13 @@ public partial class HomePage : Page
 
 	private void ValidateTxt_Click(object sender, RoutedEventArgs e)
 	{
-		if (int.Parse(FromTxt.Text) < int.Parse(ToTxt.Text))
+		int start = int.Parse(FromTxt.Text); 
+		int end = int.Parse(ToTxt.Text);
+
+		if (start < end && start >= 0 && end <= 24)
 		{
-			Global.Settings.StartHour = int.Parse(FromTxt.Text);
-			Global.Settings.EndHour = int.Parse(ToTxt.Text);
+			Global.Settings.StartHour = start;
+			Global.Settings.EndHour = end;
 			SettingsManager.Save();
 			return;
 		}
