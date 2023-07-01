@@ -45,6 +45,11 @@ namespace DayBar.Classes
 		public bool LaunchOnStart { get; set; }
 
 		/// <summary>
+		/// <see langword="true"/> if the icon displayed in the system should support dark theme taskbar.
+		/// </summary>
+		public bool UseDarkThemeSystemTray { get; set; }
+
+		/// <summary>
 		/// <see langword="true"/> if the app should display a banner when an update is available.
 		/// </summary>
 		public bool NotifyUpdate { get; set; }
@@ -62,6 +67,7 @@ namespace DayBar.Classes
 			NotifyUpdate = true;
 			NotifyHalfDay = false;
 			LaunchOnStart = true;
+			UseDarkThemeSystemTray = false;
 		}
 	}
 

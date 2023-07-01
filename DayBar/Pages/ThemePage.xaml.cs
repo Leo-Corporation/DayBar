@@ -24,25 +24,41 @@ SOFTWARE.
 using DayBar.Classes;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace DayBar;
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
-public partial class App : Application
+namespace DayBar.Pages
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
-	{
-		Global.Settings = SettingsManager.Load();
+    /// <summary>
+    /// Interaction logic for ThemePage.xaml
+    /// </summary>
+    public partial class ThemePage : Page
+    {
+        public ThemePage()
+        {
+            InitializeComponent();
+            InitUI();
+        }
 
-		Global.HomePage = new();
-		Global.NotificationsPage = new();
-		Global.AboutPage = new();
-		Global.ThemePage = new();
+        private void InitUI()
+        {
+            DarkRadio.IsChecked = Global.Settings.UseDarkThemeSystemTray;
+            LightRadio.IsChecked = !Global.Settings.UseDarkThemeSystemTray;
+		}
+
+		private void RadioButton_Checked(object sender, RoutedEventArgs e)
+		{
+            Global.Settings.UseDarkThemeSystemTray = DarkRadio.IsChecked ?? false;
+		}
 	}
 }

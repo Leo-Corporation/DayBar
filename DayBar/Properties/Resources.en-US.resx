@@ -123,6 +123,9 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="Dark" xml:space="preserve">
+    <value>Dark</value>
+  </data>
   <data name="DayBar" xml:space="preserve">
     <value>DayBar</value>
   </data>
@@ -153,6 +156,9 @@
   <data name="LaunchOnStart" xml:space="preserve">
     <value>Launch DayBar when Windows starts.</value>
   </data>
+  <data name="Light" xml:space="preserve">
+    <value>Light</value>
+  </data>
   <data name="Minimize" xml:space="preserve">
     <value>Minimize</value>
   </data>
@@ -176,6 +182,15 @@
   </data>
   <data name="Startup" xml:space="preserve">
     <value>Startup</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="SystemTrayTheme" xml:space="preserve">
+    <value>System tray theme</value>
+  </data>
+  <data name="Themes" xml:space="preserve">
+    <value>Themes</value>
   </data>
   <data name="To" xml:space="preserve">
     <value>To</value>
