@@ -162,6 +162,7 @@ public partial class MainWindow : Window
 	{
 		CheckButton(SettingsBtn);
 		PageContent.Navigate(Global.AboutPage);
+		Show();
 	}
 
 	private void QuitMenu_Click(object sender, RoutedEventArgs e)
