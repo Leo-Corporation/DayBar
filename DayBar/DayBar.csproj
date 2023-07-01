@@ -10,106 +10,207 @@
 
   <ItemGroup>
     <None Remove="Assets\Icons\0.ico" />
+    <None Remove="Assets\Icons\0L.ico" />
     <None Remove="Assets\Icons\1.ico" />
     <None Remove="Assets\Icons\10.ico" />
     <None Remove="Assets\Icons\100.ico" />
+    <None Remove="Assets\Icons\100L.ico" />
+    <None Remove="Assets\Icons\10L.ico" />
     <None Remove="Assets\Icons\11.ico" />
+    <None Remove="Assets\Icons\11L.ico" />
     <None Remove="Assets\Icons\12.ico" />
+    <None Remove="Assets\Icons\12L.ico" />
     <None Remove="Assets\Icons\13.ico" />
+    <None Remove="Assets\Icons\13L.ico" />
     <None Remove="Assets\Icons\14.ico" />
+    <None Remove="Assets\Icons\14L.ico" />
     <None Remove="Assets\Icons\15.ico" />
+    <None Remove="Assets\Icons\15L.ico" />
     <None Remove="Assets\Icons\16.ico" />
+    <None Remove="Assets\Icons\16L.ico" />
     <None Remove="Assets\Icons\17.ico" />
+    <None Remove="Assets\Icons\17L.ico" />
     <None Remove="Assets\Icons\18.ico" />
+    <None Remove="Assets\Icons\18L.ico" />
     <None Remove="Assets\Icons\19.ico" />
+    <None Remove="Assets\Icons\19L.ico" />
+    <None Remove="Assets\Icons\1L.ico" />
     <None Remove="Assets\Icons\2.ico" />
     <None Remove="Assets\Icons\20.ico" />
+    <None Remove="Assets\Icons\20L.ico" />
     <None Remove="Assets\Icons\21.ico" />
+    <None Remove="Assets\Icons\21L.ico" />
     <None Remove="Assets\Icons\22.ico" />
+    <None Remove="Assets\Icons\22L.ico" />
     <None Remove="Assets\Icons\23.ico" />
+    <None Remove="Assets\Icons\23L.ico" />
     <None Remove="Assets\Icons\24.ico" />
+    <None Remove="Assets\Icons\24L.ico" />
     <None Remove="Assets\Icons\25.ico" />
+    <None Remove="Assets\Icons\25L.ico" />
     <None Remove="Assets\Icons\26.ico" />
+    <None Remove="Assets\Icons\26L.ico" />
     <None Remove="Assets\Icons\27.ico" />
+    <None Remove="Assets\Icons\27L.ico" />
     <None Remove="Assets\Icons\28.ico" />
+    <None Remove="Assets\Icons\28L.ico" />
     <None Remove="Assets\Icons\29.ico" />
+    <None Remove="Assets\Icons\29L.ico" />
+    <None Remove="Assets\Icons\2L.ico" />
     <None Remove="Assets\Icons\3.ico" />
     <None Remove="Assets\Icons\30.ico" />
+    <None Remove="Assets\Icons\30L.ico" />
     <None Remove="Assets\Icons\31.ico" />
+    <None Remove="Assets\Icons\31L.ico" />
     <None Remove="Assets\Icons\32.ico" />
+    <None Remove="Assets\Icons\32L.ico" />
     <None Remove="Assets\Icons\33.ico" />
+    <None Remove="Assets\Icons\33L.ico" />
     <None Remove="Assets\Icons\34.ico" />
+    <None Remove="Assets\Icons\34L.ico" />
     <None Remove="Assets\Icons\35.ico" />
+    <None Remove="Assets\Icons\35L.ico" />
     <None Remove="Assets\Icons\36.ico" />
+    <None Remove="Assets\Icons\36L.ico" />
     <None Remove="Assets\Icons\37.ico" />
+    <None Remove="Assets\Icons\37L.ico" />
     <None Remove="Assets\Icons\38.ico" />
+    <None Remove="Assets\Icons\38L.ico" />
     <None Remove="Assets\Icons\39.ico" />
+    <None Remove="Assets\Icons\39L.ico" />
+    <None Remove="Assets\Icons\3L.ico" />
     <None Remove="Assets\Icons\4.ico" />
     <None Remove="Assets\Icons\40.ico" />
+    <None Remove="Assets\Icons\40L.ico" />
     <None Remove="Assets\Icons\41.ico" />
+    <None Remove="Assets\Icons\41L.ico" />
     <None Remove="Assets\Icons\42.ico" />
+    <None Remove="Assets\Icons\42L.ico" />
     <None Remove="Assets\Icons\43.ico" />
+    <None Remove="Assets\Icons\43L.ico" />
     <None Remove="Assets\Icons\44.ico" />
+    <None Remove="Assets\Icons\44L.ico" />
     <None Remove="Assets\Icons\45.ico" />
+    <None Remove="Assets\Icons\45L.ico" />
     <None Remove="Assets\Icons\46.ico" />
+    <None Remove="Assets\Icons\46L.ico" />
     <None Remove="Assets\Icons\47.ico" />
+    <None Remove="Assets\Icons\47L.ico" />
     <None Remove="Assets\Icons\48.ico" />
+    <None Remove="Assets\Icons\48L.ico" />
     <None Remove="Assets\Icons\49.ico" />
+    <None Remove="Assets\Icons\49L.ico" />
+    <None Remove="Assets\Icons\4L.ico" />
     <None Remove="Assets\Icons\5.ico" />
     <None Remove="Assets\Icons\50.ico" />
+    <None Remove="Assets\Icons\50L.ico" />
     <None Remove="Assets\Icons\51.ico" />
+    <None Remove="Assets\Icons\51L.ico" />
     <None Remove="Assets\Icons\52.ico" />
+    <None Remove="Assets\Icons\52L.ico" />
     <None Remove="Assets\Icons\53.ico" />
+    <None Remove="Assets\Icons\53L.ico" />
     <None Remove="Assets\Icons\54.ico" />
+    <None Remove="Assets\Icons\54L.ico" />
     <None Remove="Assets\Icons\55.ico" />
+    <None Remove="Assets\Icons\55L.ico" />
     <None Remove="Assets\Icons\56.ico" />
+    <None Remove="Assets\Icons\56L.ico" />
     <None Remove="Assets\Icons\57.ico" />
+    <None Remove="Assets\Icons\57L.ico" />
     <None Remove="Assets\Icons\58.ico" />
+    <None Remove="Assets\Icons\58L.ico" />
     <None Remove="Assets\Icons\59.ico" />
+    <None Remove="Assets\Icons\59L.ico" />
+    <None Remove="Assets\Icons\5L.ico" />
     <None Remove="Assets\Icons\6.ico" />
     <None Remove="Assets\Icons\60.ico" />
+    <None Remove="Assets\Icons\60L.ico" />
     <None Remove="Assets\Icons\61.ico" />
+    <None Remove="Assets\Icons\61L.ico" />
     <None Remove="Assets\Icons\62.ico" />
+    <None Remove="Assets\Icons\62L.ico" />
     <None Remove="Assets\Icons\63.ico" />
+    <None Remove="Assets\Icons\63L.ico" />
     <None Remove="Assets\Icons\64.ico" />
+    <None Remove="Assets\Icons\64L.ico" />
     <None Remove="Assets\Icons\65.ico" />
+    <None Remove="Assets\Icons\65L.ico" />
     <None Remove="Assets\Icons\66.ico" />
+    <None Remove="Assets\Icons\66L.ico" />
     <None Remove="Assets\Icons\67.ico" />
+    <None Remove="Assets\Icons\67L.ico" />
     <None Remove="Assets\Icons\68.ico" />
+    <None Remove="Assets\Icons\68L.ico" />
     <None Remove="Assets\Icons\69.ico" />
+    <None Remove="Assets\Icons\69L.ico" />
+    <None Remove="Assets\Icons\6L.ico" />
     <None Remove="Assets\Icons\7.ico" />
     <None Remove="Assets\Icons\70.ico" />
+    <None Remove="Assets\Icons\70L.ico" />
     <None Remove="Assets\Icons\71.ico" />
+    <None Remove="Assets\Icons\71L.ico" />
     <None Remove="Assets\Icons\72.ico" />
+    <None Remove="Assets\Icons\72L.ico" />
     <None Remove="Assets\Icons\73.ico" />
+    <None Remove="Assets\Icons\73L.ico" />
     <None Remove="Assets\Icons\74.ico" />
+    <None Remove="Assets\Icons\74L.ico" />
     <None Remove="Assets\Icons\75.ico" />
+    <None Remove="Assets\Icons\75L.ico" />
     <None Remove="Assets\Icons\76.ico" />
+    <None Remove="Assets\Icons\76L.ico" />
     <None Remove="Assets\Icons\77.ico" />
+    <None Remove="Assets\Icons\77L.ico" />
     <None Remove="Assets\Icons\78.ico" />
+    <None Remove="Assets\Icons\78L.ico" />
     <None Remove="Assets\Icons\79.ico" />
+    <None Remove="Assets\Icons\79L.ico" />
+    <None Remove="Assets\Icons\7L.ico" />
     <None Remove="Assets\Icons\8.ico" />
     <None Remove="Assets\Icons\80.ico" />
+    <None Remove="Assets\Icons\80L.ico" />
     <None Remove="Assets\Icons\81.ico" />
+    <None Remove="Assets\Icons\81L.ico" />
     <None Remove="Assets\Icons\82.ico" />
+    <None Remove="Assets\Icons\82L.ico" />
     <None Remove="Assets\Icons\83.ico" />
+    <None Remove="Assets\Icons\83L.ico" />
     <None Remove="Assets\Icons\84.ico" />
+    <None Remove="Assets\Icons\84L.ico" />
     <None Remove="Assets\Icons\85.ico" />
+    <None Remove="Assets\Icons\85L.ico" />
     <None Remove="Assets\Icons\86.ico" />
+    <None Remove="Assets\Icons\86L.ico" />
     <None Remove="Assets\Icons\87.ico" />
+    <None Remove="Assets\Icons\87L.ico" />
     <None Remove="Assets\Icons\88.ico" />
+    <None Remove="Assets\Icons\88L.ico" />
     <None Remove="Assets\Icons\89.ico" />
+    <None Remove="Assets\Icons\89L.ico" />
+    <None Remove="Assets\Icons\8L.ico" />
     <None Remove="Assets\Icons\9.ico" />
     <None Remove="Assets\Icons\90.ico" />
+    <None Remove="Assets\Icons\90L.ico" />
     <None Remove="Assets\Icons\91.ico" />
+    <None Remove="Assets\Icons\91L.ico" />
     <None Remove="Assets\Icons\92.ico" />
+    <None Remove="Assets\Icons\92L.ico" />
     <None Remove="Assets\Icons\93.ico" />
+    <None Remove="Assets\Icons\93L.ico" />
     <None Remove="Assets\Icons\94.ico" />
+    <None Remove="Assets\Icons\94L.ico" />
     <None Remove="Assets\Icons\95.ico" />
+    <None Remove="Assets\Icons\95L.ico" />
     <None Remove="Assets\Icons\96.ico" />
+    <None Remove="Assets\Icons\96L.ico" />
     <None Remove="Assets\Icons\97.ico" />
+    <None Remove="Assets\Icons\97L.ico" />
     <None Remove="Assets\Icons\98.ico" />
+    <None Remove="Assets\Icons\98L.ico" />
     <None Remove="Assets\Icons\99.ico" />
+    <None Remove="Assets\Icons\99L.ico" />
+    <None Remove="Assets\Icons\9L.ico" />
     <None Remove="Assets\Images\Logo.png" />
     <None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
     <None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
@@ -132,6 +233,9 @@
     <Resource Include="Assets\Icons\0.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\0L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\1.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -141,31 +245,67 @@
     <Resource Include="Assets\Icons\100.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\100L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\10L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\11.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\11L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\12.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\12L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\13.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\13L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\14.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\14L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\15.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\15L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\16.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\16L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\17.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\17L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\18.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\18L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\19.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\19L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\1L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\2.ico">
@@ -174,31 +314,64 @@
     <Resource Include="Assets\Icons\20.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\20L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\21.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\21L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\22.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\22L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\23.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\23L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\24.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\24L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\25.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\25L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\26.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\26L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\27.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\27L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\28.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\28L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\29.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\29L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\2L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\3.ico">
@@ -207,31 +380,64 @@
     <Resource Include="Assets\Icons\30.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\30L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\31.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\31L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\32.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\32L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\33.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\33L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\34.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\34L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\35.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\35L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\36.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\36L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\37.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\37L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\38.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\38L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\39.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\39L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\3L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\4.ico">
@@ -240,31 +446,64 @@
     <Resource Include="Assets\Icons\40.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\40L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\41.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\41L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\42.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\42L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\43.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\43L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\44.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\44L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\45.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\45L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\46.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\46L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\47.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\47L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\48.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\48L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\49.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\49L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\4L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\5.ico">
@@ -273,31 +512,64 @@
     <Resource Include="Assets\Icons\50.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\50L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\51.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\51L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\52.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\52L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\53.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\53L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\54.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\54L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\55.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\55L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\56.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\56L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\57.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\57L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\58.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\58L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\59.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\59L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\5L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\6.ico">
@@ -306,31 +578,64 @@
     <Resource Include="Assets\Icons\60.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\60L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\61.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\61L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\62.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\62L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\63.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\63L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\64.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\64L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\65.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\65L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\66.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\66L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\67.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\67L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\68.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\68L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\69.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\69L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\6L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\7.ico">
@@ -339,31 +644,64 @@
     <Resource Include="Assets\Icons\70.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\70L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\71.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\71L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\72.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\72L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\73.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\73L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\74.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\74L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\75.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\75L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\76.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\76L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\77.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\77L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\78.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\78L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\79.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\79L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\7L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\8.ico">
@@ -372,31 +710,64 @@
     <Resource Include="Assets\Icons\80.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\80L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\81.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\81L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\82.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\82L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\83.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\83L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\84.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\84L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\85.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\85L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\86.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\86L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\87.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\87L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\88.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\88L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\89.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\89L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\8L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\9.ico">
@@ -405,31 +776,64 @@
     <Resource Include="Assets\Icons\90.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\90L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\91.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\91L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\92.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\92L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\93.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\93L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\94.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\94L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\95.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\95L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\96.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\96L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\97.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\97L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Icons\98.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Icons\98L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Icons\99.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\99L.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Icons\9L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Assets\Images\Logo.png">

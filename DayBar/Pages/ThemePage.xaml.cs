@@ -39,26 +39,32 @@ using System.Windows.Shapes;
 
 namespace DayBar.Pages
 {
-    /// <summary>
-    /// Interaction logic for ThemePage.xaml
-    /// </summary>
-    public partial class ThemePage : Page
-    {
-        public ThemePage()
-        {
-            InitializeComponent();
-            InitUI();
-        }
+	/// <summary>
+	/// Interaction logic for ThemePage.xaml
+	/// </summary>
+	public partial class ThemePage : Page
+	{
+		public ThemePage()
+		{
+			InitializeComponent();
+			InitUI();
+		}
 
-        private void InitUI()
-        {
-            DarkRadio.IsChecked = Global.Settings.UseDarkThemeSystemTray;
-            LightRadio.IsChecked = !Global.Settings.UseDarkThemeSystemTray;
+		private void InitUI()
+		{
+			DarkRadio.IsChecked = Global.Settings.UseDarkThemeSystemTray;
+			LightRadio.IsChecked = !Global.Settings.UseDarkThemeSystemTray;
 		}
 
 		private void RadioButton_Checked(object sender, RoutedEventArgs e)
 		{
-            Global.Settings.UseDarkThemeSystemTray = DarkRadio.IsChecked ?? false;
+			try
+			{
+				Global.Settings.UseDarkThemeSystemTray = DarkRadio.IsChecked ?? false;
+				Global.MainWindow.InitTimer(Global.Settings.StartHour * 3600, Global.Settings.EndHour * 3600);
+				SettingsManager.Save();
+			}
+			catch { }
 		}
 	}
 }

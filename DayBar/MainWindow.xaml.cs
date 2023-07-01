@@ -100,7 +100,7 @@ public partial class MainWindow : Window
 		if (progress > 100) progress = 100;
 		if (progress < 0) progress = 0;
 
-		myNotifyIcon.IconSource = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/{progress}.ico"));
+		myNotifyIcon.IconSource = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/{progress}{(Global.Settings.UseDarkThemeSystemTray ? "" : "L")}.ico"));
 		myNotifyIcon.ToolTipText = $"{Properties.Resources.DayBar} ({progress}%)";
 
 		Global.HomePage.ProgressTxt.Text = $"{progress}%";
