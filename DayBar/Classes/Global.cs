@@ -40,6 +40,7 @@ namespace DayBar.Classes
 		public static NotificationsPage NotificationsPage { get; set; }
 		public static AboutPage AboutPage { get; set; }
 		public static Settings Settings { get; set; }
+		public static MainWindow MainWindow { get; set; }
 
 		public static string GetHiSentence
 		{

@@ -47,8 +47,10 @@ public partial class MainWindow : Window
 	public MainWindow()
 	{
 		InitializeComponent();
+
+		Global.MainWindow = this;
 		InitUI();
-		InitTimer(0*3600, 24*3600);
+		InitTimer(Global.Settings.StartHour*3600, Global.Settings.EndHour*3600);
 	}
 
 	private void InitUI()
@@ -62,9 +64,9 @@ public partial class MainWindow : Window
 
 	DispatcherTimer dispatcherTimer = new();
 	
-	private void InitTimer(int startHour, int endHour)
+	internal void InitTimer(int startHour, int endHour)
 	{
-
+		dispatcherTimer.Stop();
 		int c = CalculatePercentage(startHour, endHour);
 
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
@@ -93,10 +95,10 @@ public partial class MainWindow : Window
 
 	private void SetNotifyIcon(ref int progress)
 	{
-		if (progress > 100)
-		{
-			progress = 100;
-		}
+		// Avoid errors
+		if (progress > 100) progress = 100;
+		if (progress < 0) progress = 0;
+
 		myNotifyIcon.IconSource = new BitmapImage(new Uri($"pack://application:,,,/Assets/Icons/{progress}.ico"));
 		myNotifyIcon.ToolTipText = $"{Properties.Resources.DayBar} ({progress}%)";
 

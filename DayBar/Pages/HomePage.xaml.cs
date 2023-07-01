@@ -58,7 +58,7 @@ public partial class HomePage : Page
 
 	private void ValidateTxt_Click(object sender, RoutedEventArgs e)
 	{
-		int start = int.Parse(FromTxt.Text); 
+		int start = int.Parse(FromTxt.Text);
 		int end = int.Parse(ToTxt.Text);
 
 		if (start < end && start >= 0 && end <= 24)
@@ -66,6 +66,8 @@ public partial class HomePage : Page
 			Global.Settings.StartHour = start;
 			Global.Settings.EndHour = end;
 			SettingsManager.Save();
+			Global.MainWindow.InitTimer(start * 3600, end * 3600);
+
 			return;
 		}
 		MessageBox.Show(Properties.Resources.WorkHoursError, Properties.Resources.DayBar, MessageBoxButton.OK, MessageBoxImage.Error);
