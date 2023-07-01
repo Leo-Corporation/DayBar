@@ -91,8 +91,30 @@
 					ToolTipText="DayBar"
 					IconSource="Assets/Icons/0.ico"
 					MenuActivation="LeftOrRightClick"
-					PopupActivation="DoubleClick"
-	  />
+					PopupActivation="DoubleClick">
+				<tb:TaskbarIcon.ContextMenu>
+					<ContextMenu>
+						<ContextMenu.Template>
+							<ControlTemplate>
+								<Border Padding="5" CornerRadius="5" Background="{DynamicResource Background1}">
+									<ScrollViewer
+								Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}"
+								Uid="ScrollViewer_9"
+								CanContentScroll="True">
+										<ItemsPresenter Margin="{TemplateBinding Padding}"
+												SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+												KeyboardNavigation.DirectionalNavigation="Cycle" />
+									</ScrollViewer>
+								</Border>
+							</ControlTemplate>
+						</ContextMenu.Template>
+						<MenuItem Header="{x:Static lang:Resources.Settings}" Style="{DynamicResource MenuStyle}"/>
+						<MenuItem Header="{x:Static lang:Resources.About}" Style="{DynamicResource MenuStyle}"/>
+						<Separator/>
+						<MenuItem Header="{x:Static lang:Resources.Quit}" Style="{DynamicResource MenuStyle}"/>
+					</ContextMenu>
+				</tb:TaskbarIcon.ContextMenu>
+			</tb:TaskbarIcon>
 			<Border Height="Auto" Style="{StaticResource WindowMainPanelStyle}">
 				<Grid Height="32" VerticalAlignment="Top">
 					<Grid.ColumnDefinitions>
