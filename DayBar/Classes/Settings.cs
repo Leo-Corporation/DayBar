@@ -93,7 +93,7 @@ namespace DayBar.Classes
 
 			StreamReader streamReader = new(SettingsPath);
 			var settings = (Settings?)xmlDeserializer.Deserialize(streamReader) ?? new();
-
+			streamReader.Dispose();
 			return settings;
 		}
 

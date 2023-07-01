@@ -141,6 +141,9 @@
   <data name="GoodNight" xml:space="preserve">
     <value>Bonne nuit</value>
   </data>
+  <data name="HalfPassed" xml:space="preserve">
+    <value>La moitié de votre journée s'est écoulée.</value>
+  </data>
   <data name="Hi" xml:space="preserve">
     <value>Bonjour</value>
   </data>
@@ -155,6 +158,12 @@
   </data>
   <data name="Notifications" xml:space="preserve">
     <value>Notifications</value>
+  </data>
+  <data name="NotifyHalf" xml:space="preserve">
+    <value>Afficher une notification lorsque la moitié de la journée s'est écoulée</value>
+  </data>
+  <data name="NotifyUpdates" xml:space="preserve">
+    <value>Afficher une notification lorsque des mises à jour sont disponibles</value>
   </data>
   <data name="Progress" xml:space="preserve">
     <value>Progression</value>

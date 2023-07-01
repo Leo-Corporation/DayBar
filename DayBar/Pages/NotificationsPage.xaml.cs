@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using DayBar.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,5 +46,24 @@ public partial class NotificationsPage : Page
 	public NotificationsPage()
 	{
 		InitializeComponent();
+		InitUI();
+	}
+
+	private void InitUI()
+	{
+		NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdate;
+		NotifyHalfChk.IsChecked = Global.Settings.NotifyHalfDay;
+	}
+
+	private void NotifyUpdatesChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.NotifyUpdate = NotifyUpdatesChk.IsChecked ?? true;
+		SettingsManager.Save();
+	}
+
+	private void NotifyHalfChk_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.NotifyHalfDay = NotifyHalfChk.IsChecked ?? false;
+		SettingsManager.Save();
 	}
 }

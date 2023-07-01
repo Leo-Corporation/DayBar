@@ -133,6 +133,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Half of your day has passed..
+        /// </summary>
+        public static string HalfPassed {
+            get {
+                return ResourceManager.GetString("HalfPassed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hi.
         /// </summary>
         public static string Hi {
@@ -174,6 +183,24 @@ namespace DayBar.Properties {
         public static string Notifications {
             get {
                 return ResourceManager.GetString("Notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a notification when half of the day has passed.
+        /// </summary>
+        public static string NotifyHalf {
+            get {
+                return ResourceManager.GetString("NotifyHalf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a notification when updates are available.
+        /// </summary>
+        public static string NotifyUpdates {
+            get {
+                return ResourceManager.GetString("NotifyUpdates", resourceCulture);
             }
         }
         

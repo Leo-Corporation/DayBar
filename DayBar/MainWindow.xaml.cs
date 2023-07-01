@@ -64,7 +64,7 @@ public partial class MainWindow : Window
 	}
 
 	DispatcherTimer dispatcherTimer = new();
-	
+	bool halfShown = false;
 	internal void InitTimer(int startHour, int endHour)
 	{
 		dispatcherTimer.Stop();
@@ -105,6 +105,12 @@ public partial class MainWindow : Window
 
 		Global.HomePage.ProgressTxt.Text = $"{progress}%";
 		Global.HomePage.ProgressBar.Value = progress;
+
+		if (!halfShown && Global.Settings.NotifyHalfDay)
+		{
+			halfShown = true;
+			myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, Properties.Resources.HalfPassed, Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
+		}
 	}
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)
