@@ -97,6 +97,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        public static string From {
+            get {
+                return ResourceManager.GetString("From", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Good afternoon.
         /// </summary>
         public static string GoodAfternoon {
@@ -178,11 +187,29 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        public static string To {
+            get {
+                return ResourceManager.GetString("To", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Work hours.
         /// </summary>
         public static string WorkHours {
             get {
                 return ResourceManager.GetString("WorkHours", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set your working hours to ensure monitoring..
+        /// </summary>
+        public static string WorkHoursDesc {
+            get {
+                return ResourceManager.GetString("WorkHoursDesc", resourceCulture);
             }
         }
     }

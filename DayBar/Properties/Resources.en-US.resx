@@ -129,6 +129,9 @@
   <data name="DayCompletedFormat" xml:space="preserve">
     <value>{0}% of day completed</value>
   </data>
+  <data name="From" xml:space="preserve">
+    <value>From</value>
+  </data>
   <data name="GoodAfternoon" xml:space="preserve">
     <value>Good afternoon</value>
   </data>
@@ -156,7 +159,13 @@
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="To" xml:space="preserve">
+    <value>To</value>
+  </data>
   <data name="WorkHours" xml:space="preserve">
     <value>Work hours</value>
+  </data>
+  <data name="WorkHoursDesc" xml:space="preserve">
+    <value>Set your working hours to ensure monitoring.</value>
   </data>
 </root>

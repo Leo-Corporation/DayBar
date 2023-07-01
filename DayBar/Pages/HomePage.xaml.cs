@@ -25,6 +25,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,5 +46,21 @@ public partial class HomePage : Page
 	public HomePage()
 	{
 		InitializeComponent();
+	}
+
+	private void InitUI()
+	{
+
+	}
+
+	private void ValidateTxt_Click(object sender, RoutedEventArgs e)
+	{
+
+	}
+
+	private void FromTxt_PreviewTextInput(object sender, TextCompositionEventArgs e)
+	{
+		Regex regex = new("[^0-9]+");
+		e.Handled = regex.IsMatch(e.Text);
 	}
 }
