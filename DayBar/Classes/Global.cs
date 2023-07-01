@@ -39,6 +39,7 @@ namespace DayBar.Classes
 		public static HomePage HomePage { get; set; }
 		public static NotificationsPage NotificationsPage { get; set; }
 		public static AboutPage AboutPage { get; set; }
+		public static Settings Settings { get; set; }
 
 		public static string GetHiSentence
 		{

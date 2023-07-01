@@ -168,4 +168,7 @@
   <data name="WorkHoursDesc" xml:space="preserve">
     <value>Set your working hours to ensure monitoring.</value>
   </data>
+  <data name="WorkHoursError" xml:space="preserve">
+    <value>Please specify a valid time interval.</value>
+  </data>
 </root>

@@ -38,6 +38,8 @@ public partial class App : Application
 {
 	private void Application_Startup(object sender, StartupEventArgs e)
 	{
+		Global.Settings = SettingsManager.Load();
+
 		Global.HomePage = new();
 		Global.NotificationsPage = new();
 		Global.AboutPage = new();

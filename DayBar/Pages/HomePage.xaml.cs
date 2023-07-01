@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using DayBar.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,16 +47,25 @@ public partial class HomePage : Page
 	public HomePage()
 	{
 		InitializeComponent();
+		InitUI();
 	}
 
 	private void InitUI()
 	{
-
+		FromTxt.Text = Global.Settings.StartHour.ToString();
+		ToTxt.Text = Global.Settings.EndHour.ToString();
 	}
 
 	private void ValidateTxt_Click(object sender, RoutedEventArgs e)
 	{
-
+		if (int.Parse(FromTxt.Text) < int.Parse(ToTxt.Text))
+		{
+			Global.Settings.StartHour = int.Parse(FromTxt.Text);
+			Global.Settings.EndHour = int.Parse(ToTxt.Text);
+			SettingsManager.Save();
+			return;
+		}
+		MessageBox.Show(Properties.Resources.WorkHoursError, Properties.Resources.DayBar, MessageBoxButton.OK, MessageBoxImage.Error);
 	}
 
 	private void FromTxt_PreviewTextInput(object sender, TextCompositionEventArgs e)

@@ -212,5 +212,14 @@ namespace DayBar.Properties {
                 return ResourceManager.GetString("WorkHoursDesc", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please specify a valid time interval..
+        /// </summary>
+        public static string WorkHoursError {
+            get {
+                return ResourceManager.GetString("WorkHoursError", resourceCulture);
+            }
+        }
     }
 }
