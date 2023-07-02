@@ -8,7 +8,7 @@
 		xmlns:lang="clr-namespace:DayBar.Properties"
 		mc:Ignorable="d" Icon="DayBar.ico"
 		FontFamily="/Fonts/#Hauora"
-		Foreground="{Binding Source={StaticResource Foreground1}}"
+		Foreground="{DynamicResource Foreground1}"
 		Title="{x:Static lang:Resources.DayBar}"  Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Background="Transparent" AllowsTransparency="True">
 	<WindowChrome.WindowChrome>
 		<WindowChrome CaptionHeight="32" ResizeBorderThickness="10" />
@@ -80,7 +80,7 @@
 	<Window.Effect>
 		<DropShadowEffect Color="Black" ShadowDepth="0" BlurRadius="10" Opacity="0.4" RenderingBias="Quality" />
 	</Window.Effect>
-	<Border Name="WindowBorder" Margin="10" BorderThickness="0" Background="{Binding Source={StaticResource Background1}}" CornerRadius="5">
+	<Border Name="WindowBorder" Margin="10" BorderThickness="0" Background="{DynamicResource Background1}" CornerRadius="5">
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="Auto" />
@@ -108,10 +108,10 @@
 								</Border>
 							</ControlTemplate>
 						</ContextMenu.Template>
-						<MenuItem Header="{x:Static lang:Resources.Settings}" Style="{DynamicResource MenuStyle}" x:Name="SettingsMenu" Click="SettingsMenu_Click"/>
-						<MenuItem x:Name="AboutMenu" Header="{x:Static lang:Resources.About}" Style="{DynamicResource MenuStyle}" Click="AboutMenu_Click"/>
-						<Separator/>
-						<MenuItem x:Name="QuitMenu" Header="{x:Static lang:Resources.Quit}" Style="{DynamicResource MenuStyle}" Click="QuitMenu_Click"/>
+						<MenuItem Foreground="{DynamicResource Foreground1}" Header="{x:Static lang:Resources.Settings}" Style="{DynamicResource MenuStyle}" x:Name="SettingsMenu" Click="SettingsMenu_Click"/>
+						<MenuItem Foreground="{DynamicResource Foreground1}" x:Name="AboutMenu" Header="{x:Static lang:Resources.About}" Style="{DynamicResource MenuStyle}" Click="AboutMenu_Click"/>
+						<Separator Foreground="{DynamicResource Foreground1}"/>
+						<MenuItem Foreground="{DynamicResource Foreground1}" x:Name="QuitMenu" Header="{x:Static lang:Resources.Quit}" Style="{DynamicResource MenuStyle}" Click="QuitMenu_Click"/>
 					</ContextMenu>
 				</tb:TaskbarIcon.ContextMenu>
 			</tb:TaskbarIcon>
@@ -125,14 +125,14 @@
 						<ColumnDefinition Width="Auto" />
 					</Grid.ColumnDefinitions>
 
-					<Button Grid.Column="3" FontSize="14" Content="&#xFC75;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="MinimizeBtn" Click="MinimizeBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}" >
+					<Button Grid.Column="3" FontSize="14" Content="&#xFC75;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="MinimizeBtn" Click="MinimizeBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{DynamicResource Foreground1}" >
 						<Button.ToolTip>
-							<ToolTip Content="{x:Static lang:Resources.Minimize}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" />
+							<ToolTip Content="{x:Static lang:Resources.Minimize}" Foreground="{DynamicResource Foreground1}" Background="{DynamicResource Background1}" />
 						</Button.ToolTip>
 					</Button>
-					<Button Grid.Column="4" FontSize="14" Content="&#xF36B;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="CloseBtn" Click="CloseBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarCloseButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{Binding Source={StaticResource Foreground1}}" >
+					<Button Grid.Column="4" FontSize="14" Content="&#xF36B;" FontFamily="/Fonts/#FluentSystemIcons-Regular" Name="CloseBtn" Click="CloseBtn_Click" RenderOptions.EdgeMode="Aliased" Style="{StaticResource TitleBarCloseButtonStyle}" Background="Transparent" Width="46" Height="32" Foreground="{DynamicResource Foreground1}" >
 						<Button.ToolTip>
-							<ToolTip Content="{x:Static lang:Resources.Close}" Foreground="{Binding Source={StaticResource Foreground1}}" Background="{Binding Source={StaticResource Background1}}" />
+							<ToolTip Content="{x:Static lang:Resources.Close}" Foreground="{DynamicResource Foreground1}" Background="{DynamicResource Background1}" />
 						</Button.ToolTip>
 					</Button>
 				</Grid>
@@ -169,7 +169,7 @@
 						</Grid.ColumnDefinitions>
 
 						<StackPanel Margin="10" Grid.Column="0">
-							<Button Click="HomeBtn_Click" Padding="5" x:Name="HomeBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
+							<Button Click="HomeBtn_Click" Padding="5" x:Name="HomeBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground1}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
 								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 									<TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF481;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
 									<TextBlock Text="{x:Static lang:Resources.Home}" />
@@ -181,7 +181,7 @@
 
 							</Button>
 
-							<Button Click="NotificationsBtn_Click" Padding="5" x:Name="NotificationsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
+							<Button Click="NotificationsBtn_Click" Padding="5" x:Name="NotificationsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground1}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
 								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 									<TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF115;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
 									<TextBlock Text="{x:Static lang:Resources.Notifications}" />
@@ -193,7 +193,7 @@
 
 							</Button>
 
-							<Button Click="ThemeBtn_Click" Padding="5" x:Name="ThemeBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
+							<Button Click="ThemeBtn_Click" Padding="5" x:Name="ThemeBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground1}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
 								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 									<TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF33C;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
 									<TextBlock Text="{x:Static lang:Resources.Themes}" />
@@ -205,7 +205,7 @@
 
 							</Button>
 
-							<Button Click="SettingsBtn_Click" Padding="5" x:Name="SettingsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
+							<Button Click="SettingsBtn_Click" Padding="5" x:Name="SettingsBtn" Cursor="Hand" FontSize="13" FontWeight="ExtraBold" Style="{DynamicResource ButtonMenu}" Background="{x:Null}" Foreground="{DynamicResource Foreground1}" HorizontalContentAlignment="Left" Margin="0,0,0,1" BorderThickness="2 0 0 0">
 								<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
 									<TextBlock FontWeight="Normal" Margin="0 0 10 0" Text="&#xF4A4;" FontFamily="Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" FontSize="15" />
 									<TextBlock Text="{x:Static lang:Resources.About}" />

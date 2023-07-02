@@ -22,8 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using DayBar.Enums;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +68,58 @@ namespace DayBar.Pages
 				SettingsManager.Save();
 			}
 			catch { }
+		}
+
+		Border ThemeSelectedBorder;
+		private void Border_MouseEnter(object sender, MouseEventArgs e)
+		{
+			((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+		}
+
+		private void Border_MouseLeave(object sender, MouseEventArgs e)
+		{
+			if ((Border)sender == ThemeSelectedBorder) return;
+			((Border)sender).BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+		}
+
+		private void ResetBorders()
+		{
+			LightBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+			DarkBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+			SystemBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+		}
+
+		private void LightBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			ResetBorders();
+			ThemeSelectedBorder = (Border)sender;
+			((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+
+			Global.Settings.Theme = Themes.Light;
+			SettingsManager.Save();
+			Global.ChangeTheme();
+		}
+
+		private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			ResetBorders();
+			ThemeSelectedBorder = (Border)sender;
+			((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+
+			Global.Settings.Theme = Themes.Dark;
+			SettingsManager.Save();
+			Global.ChangeTheme();
+
+		}
+
+		private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+		{
+			ResetBorders();
+			ThemeSelectedBorder = (Border)sender;
+			((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+			Global.Settings.Theme = Themes.System;
+			SettingsManager.Save();
+			Global.ChangeTheme();
 		}
 	}
 }

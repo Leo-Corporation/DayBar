@@ -11,7 +11,7 @@
 
 	<StackPanel>
 		<TextBlock Margin="5 10" Text="{x:Static lang:Resources.Notifications}" FontWeight="Bold" FontSize="14"/>
-        <CheckBox Margin="5 0" x:Name="NotifyUpdatesChk" Content="{x:Static lang:Resources.NotifyUpdates}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyUpdatesChk_Checked" Unchecked="NotifyUpdatesChk_Checked"/>
-        <CheckBox Margin="5 0" x:Name="NotifyHalfChk" Content="{x:Static lang:Resources.NotifyHalf}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyHalfChk_Checked" Unchecked="NotifyHalfChk_Checked"/>
+        <CheckBox Margin="5 0" x:Name="NotifyUpdatesChk" Content="{x:Static lang:Resources.NotifyUpdates}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyUpdatesChk_Checked" Unchecked="NotifyUpdatesChk_Checked" Foreground="{DynamicResource Foreground1}"/>
+        <CheckBox Margin="5 0" x:Name="NotifyHalfChk" Content="{x:Static lang:Resources.NotifyHalf}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyHalfChk_Checked" Unchecked="NotifyHalfChk_Checked" Foreground="{DynamicResource Foreground1}"/>
 	</StackPanel>
 </Page>

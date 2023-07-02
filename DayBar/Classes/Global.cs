@@ -21,11 +21,16 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using DayBar.Enums;
 using DayBar.Pages;
+using Microsoft.Win32;
+using PeyrSharp.Enums;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
@@ -70,6 +75,45 @@ namespace DayBar.Classes
 			}
 		}
 		public static SolidColorBrush GetSolidColor(string resource) => (SolidColorBrush)Application.Current.Resources[resource];
+
+		public static void ChangeTheme()
+		{
+			App.Current.Resources.MergedDictionaries.Clear();
+			ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
+
+			bool isDark = Settings.Theme == Themes.Dark;
+			if (Settings.Theme == Themes.System)
+			{
+				isDark = IsSystemThemeDark(); // Set
+			}
+
+			if (isDark) // If the dark theme is on
+			{
+				resourceDictionary.Source = new Uri("..\\Themes\\Dark.xaml", UriKind.Relative); // Add source
+			}
+			else
+			{
+				resourceDictionary.Source = new Uri("..\\Themes\\Light.xaml", UriKind.Relative); // Add source
+			}
+
+			App.Current.Resources.MergedDictionaries.Add(resourceDictionary); // Add the dictionary
+		}
+
+		public static bool IsSystemThemeDark()
+		{
+			if (Sys.CurrentWindowsVersion != WindowsVersion.Windows10 && Sys.CurrentWindowsVersion != WindowsVersion.Windows11)
+			{
+				return false; // Avoid errors on older OSs
+			}
+
+			var t = Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize", "SystemUsesLightTheme", "1");
+			return t switch
+			{
+				0 => true,
+				1 => false,
+				_ => false
+			}; // Return
+		}
 
 	}
 }

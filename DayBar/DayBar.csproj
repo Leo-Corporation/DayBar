@@ -211,7 +211,10 @@
     <None Remove="Assets\Icons\99.ico" />
     <None Remove="Assets\Icons\99L.ico" />
     <None Remove="Assets\Icons\9L.ico" />
+    <None Remove="Assets\Images\DarkTheme.png" />
+    <None Remove="Assets\Images\LightTheme.png" />
     <None Remove="Assets\Images\Logo.png" />
+    <None Remove="Assets\Images\SystemTheme.png" />
     <None Remove="Fonts\FluentSystemIcons-Filled.ttf" />
     <None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
     <None Remove="Fonts\Hauora-ExtraBold.ttf" />
@@ -836,7 +839,16 @@
     <Resource Include="Assets\Icons\9L.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Assets\Images\DarkTheme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\LightTheme.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Assets\Images\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\Images\SystemTheme.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Fonts\FluentSystemIcons-Filled.ttf">
