@@ -99,7 +99,7 @@ namespace DayBar.Pages.FirstRun
 			Global.Settings.Theme = Themes.Light;
 			SettingsManager.Save();
 			Global.ChangeTheme();
-			Global.MainWindow.CheckButton(Global.MainWindow.ThemeBtn);
+			Global.MainWindow.CheckButton(Global.MainWindow.HomeBtn);
 		}
 
 		private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -111,7 +111,7 @@ namespace DayBar.Pages.FirstRun
 			Global.Settings.Theme = Themes.Dark;
 			SettingsManager.Save();
 			Global.ChangeTheme();
-			Global.MainWindow.CheckButton(Global.MainWindow.ThemeBtn);
+			Global.MainWindow.CheckButton(Global.MainWindow.HomeBtn);
 
 		}
 
@@ -123,7 +123,7 @@ namespace DayBar.Pages.FirstRun
 			Global.Settings.Theme = Themes.System;
 			SettingsManager.Save();
 			Global.ChangeTheme();
-			Global.MainWindow.CheckButton(Global.MainWindow.ThemeBtn);
+			Global.MainWindow.CheckButton(Global.MainWindow.HomeBtn);
 		}
 
 		private void RadioButton_Checked(object sender, RoutedEventArgs e)
