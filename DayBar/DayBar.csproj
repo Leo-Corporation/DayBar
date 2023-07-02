@@ -7,6 +7,13 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>DayBar.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <Title>DayBar</Title>
+    <Version>1.0.0.2307</Version>
+    <Authors>Léo Corporation</Authors>
+    <Company>Léo Corporation</Company>
+    <Copyright>© 2023</Copyright>
+    <PackageProjectUrl>https://leocorporation.dev</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Leo-Corporation/DayBar/</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
