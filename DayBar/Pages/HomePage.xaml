@@ -12,7 +12,7 @@
 	<StackPanel>
 		<TextBlock Margin="5 10" Text="{x:Static lang:Resources.Progress}" FontWeight="Bold" FontSize="14"/>
 		<TextBlock x:Name="ProgressTxt" d:Text="95%" FontWeight="ExtraBold" FontSize="48" HorizontalAlignment="Center" Margin="10"/>
-		<ProgressBar x:Name="ProgressBar" Style="{DynamicResource RoundedProgressBar}" BorderThickness="0" Height="10" Width="300" Value="100">
+		<ProgressBar x:Name="ProgressBar" Style="{DynamicResource RoundedProgressBar}" BorderThickness="0" Height="10" Width="300" Value="50" Background="{DynamicResource Background2}">
 			<ProgressBar.Foreground>
 				<LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
 					<GradientStop Color="#9DFF00" Offset="0" />
@@ -54,6 +54,38 @@
 				<StackPanel Grid.Column="1">
 					<TextBlock Text="{x:Static lang:Resources.Startup}" FontWeight="ExtraBold"/>
 					<CheckBox Foreground="{DynamicResource Foreground1}" x:Name="LaunchOnStartChk" Content="{x:Static lang:Resources.LaunchOnStart}" Style="{DynamicResource CheckBoxStyle1}" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked"/>
+				</StackPanel>
+			</Grid>
+		</Border>
+		<Border CornerRadius="10" Padding="10" Margin="5" Background="{DynamicResource Background2}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="&#xF834;" FontSize="28" FontFamily="..\Fonts\#FluentSystemIcons-Regular" VerticalAlignment="Center" Margin="3"/>
+					<StackPanel>
+						<TextBlock Text="{x:Static lang:Resources.Language}" VerticalAlignment="Center" FontWeight="ExtraBold"/>
+						<TextBlock Text="{x:Static lang:Resources.ChangeLanguage}" VerticalAlignment="Center" TextWrapping="Wrap"/>
+					</StackPanel>
+				</StackPanel>
+
+				<StackPanel Orientation="Horizontal" Grid.Column="2">
+					<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="2" Padding="2" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{DynamicResource Accent}" Foreground="{DynamicResource Foreground1}" HorizontalAlignment="Left" VerticalAlignment="Center">
+						<ComboBoxItem Content="{x:Static lang:Resources.System}"/>
+						<ComboBoxItem Content="English (United States)"/>
+						<ComboBoxItem Content="Français (France)"/>
+					</ComboBox>
+					<Button x:Name="LangApplyBtn" BorderThickness="0" Background="{DynamicResource Background3}" Foreground="{DynamicResource Foreground1}" Padding="10,5,10,5" Style="{StaticResource ButtonMenu}" FontWeight="ExtraBold" Cursor="Hand" VerticalAlignment="Center" Click="LangApplyBtn_Click" Visibility="Collapsed" Margin="5 0 0 0">
+						<TextBlock Text="&#xF680;" FontWeight="Regular" FontFamily="..\Fonts\#FluentSystemIcons-Regular" Margin="0,0,0,0" VerticalAlignment="Center"/>
+
+						<Button.ToolTip>
+							<ToolTip Content="{x:Static lang:Resources.Apply}" Foreground="{DynamicResource Foreground1}" Background="{DynamicResource Background1}"/>
+						</Button.ToolTip>
+					</Button>
 				</StackPanel>
 			</Grid>
 		</Border>

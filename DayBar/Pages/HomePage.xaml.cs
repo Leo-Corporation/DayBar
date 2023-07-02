@@ -22,9 +22,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using DayBar.Enums;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -55,7 +58,7 @@ public partial class HomePage : Page
 	{
 		FromTxt.Text = Global.Settings.StartHour.ToString();
 		ToTxt.Text = Global.Settings.EndHour.ToString();
-
+		LangComboBox.SelectedIndex = (int)Global.Settings.Language;
 		LaunchOnStartChk.IsChecked = Global.Settings.LaunchOnStart;
 	}
 
@@ -92,5 +95,24 @@ public partial class HomePage : Page
 	{
 		var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 		key?.DeleteValue("DayBar", false);
+	}
+
+	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.Language = (Languages)LangComboBox.SelectedIndex;
+		SettingsManager.Save();
+		LangApplyBtn.Visibility = Visibility.Collapsed;
+
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+		Process.Start(Directory.GetCurrentDirectory() + @"\DayBar.exe");
+		Application.Current.Shutdown();
+	}
+
+	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+		LangApplyBtn.Visibility = Visibility.Visible;
 	}
 }
