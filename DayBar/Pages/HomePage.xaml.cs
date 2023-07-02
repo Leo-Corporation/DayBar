@@ -89,12 +89,16 @@ public partial class HomePage : Page
 	{
 		var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 		key?.SetValue("DayBar", Environment.ProcessPath ?? $@"{AppContext.BaseDirectory}\DayBar.exe");
+		Global.Settings.LaunchOnStart = LaunchOnStartChk.IsChecked ?? true;
+		SettingsManager.Save();
 	}
 
 	private void CheckBox_Unchecked(object sender, RoutedEventArgs e)
 	{
 		var key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
 		key?.DeleteValue("DayBar", false);
+		Global.Settings.LaunchOnStart = LaunchOnStartChk.IsChecked ?? true;
+		SettingsManager.Save();
 	}
 
 	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
