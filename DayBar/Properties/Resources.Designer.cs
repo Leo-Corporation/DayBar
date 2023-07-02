@@ -259,6 +259,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Let&apos;s go!.
+        /// </summary>
+        public static string LetsGo {
+            get {
+                return ResourceManager.GetString("LetsGo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Licenses.
         /// </summary>
         public static string Licenses {
@@ -444,6 +453,15 @@ namespace DayBar.Properties {
         public static string WelcomeDesc {
             get {
                 return ResourceManager.GetString("WelcomeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Everyting is ready.
+        /// </summary>
+        public static string WelcomeReady {
+            get {
+                return ResourceManager.GetString("WelcomeReady", resourceCulture);
             }
         }
         

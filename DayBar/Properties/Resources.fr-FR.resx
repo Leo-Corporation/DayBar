@@ -183,6 +183,9 @@
   <data name="LaunchOnStart" xml:space="preserve">
     <value>Lancer DayBar lorsque Windows démarre.</value>
   </data>
+  <data name="LetsGo" xml:space="preserve">
+    <value>Allons-y !</value>
+  </data>
   <data name="Licenses" xml:space="preserve">
     <value>Licences</value>
   </data>
@@ -245,6 +248,9 @@
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
     <value>Bienvenue dans DayBar, un outil simple et utile qui vous aide à gérer votre temps.</value>
+  </data>
+  <data name="WelcomeReady" xml:space="preserve">
+    <value>Tout est prêt</value>
   </data>
   <data name="WelcomeTray" xml:space="preserve">
     <value>Une icône a été ajoutée à la barre d'état système. Vous pouvez la faire glisser dans la barre des tâches pour suivre l'évolution de votre journée.</value>

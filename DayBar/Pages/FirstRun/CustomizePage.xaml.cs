@@ -48,6 +48,9 @@ namespace DayBar.Pages.FirstRun
 
 		private void InitUI()
 		{
+			DarkRadio.IsChecked = Global.Settings.UseDarkThemeSystemTray;
+			LightRadio.IsChecked = !Global.Settings.UseDarkThemeSystemTray;
+
 			// Select the default theme border
 			ThemeSelectedBorder = Global.Settings.Theme switch
 			{

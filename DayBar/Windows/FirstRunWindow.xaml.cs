@@ -46,15 +46,18 @@ namespace DayBar.Windows
 	/// </summary>
 	public partial class FirstRunWindow : Window
 	{
-		internal WelcomePage welcomePage;
-		internal FeaturesPage featuresPage;
-		internal CustomizePage customizePage;
+		private WelcomePage welcomePage;
+		private FeaturesPage featuresPage;
+		private CustomizePage customizePage;
+		private JumpInPage jumpInPage;
+
 		public FirstRunWindow()
 		{
 			InitializeComponent();
 			welcomePage = new(this);
 			featuresPage = new(this);
 			customizePage = new(this);
+			jumpInPage = new(this);
 
 			ChangePage(0);
 		}
@@ -66,6 +69,7 @@ namespace DayBar.Windows
 				0 => welcomePage,
 				1 => featuresPage,
 				2 => customizePage,
+				3 => jumpInPage,
 				_ => welcomePage
 			};
 		}
@@ -74,9 +78,9 @@ namespace DayBar.Windows
 		{
 			if (MessageBox.Show(Properties.Resources.FirstRunQuitMsg, Properties.Resources.DayBar, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
 			{
-				new MainWindow().Show();
 				Global.Settings.IsFirstRun = false;
 				Close();
+				Global.MainWindow.Show();
 			}
 			else
 			{

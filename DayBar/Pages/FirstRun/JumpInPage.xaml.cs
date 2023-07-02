@@ -23,56 +23,31 @@ SOFTWARE.
 */
 
 using DayBar.Classes;
-using DayBar.Enums;
 using DayBar.Windows;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DayBar.Pages.FirstRun
 {
-    /// <summary>
-    /// Interaction logic for WelcomePage.xaml
-    /// </summary>
-    public partial class WelcomePage : Page
+	/// <summary>
+	/// Interaction logic for JumpIn.xaml
+	/// </summary>
+	public partial class JumpInPage : Page
     {
-		private FirstRunWindow FirstRunWindow { get; init; }
-		public WelcomePage(FirstRunWindow firstRunWindow)
-		{
-			InitializeComponent();
+		FirstRunWindow FirstRunWindow { get; init; }
+		public JumpInPage(FirstRunWindow firstRunWindow)
+        {
+            InitializeComponent();
 			FirstRunWindow = firstRunWindow;
-			LangComboBox.SelectedIndex = (int)Global.Settings.Language;
-		}
+        }
 
 		private void NextBtn_Click(object sender, RoutedEventArgs e)
 		{
-			FirstRunWindow.ChangePage(1);
-		}
-
-		private void SkipBtn_Click(object sender, RoutedEventArgs e)
-		{
 			Global.Settings.IsFirstRun = false;
-			SettingsManager.Save();
+            SettingsManager.Save();
 
 			Global.MainWindow.Show();
 			FirstRunWindow.Close();
-		}
-
-		private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			Global.Settings.Language = (Languages)LangComboBox.SelectedIndex;
 		}
 	}
 }
