@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using DayBar.Windows;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -46,5 +47,14 @@ public partial class App : Application
 		Global.NotificationsPage = new();
 		Global.AboutPage = new();
 		Global.ThemePage = new();
+
+		if (!Global.Settings.IsFirstRun)
+		{
+			new MainWindow().Show();
+		}
+		else
+		{
+			new FirstRunWindow().Show();
+		}
 	}
 }

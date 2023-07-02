@@ -70,6 +70,11 @@ namespace DayBar.Classes
 		/// </summary>
 		public Languages Language { get; set; }
 
+		/// <summary>
+		/// <see langword="true"/> if this is the user is launching the app for the first time.
+		/// </summary>
+		public bool IsFirstRun { get; set; }
+
 		public Settings()
 		{
 			// Default configuration
@@ -81,6 +86,7 @@ namespace DayBar.Classes
 			UseDarkThemeSystemTray = false;
 			Theme = Themes.System;
 			Language = Languages.Default;
+			IsFirstRun = true;
 		}
 	}
 
