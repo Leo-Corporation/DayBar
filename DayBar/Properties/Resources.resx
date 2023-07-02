@@ -103,6 +103,9 @@
   <data name="Apply" xml:space="preserve">
     <value>Apply</value>
   </data>
+  <data name="AppTheme" xml:space="preserve">
+    <value>Application theme</value>
+  </data>
   <data name="AvailableUpdates" xml:space="preserve">
     <value>Updates are available for DayBar. Do you want to install them now?</value>
   </data>

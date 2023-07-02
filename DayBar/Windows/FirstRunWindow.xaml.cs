@@ -41,18 +41,20 @@ using DayBar.Classes;
 
 namespace DayBar.Windows
 {
-    /// <summary>
-    /// Interaction logic for FirstRunWindow.xaml
-    /// </summary>
-    public partial class FirstRunWindow : Window
-    {
+	/// <summary>
+	/// Interaction logic for FirstRunWindow.xaml
+	/// </summary>
+	public partial class FirstRunWindow : Window
+	{
 		internal WelcomePage welcomePage;
 		internal FeaturesPage featuresPage;
+		internal CustomizePage customizePage;
 		public FirstRunWindow()
 		{
 			InitializeComponent();
 			welcomePage = new(this);
 			featuresPage = new(this);
+			customizePage = new(this);
 
 			ChangePage(0);
 		}
@@ -63,6 +65,7 @@ namespace DayBar.Windows
 			{
 				0 => welcomePage,
 				1 => featuresPage,
+				2 => customizePage,
 				_ => welcomePage
 			};
 		}
