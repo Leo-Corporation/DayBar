@@ -14,6 +14,7 @@
     <Copyright>© 2023</Copyright>
     <PackageProjectUrl>https://leocorporation.dev</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Leo-Corporation/DayBar/</RepositoryUrl>
+    <Description>DayBar is a simple and useful tool that helps you keep track of your time. It displays the percentage of the day or your work hours that has elapsed in the system tray.</Description>
   </PropertyGroup>
 
   <ItemGroup>
