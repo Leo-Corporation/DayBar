@@ -144,6 +144,9 @@
   <data name="DayCompletedFormat" xml:space="preserve">
     <value>{0}% of day completed</value>
   </data>
+  <data name="FirstRunQuitMsg" xml:space="preserve">
+    <value>Do you want to ignore this window and continue to DayBar?</value>
+  </data>
   <data name="From" xml:space="preserve">
     <value>From</value>
   </data>
@@ -186,6 +189,9 @@
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
     <value>DayBar needs to restart to apply the changes. Do you want to restart now?</value>
   </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
   <data name="Notifications" xml:space="preserve">
     <value>Notifications</value>
   </data>
@@ -204,6 +210,9 @@
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="Skip" xml:space="preserve">
+    <value>Skip</value>
+  </data>
   <data name="Startup" xml:space="preserve">
     <value>Startup</value>
   </data>
@@ -218,6 +227,9 @@
   </data>
   <data name="To" xml:space="preserve">
     <value>To</value>
+  </data>
+  <data name="WelcomeDesc" xml:space="preserve">
+    <value>Welcome to DayBar, a simple and useful tool that helps you keep track of your time.</value>
   </data>
   <data name="WorkHours" xml:space="preserve">
     <value>Work hours</value>
