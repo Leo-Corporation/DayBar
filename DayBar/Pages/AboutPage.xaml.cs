@@ -53,4 +53,18 @@ public partial class AboutPage : Page
 	{
 		VerTxt.Text = Global.Version;
 	}
+
+	private void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
+	{
+
+    }
+
+	private void SeeLicensesBtn_Click(object sender, RoutedEventArgs e)
+	{
+		MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
+			"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
+			"NotifyIcon.Wpf - The Code Project Open License (CPOL) 1.02 - © Hardcodet\n" +
+			"PeyrSharp - MIT License - © 2022-2023 Devyus\n" +
+			"DayBar - MIT License - © 2023 Léo Corporation", $"{Properties.Resources.DayBar} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
+	}
 }

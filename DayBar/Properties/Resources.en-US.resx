@@ -126,6 +126,9 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Change the display language of DayBar.</value>
   </data>
+  <data name="CheckUpdate" xml:space="preserve">
+    <value>Check for updates</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="LaunchOnStart" xml:space="preserve">
     <value>Launch DayBar when Windows starts.</value>
+  </data>
+  <data name="Licenses" xml:space="preserve">
+    <value>Licenses</value>
   </data>
   <data name="Light" xml:space="preserve">
     <value>Light</value>

@@ -88,6 +88,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check for updates.
+        /// </summary>
+        public static string CheckUpdate {
+            get {
+                return ResourceManager.GetString("CheckUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         public static string Close {
@@ -201,6 +210,15 @@ namespace DayBar.Properties {
         public static string LaunchOnStart {
             get {
                 return ResourceManager.GetString("LaunchOnStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Licenses.
+        /// </summary>
+        public static string Licenses {
+            get {
+                return ResourceManager.GetString("Licenses", resourceCulture);
             }
         }
         
