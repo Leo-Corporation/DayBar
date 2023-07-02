@@ -55,6 +55,7 @@ public partial class App : Application
 		else
 		{
 			new FirstRunWindow().Show();
+			new MainWindow();
 		}
 	}
 }
