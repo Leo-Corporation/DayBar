@@ -139,7 +139,7 @@ public partial class MainWindow : Window
 		SettingsBtn.BorderBrush = Brushes.Transparent;
 	}
 
-	private void CheckButton(Button btn)
+	internal void CheckButton(Button btn)
 	{
 		UnCheckAll();
 		btn.Background = Global.GetSolidColor("Background2");
