@@ -21,6 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+using DayBar.Enums;
 using PeyrSharp.Env;
 using System.IO;
 using System.Xml.Serialization;
@@ -50,6 +51,11 @@ namespace DayBar.Classes
 		public bool UseDarkThemeSystemTray { get; set; }
 
 		/// <summary>
+		/// The theme of the app.
+		/// </summary>
+		public Themes Theme { get; set; }
+
+		/// <summary>
 		/// <see langword="true"/> if the app should display a banner when an update is available.
 		/// </summary>
 		public bool NotifyUpdate { get; set; }
@@ -68,6 +74,7 @@ namespace DayBar.Classes
 			NotifyHalfDay = false;
 			LaunchOnStart = true;
 			UseDarkThemeSystemTray = false;
+			Theme = Themes.System;
 		}
 	}
 
