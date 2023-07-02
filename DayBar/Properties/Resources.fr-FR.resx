@@ -144,6 +144,9 @@
   <data name="DayCompletedFormat" xml:space="preserve">
     <value>{0}% de la journée écoulée</value>
   </data>
+  <data name="Features" xml:space="preserve">
+    <value>Fonctionnalités</value>
+  </data>
   <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>Voulez-vous ignorer cette fenêtre et continuer à utiliser DayBar ?</value>
   </data>
@@ -211,13 +214,16 @@
     <value>Paramètres</value>
   </data>
   <data name="Skip" xml:space="preserve">
-    <value>Skip</value>
+    <value>Passer</value>
   </data>
   <data name="Startup" xml:space="preserve">
     <value>Démarrage</value>
   </data>
   <data name="System" xml:space="preserve">
     <value>Système</value>
+  </data>
+  <data name="SystemTray" xml:space="preserve">
+    <value>Icône dans la barre d'état</value>
   </data>
   <data name="SystemTrayTheme" xml:space="preserve">
     <value>Thème de la barre d'état système</value>
@@ -228,8 +234,17 @@
   <data name="To" xml:space="preserve">
     <value>À</value>
   </data>
+  <data name="TrackProgress" xml:space="preserve">
+    <value>Suivez votre progression</value>
+  </data>
+  <data name="TrackProgressDesc" xml:space="preserve">
+    <value>Surveillez vos progrès et gardez le cap sur vos objectifs grâce à DayBar. Suivez votre temps, visualisez votre productivité et prenez des décisions éclairées pour optimiser vos activités quotidiennes. Grâce à son interface intuitive et à ses fonctions personnalisables, DayBar vous permet de rester concentré, efficace et maître de vos progrès.</value>
+  </data>
   <data name="WelcomeDesc" xml:space="preserve">
     <value>Bienvenue dans DayBar, un outil simple et utile qui vous aide à gérer votre temps.</value>
+  </data>
+  <data name="WelcomeTray" xml:space="preserve">
+    <value>Une icône a été ajoutée à la barre d'état système. Vous pouvez la faire glisser dans la barre des tâches pour suivre l'évolution de votre journée.</value>
   </data>
   <data name="WorkHours" xml:space="preserve">
     <value>Heures de travail</value>

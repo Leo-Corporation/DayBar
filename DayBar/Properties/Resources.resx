@@ -124,6 +124,9 @@
   <data name="DayCompletedFormat" xml:space="preserve">
     <value>{0}% of day completed</value>
   </data>
+  <data name="Features" xml:space="preserve">
+    <value>Features</value>
+  </data>
   <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>Do you want to ignore this window and continue to DayBar?</value>
   </data>
@@ -199,6 +202,9 @@
   <data name="System" xml:space="preserve">
     <value>System</value>
   </data>
+  <data name="SystemTray" xml:space="preserve">
+    <value>System tray icon</value>
+  </data>
   <data name="SystemTrayTheme" xml:space="preserve">
     <value>System tray theme</value>
   </data>
@@ -208,8 +214,17 @@
   <data name="To" xml:space="preserve">
     <value>To</value>
   </data>
+  <data name="TrackProgress" xml:space="preserve">
+    <value>Monitor your progress</value>
+  </data>
+  <data name="TrackProgressDesc" xml:space="preserve">
+    <value>Effortlessly monitor your progress and stay on top of your goals with DayBar. Keep track of your time, visualize your productivity, and make informed decisions to optimize your daily activities. With its intuitive interface and customizable features, DayBar empowers you to stay focused, efficient, and in control of your progress.</value>
+  </data>
   <data name="WelcomeDesc" xml:space="preserve">
     <value>Welcome to DayBar, a simple and useful tool that helps you keep track of your time.</value>
+  </data>
+  <data name="WelcomeTray" xml:space="preserve">
+    <value>An icon has been added to the system tray. You can drag it to the taskbar to keep track of the progress of your day.</value>
   </data>
   <data name="WorkHours" xml:space="preserve">
     <value>Work hours</value>

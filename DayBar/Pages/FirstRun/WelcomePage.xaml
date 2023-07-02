@@ -31,7 +31,7 @@
 				<Button x:Name="NextBtn" Click="NextBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Next}" Margin="5 10" Padding="10 5" BorderThickness="0" Background="{DynamicResource Accent}" Foreground="{Binding Source={StaticResource WindowButtonsHoverForeground1}}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 				<Button x:Name="SkipBtn" Click="SkipBtn_Click" Cursor="Hand" Content="{x:Static lang:Resources.Skip}" Margin="5 10" Padding="10 5" BorderThickness="0" Background="{DynamicResource LightAccent}" Foreground="{DynamicResource Accent}" FontWeight="ExtraBold" Style="{DynamicResource PrimaryButton}"/>
 			</StackPanel>
-			<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="1" Padding="3" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{DynamicResource Accent}" Foreground="{Binding Source={StaticResource Foreground1}}" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<ComboBox SelectionChanged="LangComboBox_SelectionChanged" BorderThickness="1" Padding="3" Style="{DynamicResource ComboBoxStyle1}" x:Name="LangComboBox" Background="Transparent" BorderBrush="{DynamicResource Accent}" Foreground="{DynamicResource Foreground1}" HorizontalAlignment="Center" VerticalAlignment="Center">
 				<ComboBoxItem Content="{x:Static lang:Resources.System}"/>
 				<ComboBoxItem Content="English (United States)"/>
 				<ComboBoxItem Content="French (France)"/>

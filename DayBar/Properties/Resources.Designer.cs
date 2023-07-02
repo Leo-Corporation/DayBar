@@ -142,6 +142,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Features.
+        /// </summary>
+        public static string Features {
+            get {
+                return ResourceManager.GetString("Features", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Do you want to ignore this window and continue to DayBar?.
         /// </summary>
         public static string FirstRunQuitMsg {
@@ -367,6 +376,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to System tray icon.
+        /// </summary>
+        public static string SystemTray {
+            get {
+                return ResourceManager.GetString("SystemTray", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to System tray theme.
         /// </summary>
         public static string SystemTrayTheme {
@@ -394,11 +412,38 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Monitor your progress.
+        /// </summary>
+        public static string TrackProgress {
+            get {
+                return ResourceManager.GetString("TrackProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Effortlessly monitor your progress and stay on top of your goals with DayBar. Keep track of your time, visualize your productivity, and make informed decisions to optimize your daily activities. With its intuitive interface and customizable features, DayBar empowers you to stay focused, efficient, and in control of your progress..
+        /// </summary>
+        public static string TrackProgressDesc {
+            get {
+                return ResourceManager.GetString("TrackProgressDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome to DayBar, a simple and useful tool that helps you keep track of your time..
         /// </summary>
         public static string WelcomeDesc {
             get {
                 return ResourceManager.GetString("WelcomeDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An icon has been added to the system tray. You can drag it to the taskbar to keep track of the progress of your day..
+        /// </summary>
+        public static string WelcomeTray {
+            get {
+                return ResourceManager.GetString("WelcomeTray", resourceCulture);
             }
         }
         

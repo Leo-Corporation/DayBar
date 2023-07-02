@@ -47,10 +47,13 @@ namespace DayBar.Windows
     public partial class FirstRunWindow : Window
     {
 		internal WelcomePage welcomePage;
+		internal FeaturesPage featuresPage;
 		public FirstRunWindow()
 		{
 			InitializeComponent();
 			welcomePage = new(this);
+			featuresPage = new(this);
+
 			ChangePage(0);
 		}
 
@@ -59,6 +62,7 @@ namespace DayBar.Windows
 			WindowFrame.Content = pageID switch
 			{
 				0 => welcomePage,
+				1 => featuresPage,
 				_ => welcomePage
 			};
 		}
