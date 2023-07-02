@@ -120,6 +120,12 @@
   <data name="About" xml:space="preserve">
     <value>A propos</value>
   </data>
+  <data name="Apply" xml:space="preserve">
+    <value>Appliquer</value>
+  </data>
+  <data name="ChangeLanguage" xml:space="preserve">
+    <value>Modifier la langue d'affichage de DayBar.</value>
+  </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
@@ -153,6 +159,9 @@
   <data name="Home" xml:space="preserve">
     <value>Accueil</value>
   </data>
+  <data name="Language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
   <data name="LaunchOnStart" xml:space="preserve">
     <value>Lancer DayBar lorsque Windows démarre.</value>
   </data>
@@ -161,6 +170,9 @@
   </data>
   <data name="Minimize" xml:space="preserve">
     <value>Minimiser</value>
+  </data>
+  <data name="NeedRestartToApplyChanges" xml:space="preserve">
+    <value>DayBar doit redémarrer pour appliquer les changements. Voulez-vous redémarrer maintenant ?</value>
   </data>
   <data name="Notifications" xml:space="preserve">
     <value>Notifications</value>
