@@ -23,22 +23,10 @@ SOFTWARE.
 */
 using DayBar.Classes;
 using DayBar.Enums;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DayBar.Pages
 {
@@ -57,6 +45,20 @@ namespace DayBar.Pages
 		{
 			DarkRadio.IsChecked = Global.Settings.UseDarkThemeSystemTray;
 			LightRadio.IsChecked = !Global.Settings.UseDarkThemeSystemTray;
+
+			ThemeSelectedBorder = Global.Settings.Theme switch
+			{
+				Themes.Light => LightBorder,
+				Themes.Dark => DarkBorder,
+				_ => SystemBorder
+			};
+
+			Border_MouseEnter(Global.Settings.Theme switch
+			{
+				Themes.Light => LightBorder,
+				Themes.Dark => DarkBorder,
+				_ => SystemBorder
+			}, null);
 		}
 
 		private void RadioButton_Checked(object sender, RoutedEventArgs e)
