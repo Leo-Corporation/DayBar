@@ -115,5 +115,22 @@ namespace DayBar.Classes
 			}; // Return
 		}
 
+		public static void ChangeLanguage()
+		{
+			switch (Settings.Language) // For each case
+			{
+				case Languages.Default: // No language
+					break;
+				case Languages.en_US: // English (US)
+					Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-US"); // Change
+					break;
+
+				case Languages.fr_FR: // French (FR)
+					Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fr-FR"); // Change
+					break;
+				default: // No language
+					break;
+			}
+		}
 	}
 }

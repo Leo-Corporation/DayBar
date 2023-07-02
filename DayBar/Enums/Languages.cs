@@ -21,30 +21,11 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
-using DayBar.Classes;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
 
-namespace DayBar;
-/// <summary>
-/// Interaction logic for App.xaml
-/// </summary>
-public partial class App : Application
+namespace DayBar.Enums;
+public enum Languages
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
-	{
-		Global.Settings = SettingsManager.Load();
-		Global.ChangeTheme();
-		Global.ChangeLanguage();
-
-		Global.HomePage = new();
-		Global.NotificationsPage = new();
-		Global.AboutPage = new();
-		Global.ThemePage = new();
-	}
+	Default,
+	en_US,
+	fr_FR
 }

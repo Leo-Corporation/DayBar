@@ -65,6 +65,11 @@ namespace DayBar.Classes
 		/// </summary>
 		public bool NotifyHalfDay { get; set; }
 
+		/// <summary>
+		/// The language of the app.
+		/// </summary>
+		public Languages Language { get; set; }
+
 		public Settings()
 		{
 			// Default configuration
@@ -75,6 +80,7 @@ namespace DayBar.Classes
 			LaunchOnStart = true;
 			UseDarkThemeSystemTray = false;
 			Theme = Themes.System;
+			Language = Languages.Default;
 		}
 	}
 
