@@ -22,8 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,18 +51,28 @@ public partial class MainWindow : Window
 		InitializeComponent();
 
 		Global.MainWindow = this;
+		InitTimer(Global.Settings.StartHour * 3600, Global.Settings.EndHour * 3600);
 		InitUI();
-		InitTimer(Global.Settings.StartHour*3600, Global.Settings.EndHour*3600);
 		Hide();
 	}
 
-	private void InitUI()
+	string lastVersion = "";
+	private async void InitUI()
 	{
 		HelloTxt.Text = Global.GetHiSentence;
 
 		UnCheckAll();
 		CheckButton(HomeBtn);
 		PageContent.Navigate(Global.HomePage);
+		try
+		{
+			lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
+			if (Update.IsAvailable(Global.Version, lastVersion))
+			{
+				UpdatesAvailable();
+			}
+		}
+		catch { }
 	}
 
 	DispatcherTimer dispatcherTimer = new();
@@ -73,7 +85,7 @@ public partial class MainWindow : Window
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
-			c = CalculatePercentage(startHour, endHour);			
+			c = CalculatePercentage(startHour, endHour);
 			SetNotifyIcon(ref c);
 		};
 
@@ -114,6 +126,33 @@ public partial class MainWindow : Window
 			halfShown = true;
 			myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, Properties.Resources.HalfPassed, Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
 		}
+	}
+
+	internal void UpdatesAvailable()
+	{
+		if (!Global.Settings.NotifyUpdate) return;
+
+		void BalloonClick(object o, RoutedEventArgs e)
+		{
+			myNotifyIcon.TrayBalloonTipClosed += (o, e) =>
+			{
+				myNotifyIcon.TrayBalloonTipClicked -= BalloonClick;
+			};
+			if (MessageBox.Show(Properties.Resources.AvailableUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+			{
+				return;
+			}
+
+			// If the user wants to proceed.
+			SettingsManager.Save();
+
+			Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+			Application.Current.Shutdown(); // Close
+			
+		}
+
+		myNotifyIcon.TrayBalloonTipClicked += BalloonClick;
+		myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, Properties.Resources.AvailableUpdates, Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
 	}
 
 	private void CloseBtn_Click(object sender, RoutedEventArgs e)

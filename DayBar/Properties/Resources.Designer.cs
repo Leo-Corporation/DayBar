@@ -79,6 +79,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Updates are available for DayBar. Do you want to install them now?.
+        /// </summary>
+        public static string AvailableUpdates {
+            get {
+                return ResourceManager.GetString("AvailableUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change the display language of DayBar..
         /// </summary>
         public static string ChangeLanguage {
@@ -192,6 +201,15 @@ namespace DayBar.Properties {
         public static string Home {
             get {
                 return ResourceManager.GetString("Home", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Install version.
+        /// </summary>
+        public static string InstallVersion {
+            get {
+                return ResourceManager.GetString("InstallVersion", resourceCulture);
             }
         }
         

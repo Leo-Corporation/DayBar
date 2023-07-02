@@ -123,6 +123,9 @@
   <data name="Apply" xml:space="preserve">
     <value>Appliquer</value>
   </data>
+  <data name="AvailableUpdates" xml:space="preserve">
+    <value>Des mises à jour sont disponibles pour DayBar. Voulez-vous les installer maintenant ?</value>
+  </data>
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Modifier la langue d'affichage de DayBar.</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>Accueil</value>
+  </data>
+  <data name="InstallVersion" xml:space="preserve">
+    <value>Installer la version</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Langue</value>

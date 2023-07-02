@@ -40,7 +40,7 @@ namespace DayBar.Classes
     public static class Global
     {
 		public static string Version => "1.0.0.2307";
-
+		public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/DayBar/Version.txt";
 		public static HomePage HomePage { get; set; }
 		public static NotificationsPage NotificationsPage { get; set; }
 		public static AboutPage AboutPage { get; set; }

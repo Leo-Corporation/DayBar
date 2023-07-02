@@ -22,8 +22,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,10 +56,28 @@ public partial class AboutPage : Page
 		VerTxt.Text = Global.Version;
 	}
 
-	private void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
+	private async void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
 	{
+		try
+		{
+			string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
+			if (Update.IsAvailable(Global.Version, lastVersion))
+			{
 
-    }
+				if (MessageBox.Show(Properties.Resources.AvailableUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+				{
+					return;
+				}
+
+				// If the user wants to proceed.
+				SettingsManager.Save();
+
+				Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+				Application.Current.Shutdown(); // Close
+			}
+		}
+		catch { }
+	}
 
 	private void SeeLicensesBtn_Click(object sender, RoutedEventArgs e)
 	{
