@@ -50,7 +50,7 @@ public partial class App : Application
 
 		if (!Global.Settings.IsFirstRun)
 		{
-			new MainWindow().Show();
+			new MainWindow();
 		}
 		else
 		{
