@@ -121,7 +121,7 @@ public partial class MainWindow : Window
 		Global.ThemePage.LightProgressTxt.Text = $"{progress}%";
 		Global.ThemePage.DarkProgressTxt.Text = $"{progress}%";
 
-		if (!halfShown && Global.Settings.NotifyHalfDay)
+		if (!halfShown && Global.Settings.NotifyHalfDay && progress >= 50)
 		{
 			halfShown = true;
 			myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, Properties.Resources.HalfPassed, Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
