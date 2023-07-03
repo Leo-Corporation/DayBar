@@ -8,7 +8,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/Leo-Corporation/DayBar">
-    <img src=".github/images/logo.png" alt="Logo" width="80" height="80">
+    <img src=".github/images/Logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">DayBar</h1>
@@ -28,7 +28,7 @@
 </p>
 
 ## What is it?
-
+![Banner](https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Images/DayBar%20Banner.png)
 ### Introduction
 
 DayBar is a simple and useful tool that helps you keep track of your time. It displays the percentage of the day or your work hours that has elapsed in the system tray. With DayBar, you can easily monitor your progress throughout the day and stay on top of your time management.
