@@ -1,0 +1,11 @@
+{
+  "**/*.cs": ["/*", "MIT License", "", "Copyright (c) Léo Corporation"],
+  "ignore": [
+    "**/*.Designer.cs",
+    "DayBar/Properties/",
+    "DayBar/Ressources/",
+    "Xalyus Updater/Properties/",
+    "Xalyus Updater/Resources/",
+    "AssemblyInfo.cs"
+  ]
+}
