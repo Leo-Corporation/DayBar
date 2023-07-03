@@ -36,10 +36,10 @@ namespace DayBar.Pages.FirstRun
 	/// Interaction logic for CustomizePage.xaml
 	/// </summary>
 	public partial class CustomizePage : Page
-    {
+	{
 		private FirstRunWindow FirstRunWindow { get; init; }
 		public CustomizePage(FirstRunWindow firstRunWindow)
-        {
+		{
 			InitializeComponent();
 			FirstRunWindow = firstRunWindow; // Set the first run window instance
 

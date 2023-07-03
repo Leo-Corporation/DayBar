@@ -33,18 +33,18 @@ namespace DayBar.Pages.FirstRun
 	/// Interaction logic for JumpIn.xaml
 	/// </summary>
 	public partial class JumpInPage : Page
-    {
+	{
 		FirstRunWindow FirstRunWindow { get; init; }
 		public JumpInPage(FirstRunWindow firstRunWindow)
-        {
-            InitializeComponent();
+		{
+			InitializeComponent();
 			FirstRunWindow = firstRunWindow;
-        }
+		}
 
 		private void NextBtn_Click(object sender, RoutedEventArgs e)
 		{
 			Global.Settings.IsFirstRun = false;
-            SettingsManager.Save();
+			SettingsManager.Save();
 
 			Global.MainWindow.Show();
 			FirstRunWindow.Close();

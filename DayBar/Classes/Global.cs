@@ -27,18 +27,14 @@ using Microsoft.Win32;
 using PeyrSharp.Enums;
 using PeyrSharp.Env;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 
 namespace DayBar.Classes
 {
-    public static class Global
-    {
+	public static class Global
+	{
 		public static string Version => "1.0.0.2307";
 		public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/DayBar/Version.txt";
 		public static HomePage HomePage { get; set; }

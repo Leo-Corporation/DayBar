@@ -32,7 +32,7 @@ namespace DayBar.Pages.FirstRun
 	/// Interaction logic for FeaturesPage.xaml
 	/// </summary>
 	public partial class FeaturesPage : Page
-    {
+	{
 		private FirstRunWindow FirstRunWindow { get; init; }
 		public FeaturesPage(FirstRunWindow firstRunWindow)
 		{
