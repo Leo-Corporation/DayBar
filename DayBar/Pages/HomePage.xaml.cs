@@ -57,12 +57,12 @@ public partial class HomePage : Page
 		int start = int.Parse(FromTxt.Text);
 		int end = int.Parse(ToTxt.Text);
 
-		if (start < end && start >= 0 && end <= 24)
+		if (start >= 0)
 		{
 			Global.Settings.StartHour = start;
 			Global.Settings.EndHour = end;
 			SettingsManager.Save();
-			Global.MainWindow.InitTimer(start * 3600, end * 3600);
+			Global.MainWindow.InitTimer(new(start, 0, 0), new(end, 0, 0));
 
 			return;
 		}

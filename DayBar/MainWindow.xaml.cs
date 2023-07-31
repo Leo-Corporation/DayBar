@@ -42,7 +42,7 @@ public partial class MainWindow : Window
 		InitializeComponent();
 
 		Global.MainWindow = this;
-		InitTimer(Global.Settings.StartHour * 3600, Global.Settings.EndHour * 3600);
+		InitTimer(new(Global.Settings.StartHour, 0, 0), new(Global.Settings.EndHour, 0, 0));
 		InitUI();
 		Hide();
 	}
@@ -68,15 +68,16 @@ public partial class MainWindow : Window
 
 	DispatcherTimer dispatcherTimer = new();
 	bool halfShown = false;
-	internal void InitTimer(int startHour, int endHour)
+	internal void InitTimer(TimeSpan startWorkHour, TimeSpan endWorkHour)
 	{
 		dispatcherTimer.Stop();
-		int c = CalculatePercentage(startHour, endHour);
+
+		int c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
 
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
-			c = CalculatePercentage(startHour, endHour);
+			c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
 			SetNotifyIcon(ref c);
 		};
 
@@ -84,17 +85,43 @@ public partial class MainWindow : Window
 		dispatcherTimer.Start();
 	}
 
-	private int CalculatePercentage(int startHour, int endHour)
+	private int CalculatePercentage(DateTime currentTime, TimeSpan startWorkHour, TimeSpan endWorkHour)
 	{
-		// Get the current time
-		DateTime now = DateTime.Now;
-		// Get the start of the day
-		DateTime startOfDay = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startHour / 3600, 0, 0);
-		// Get the difference as a TimeSpan
-		TimeSpan elapsed = now - startOfDay;
-		// Get the total number of seconds
-		int seconds = (int)elapsed.TotalSeconds;
-		return seconds * 100 / (endHour - startHour);
+		// Get the current date and time
+		DateTime currentDate = DateTime.Now;
+
+		// Create DateTime objects for the start and end work hours
+		DateTime startDateTime = currentDate.Date.Add(startWorkHour);
+		DateTime endDateTime = currentDate.Date.Add(endWorkHour);
+
+		// If end work hour is before the start work hour, adjust it to the next day
+		if (endDateTime < startDateTime)
+		{
+			endDateTime = endDateTime.AddDays(1);
+		}
+
+		// Check if the current time is within the range of the previous day
+		if (currentTime < startDateTime)
+		{
+			startDateTime = startDateTime.AddDays(-1);
+			endDateTime = endDateTime.AddDays(-1);
+		}
+
+		// Calculate the total number of minutes between start and end work hours
+		TimeSpan totalWorkHours = endDateTime - startDateTime;
+		int totalWorkMinutes = (int)totalWorkHours.TotalMinutes;
+
+		// Calculate the number of minutes passed since the start of the workday
+		TimeSpan timePassed = currentTime - startDateTime;
+		int minutesPassed = (int)timePassed.TotalMinutes;
+
+		// Calculate the percentage of time passed (rounded down to the nearest integer)
+		int percentagePassed = (int)((double)minutesPassed / totalWorkMinutes * 100);
+
+		// Make sure the percentage is within the range of 0 to 100
+		percentagePassed = Math.Max(0, Math.Min(100, percentagePassed));
+
+		return percentagePassed;
 	}
 
 	private void SetNotifyIcon(ref int progress)
