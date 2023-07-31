@@ -75,11 +75,23 @@ namespace DayBar.Classes
 		/// </summary>
 		public bool IsFirstRun { get; set; }
 
+		/// <summary>
+		/// The working hour start minute.
+		/// </summary>
+		public int? StartMinute { get; set; }
+
+		/// <summary>
+		/// The working hour end minute.
+		/// </summary>
+		public int? EndMinute { get; set; }
+
 		public Settings()
 		{
 			// Default configuration
 			StartHour = 0;
+			StartMinute = 0;
 			EndHour = 24;
+			EndMinute = 0;
 			NotifyUpdate = true;
 			NotifyHalfDay = false;
 			LaunchOnStart = true;
@@ -119,6 +131,9 @@ namespace DayBar.Classes
 			StreamReader streamReader = new(SettingsPath);
 			var settings = (Settings?)xmlDeserializer.Deserialize(streamReader) ?? new();
 			streamReader.Dispose();
+
+			settings.StartMinute ??= 0;
+			settings.EndMinute ??= 0;
 			return settings;
 		}
 
