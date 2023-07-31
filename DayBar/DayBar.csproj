@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -238,7 +238,7 @@
 
   <ItemGroup>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
-    <PackageReference Include="PeyrSharp.Env" Version="1.7.0.2307" />
+    <PackageReference Include="PeyrSharp.Env" Version="1.8.0.2308" />
   </ItemGroup>
 
   <ItemGroup>
