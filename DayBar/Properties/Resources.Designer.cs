@@ -331,6 +331,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show a notification every.
+        /// </summary>
+        public static string NotifyPercent {
+            get {
+                return ResourceManager.GetString("NotifyPercent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show a notification when updates are available.
         /// </summary>
         public static string NotifyUpdates {
@@ -498,6 +507,15 @@ namespace DayBar.Properties {
         public static string WorkHoursError {
             get {
                 return ResourceManager.GetString("WorkHoursError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}% of your day passed!.
+        /// </summary>
+        public static string XDayHasPassed {
+            get {
+                return ResourceManager.GetString("XDayHasPassed", resourceCulture);
             }
         }
     }

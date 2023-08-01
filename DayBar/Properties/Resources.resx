@@ -187,6 +187,9 @@
   <data name="NotifyHalf" xml:space="preserve">
     <value>Show a notification when half of the day has passed</value>
   </data>
+  <data name="NotifyPercent" xml:space="preserve">
+    <value>Show a notification every</value>
+  </data>
   <data name="NotifyUpdates" xml:space="preserve">
     <value>Show a notification when updates are available</value>
   </data>
@@ -243,5 +246,8 @@
   </data>
   <data name="WorkHoursError" xml:space="preserve">
     <value>Please specify a valid time interval.</value>
+  </data>
+  <data name="XDayHasPassed" xml:space="preserve">
+    <value>{0}% of your day passed!</value>
   </data>
 </root>
