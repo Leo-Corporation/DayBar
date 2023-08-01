@@ -85,6 +85,16 @@ namespace DayBar.Classes
 		/// </summary>
 		public int? EndMinute { get; set; }
 
+		/// <summary>
+		/// True if the app sould show a notification every x%.
+		/// </summary>
+		public bool? NotifyPercentage { get; set; }
+
+		/// <summary>
+		/// The value to look when showing a notfication every x%.
+		/// </summary>
+		public int? NotifyPercentageValue { get; set; }
+
 		public Settings()
 		{
 			// Default configuration
@@ -99,6 +109,8 @@ namespace DayBar.Classes
 			Theme = Themes.System;
 			Language = Languages.Default;
 			IsFirstRun = true;
+			NotifyPercentage = false;
+			NotifyPercentageValue = 25;
 		}
 	}
 
@@ -134,6 +146,8 @@ namespace DayBar.Classes
 
 			settings.StartMinute ??= 0;
 			settings.EndMinute ??= 0;
+			settings.NotifyPercentage ??= false;
+			settings.NotifyPercentageValue ??= 25;
 			return settings;
 		}
 

@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -41,6 +42,8 @@ public partial class NotificationsPage : Page
 	{
 		NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdate;
 		NotifyHalfChk.IsChecked = Global.Settings.NotifyHalfDay;
+		NotifyPercChk.IsChecked = Global.Settings.NotifyPercentage;
+		PercentTxt.Text = Global.Settings.NotifyPercentageValue.ToString();
 	}
 
 	private void NotifyUpdatesChk_Checked(object sender, RoutedEventArgs e)
@@ -53,5 +56,33 @@ public partial class NotificationsPage : Page
 	{
 		Global.Settings.NotifyHalfDay = NotifyHalfChk.IsChecked ?? false;
 		SettingsManager.Save();
+	}
+
+	private void PercentTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+	{
+		Regex regex = new("[^0-9]+");
+		e.Handled = regex.IsMatch(e.Text);
+	}
+
+	private void NotifyPercChk_Checked(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			Global.Settings.NotifyPercentage = NotifyPercChk.IsChecked;
+			Global.Settings.NotifyPercentageValue = int.Parse(PercentTxt.Text);
+			SettingsManager.Save();
+		}
+		catch { }
+	}
+
+	private void PercentTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		try
+		{
+			Global.Settings.NotifyPercentage = NotifyPercChk.IsChecked;
+			Global.Settings.NotifyPercentageValue = int.Parse(PercentTxt.Text);
+			SettingsManager.Save();
+		}
+		catch { }
 	}
 }

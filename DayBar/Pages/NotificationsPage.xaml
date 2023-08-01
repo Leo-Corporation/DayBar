@@ -11,7 +11,15 @@
 
 	<StackPanel>
 		<TextBlock Margin="5 10" Text="{x:Static lang:Resources.Notifications}" FontWeight="Bold" FontSize="14"/>
-        <CheckBox Margin="5 0" x:Name="NotifyUpdatesChk" Content="{x:Static lang:Resources.NotifyUpdates}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyUpdatesChk_Checked" Unchecked="NotifyUpdatesChk_Checked" Foreground="{DynamicResource Foreground1}"/>
-        <CheckBox Margin="5 0" x:Name="NotifyHalfChk" Content="{x:Static lang:Resources.NotifyHalf}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyHalfChk_Checked" Unchecked="NotifyHalfChk_Checked" Foreground="{DynamicResource Foreground1}"/>
+		<CheckBox Margin="5 0" x:Name="NotifyUpdatesChk" Content="{x:Static lang:Resources.NotifyUpdates}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyUpdatesChk_Checked" Unchecked="NotifyUpdatesChk_Checked" Foreground="{DynamicResource Foreground1}"/>
+		<CheckBox Margin="5 0" x:Name="NotifyHalfChk" Content="{x:Static lang:Resources.NotifyHalf}" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyHalfChk_Checked" Unchecked="NotifyHalfChk_Checked" Foreground="{DynamicResource Foreground1}"/>
+		<CheckBox Margin="5 0" x:Name="NotifyPercChk" Style="{DynamicResource CheckBoxStyle1}" Checked="NotifyPercChk_Checked" Unchecked="NotifyPercChk_Checked" Foreground="{DynamicResource Foreground1}">
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="{x:Static lang:Resources.NotifyPercent}"/>
+				<TextBox TextChanged="PercentTxt_TextChanged" Foreground="{DynamicResource Foreground1}" PreviewTextInput="PercentTxt_PreviewTextInput" x:Name="PercentTxt" Style="{DynamicResource RegularTextBoxStyle}" d:Text="10" TextAlignment="Center" Width="25" Padding="0" Background="Transparent" BorderBrush="Transparent" MaxLength="2"/>
+
+				<TextBlock Text="%"/>                
+			</StackPanel>
+		</CheckBox>
 	</StackPanel>
 </Page>
