@@ -48,6 +48,10 @@ public partial class HomePage : Page
 	{
 		FromTxt.Text = Global.Settings.StartHour.ToString();
 		ToTxt.Text = Global.Settings.EndHour.ToString();
+
+		MinFromTxt.Text = Global.Settings.StartMinute.ToString();
+		MinToTxt.Text = Global.Settings.EndMinute.ToString();
+
 		LangComboBox.SelectedIndex = (int)Global.Settings.Language;
 		LaunchOnStartChk.IsChecked = Global.Settings.LaunchOnStart;
 	}
@@ -56,14 +60,18 @@ public partial class HomePage : Page
 	{
 		int start = int.Parse(FromTxt.Text);
 		int end = int.Parse(ToTxt.Text);
+		int startMin = int.Parse(MinFromTxt.Text);
+		int endMin = int.Parse(MinToTxt.Text);
 
-		if (start < end && start >= 0 && end <= 24)
+		if (start >= 0)
 		{
+			Global.Settings.StartMinute = startMin;
 			Global.Settings.StartHour = start;
+			Global.Settings.EndMinute = endMin;
 			Global.Settings.EndHour = end;
 			SettingsManager.Save();
-			Global.MainWindow.InitTimer(start * 3600, end * 3600);
-
+			Global.MainWindow.InitTimer(new(start, startMin, 0), new(end, endMin, 0));
+			Global.MainWindow.RefreshNotifications();
 			return;
 		}
 		MessageBox.Show(Properties.Resources.WorkHoursError, Properties.Resources.DayBar, MessageBoxButton.OK, MessageBoxImage.Error);

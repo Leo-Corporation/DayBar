@@ -24,6 +24,7 @@ SOFTWARE.
 using DayBar.Classes;
 using PeyrSharp.Env;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -42,9 +43,27 @@ public partial class MainWindow : Window
 		InitializeComponent();
 
 		Global.MainWindow = this;
-		InitTimer(Global.Settings.StartHour * 3600, Global.Settings.EndHour * 3600);
+		RefreshNotifications();
+		InitTimer(new(Global.Settings.StartHour, Global.Settings.StartMinute ?? 0, 0), new(Global.Settings.EndHour, Global.Settings.EndMinute ?? 0, 0));
 		InitUI();
 		Hide();
+	}
+	List<int> percentages = new List<int>();
+	List<bool> shown = new List<bool>();
+	internal void RefreshNotifications()
+	{
+		percentages.Clear();
+		shown.Clear();
+		// Calculate the total number of notifications required (100 / NotifyPercentageValue)
+		int totalNotifications = 100 / Global.Settings.NotifyPercentageValue.GetValueOrDefault(25);
+
+		// Fill the percentages list with the desired percentages for notifications
+		for (int i = 0; i < totalNotifications; i++)
+		{
+			int percentage = (i + 1) * Global.Settings.NotifyPercentageValue.GetValueOrDefault(25);
+			percentages.Add(percentage);
+			shown.Add(false);
+		}
 	}
 
 	string lastVersion = "";
@@ -68,15 +87,17 @@ public partial class MainWindow : Window
 
 	DispatcherTimer dispatcherTimer = new();
 	bool halfShown = false;
-	internal void InitTimer(int startHour, int endHour)
+
+	internal void InitTimer(TimeSpan startWorkHour, TimeSpan endWorkHour)
 	{
 		dispatcherTimer.Stop();
-		int c = CalculatePercentage(startHour, endHour);
+		dispatcherTimer = new();
+		int c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
 
 		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
-			c = CalculatePercentage(startHour, endHour);
+			c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
 			SetNotifyIcon(ref c);
 		};
 
@@ -84,17 +105,43 @@ public partial class MainWindow : Window
 		dispatcherTimer.Start();
 	}
 
-	private int CalculatePercentage(int startHour, int endHour)
+	private int CalculatePercentage(DateTime currentTime, TimeSpan startWorkHour, TimeSpan endWorkHour)
 	{
-		// Get the current time
-		DateTime now = DateTime.Now;
-		// Get the start of the day
-		DateTime startOfDay = new(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, startHour / 3600, 0, 0);
-		// Get the difference as a TimeSpan
-		TimeSpan elapsed = now - startOfDay;
-		// Get the total number of seconds
-		int seconds = (int)elapsed.TotalSeconds;
-		return seconds * 100 / (endHour - startHour);
+		// Get the current date and time
+		DateTime currentDate = DateTime.Now;
+
+		// Create DateTime objects for the start and end work hours
+		DateTime startDateTime = currentDate.Date.Add(startWorkHour);
+		DateTime endDateTime = currentDate.Date.Add(endWorkHour);
+
+		// If end work hour is before the start work hour, adjust it to the next day
+		if (endDateTime < startDateTime)
+		{
+			endDateTime = endDateTime.AddDays(1);
+		}
+
+		// Check if the current time is within the range of the previous day
+		if (currentTime < startDateTime)
+		{
+			startDateTime = startDateTime.AddDays(-1);
+			endDateTime = endDateTime.AddDays(-1);
+		}
+
+		// Calculate the total number of minutes between start and end work hours
+		TimeSpan totalWorkHours = endDateTime - startDateTime;
+		int totalWorkMinutes = (int)totalWorkHours.TotalMinutes;
+
+		// Calculate the number of minutes passed since the start of the workday
+		TimeSpan timePassed = currentTime - startDateTime;
+		int minutesPassed = (int)timePassed.TotalMinutes;
+
+		// Calculate the percentage of time passed (rounded down to the nearest integer)
+		int percentagePassed = (int)((double)minutesPassed / totalWorkMinutes * 100);
+
+		// Make sure the percentage is within the range of 0 to 100
+		percentagePassed = Math.Max(0, Math.Min(100, percentagePassed));
+
+		return percentagePassed;
 	}
 
 	private void SetNotifyIcon(ref int progress)
@@ -112,10 +159,30 @@ public partial class MainWindow : Window
 		Global.ThemePage.LightProgressTxt.Text = $"{progress}%";
 		Global.ThemePage.DarkProgressTxt.Text = $"{progress}%";
 
+		// Notifications
+		if (!Global.Settings.NotificationDays.Value.IsNotificationDay()) return;
 		if (!halfShown && Global.Settings.NotifyHalfDay && progress >= 50)
 		{
 			halfShown = true;
 			myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, Properties.Resources.HalfPassed, Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
+		}
+
+		if (Global.Settings.NotifyPercentage ?? false)
+		{
+			// Show notifications when progress reaches the specified percentages
+			for (int i = percentages.Count - 1; i >= 0; i--)
+			{
+				if (progress >= percentages[i] && !shown[i] && !shown[^1])
+				{
+					shown[i] = true;
+					for (int j = i - 1; j >= 0; j--)
+					{
+						shown[j] = true;
+					}
+					myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, string.Format(Properties.Resources.XDayHasPassed, progress), Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
+					break; // To show only one notification per loop
+				}
+			}
 		}
 	}
 

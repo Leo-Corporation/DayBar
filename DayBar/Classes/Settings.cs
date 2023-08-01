@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using DayBar.Enums;
 using PeyrSharp.Env;
+using System;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -75,11 +76,34 @@ namespace DayBar.Classes
 		/// </summary>
 		public bool IsFirstRun { get; set; }
 
+		/// <summary>
+		/// The working hour start minute.
+		/// </summary>
+		public int? StartMinute { get; set; }
+
+		/// <summary>
+		/// The working hour end minute.
+		/// </summary>
+		public int? EndMinute { get; set; }
+
+		/// <summary>
+		/// True if the app sould show a notification every x%.
+		/// </summary>
+		public bool? NotifyPercentage { get; set; }
+
+		/// <summary>
+		/// The value to look when showing a notfication every x%.
+		/// </summary>
+		public int? NotifyPercentageValue { get; set; }
+		public NotificationDays? NotificationDays { get; set; }
+
 		public Settings()
 		{
 			// Default configuration
 			StartHour = 0;
+			StartMinute = 0;
 			EndHour = 24;
+			EndMinute = 0;
 			NotifyUpdate = true;
 			NotifyHalfDay = false;
 			LaunchOnStart = true;
@@ -87,6 +111,44 @@ namespace DayBar.Classes
 			Theme = Themes.System;
 			Language = Languages.Default;
 			IsFirstRun = true;
+			NotifyPercentage = false;
+			NotifyPercentageValue = 25;
+			NotificationDays = new()
+			{
+				Monday = true,
+				Tuesday = true,
+				Wednesday = true,
+				Thursday = true,
+				Friday = true,
+				Saturday = true,
+				Sunday = true
+			};
+		}
+	}
+
+	public struct NotificationDays
+	{
+		public bool Monday { get; set; }
+		public bool Tuesday { get; set; }
+		public bool Wednesday { get; set; }
+		public bool Thursday { get; set; }
+		public bool Friday { get; set; }
+		public bool Saturday { get; set; }
+		public bool Sunday { get; set; }
+
+		public bool IsNotificationDay()
+		{
+			return DateTime.Now.DayOfWeek switch
+			{
+				DayOfWeek.Monday => Monday,
+				DayOfWeek.Tuesday => Tuesday,
+				DayOfWeek.Wednesday => Wednesday,
+				DayOfWeek.Thursday => Thursday,
+				DayOfWeek.Friday => Friday,
+				DayOfWeek.Saturday => Saturday,
+				DayOfWeek.Sunday => Sunday,
+				_ => true
+			};
 		}
 	}
 
@@ -119,6 +181,21 @@ namespace DayBar.Classes
 			StreamReader streamReader = new(SettingsPath);
 			var settings = (Settings?)xmlDeserializer.Deserialize(streamReader) ?? new();
 			streamReader.Dispose();
+
+			settings.StartMinute ??= 0;
+			settings.EndMinute ??= 0;
+			settings.NotifyPercentage ??= false;
+			settings.NotifyPercentageValue ??= 25;
+			settings.NotificationDays ??= new()
+			{
+				Monday = true,
+				Tuesday = true,
+				Wednesday = true,
+				Thursday = true,
+				Friday = true,
+				Saturday = true,
+				Sunday = true
+			};
 			return settings;
 		}
 

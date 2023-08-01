@@ -22,6 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 using DayBar.Classes;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -36,11 +37,22 @@ public partial class NotificationsPage : Page
 		InitializeComponent();
 		InitUI();
 	}
-
+	bool loading = true;
 	private void InitUI()
 	{
 		NotifyUpdatesChk.IsChecked = Global.Settings.NotifyUpdate;
 		NotifyHalfChk.IsChecked = Global.Settings.NotifyHalfDay;
+		NotifyPercChk.IsChecked = Global.Settings.NotifyPercentage;
+		PercentTxt.Text = Global.Settings.NotifyPercentageValue.ToString();
+
+		MonBtn.IsChecked = Global.Settings.NotificationDays.Value.Monday;
+		TueBtn.IsChecked = Global.Settings.NotificationDays.Value.Tuesday;
+		WedBtn.IsChecked = Global.Settings.NotificationDays.Value.Wednesday;
+		ThuBtn.IsChecked = Global.Settings.NotificationDays.Value.Thursday;
+		FriBtn.IsChecked = Global.Settings.NotificationDays.Value.Friday;
+		SatBtn.IsChecked = Global.Settings.NotificationDays.Value.Saturday;
+		SunBtn.IsChecked = Global.Settings.NotificationDays.Value.Sunday;
+		loading = false;
 	}
 
 	private void NotifyUpdatesChk_Checked(object sender, RoutedEventArgs e)
@@ -52,6 +64,50 @@ public partial class NotificationsPage : Page
 	private void NotifyHalfChk_Checked(object sender, RoutedEventArgs e)
 	{
 		Global.Settings.NotifyHalfDay = NotifyHalfChk.IsChecked ?? false;
+		SettingsManager.Save();
+	}
+
+	private void PercentTxt_PreviewTextInput(object sender, System.Windows.Input.TextCompositionEventArgs e)
+	{
+		Regex regex = new("[^0-9]+");
+		e.Handled = regex.IsMatch(e.Text);
+	}
+
+	private void NotifyPercChk_Checked(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			Global.Settings.NotifyPercentage = NotifyPercChk.IsChecked;
+			Global.Settings.NotifyPercentageValue = int.Parse(PercentTxt.Text);
+			SettingsManager.Save();
+		}
+		catch { }
+	}
+
+	private void PercentTxt_TextChanged(object sender, TextChangedEventArgs e)
+	{
+		try
+		{
+			Global.Settings.NotifyPercentage = NotifyPercChk.IsChecked;
+			Global.Settings.NotifyPercentageValue = int.Parse(PercentTxt.Text);
+			SettingsManager.Save();
+		}
+		catch { }
+	}
+
+	private void MonBtn_Checked(object sender, RoutedEventArgs e)
+	{
+		if (loading) return;
+		Global.Settings.NotificationDays = new()
+		{
+			Monday = MonBtn.IsChecked.Value,
+			Tuesday = TueBtn.IsChecked.Value,
+			Wednesday = WedBtn.IsChecked.Value,
+			Thursday = ThuBtn.IsChecked.Value,
+			Friday = FriBtn.IsChecked.Value,
+			Saturday = SatBtn.IsChecked.Value,
+			Sunday = SunBtn.IsChecked.Value,
+		};
 		SettingsManager.Save();
 	}
 }

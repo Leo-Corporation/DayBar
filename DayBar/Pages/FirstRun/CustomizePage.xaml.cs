@@ -131,7 +131,7 @@ namespace DayBar.Pages.FirstRun
 			try
 			{
 				Global.Settings.UseDarkThemeSystemTray = DarkRadio.IsChecked ?? false;
-				Global.MainWindow.InitTimer(Global.Settings.StartHour * 3600, Global.Settings.EndHour * 3600);
+				Global.MainWindow.InitTimer(new(Global.Settings.StartHour, 0, 0), new(Global.Settings.EndHour, 0, 0));
 				SettingsManager.Save();
 			}
 			catch { }
