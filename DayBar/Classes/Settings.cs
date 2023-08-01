@@ -23,6 +23,7 @@ SOFTWARE.
 */
 using DayBar.Enums;
 using PeyrSharp.Env;
+using System;
 using System.IO;
 using System.Xml.Serialization;
 
@@ -94,6 +95,7 @@ namespace DayBar.Classes
 		/// The value to look when showing a notfication every x%.
 		/// </summary>
 		public int? NotifyPercentageValue { get; set; }
+		public NotificationDays? NotificationDays { get; set; }
 
 		public Settings()
 		{
@@ -111,6 +113,42 @@ namespace DayBar.Classes
 			IsFirstRun = true;
 			NotifyPercentage = false;
 			NotifyPercentageValue = 25;
+			NotificationDays = new()
+			{
+				Monday = true,
+				Tuesday = true,
+				Wednesday = true,
+				Thursday = true,
+				Friday = true,
+				Saturday = true,
+				Sunday = true
+			};
+		}
+	}
+
+	public struct NotificationDays
+	{
+		public bool Monday { get; set; }
+		public bool Tuesday { get; set; }
+		public bool Wednesday { get; set; }
+		public bool Thursday { get; set; }
+		public bool Friday { get; set; }
+		public bool Saturday { get; set; }
+		public bool Sunday { get; set; }
+
+		public bool IsNotificationDay()
+		{
+			return DateTime.Now.DayOfWeek switch
+			{
+				DayOfWeek.Monday => Monday,
+				DayOfWeek.Tuesday => Tuesday,
+				DayOfWeek.Wednesday => Wednesday,
+				DayOfWeek.Thursday => Thursday,
+				DayOfWeek.Friday => Friday,
+				DayOfWeek.Saturday => Saturday,
+				DayOfWeek.Sunday => Sunday,
+				_ => true
+			};
 		}
 	}
 
@@ -148,6 +186,16 @@ namespace DayBar.Classes
 			settings.EndMinute ??= 0;
 			settings.NotifyPercentage ??= false;
 			settings.NotifyPercentageValue ??= 25;
+			settings.NotificationDays ??= new()
+			{
+				Monday = true,
+				Tuesday = true,
+				Wednesday = true,
+				Thursday = true,
+				Friday = true,
+				Saturday = true,
+				Sunday = true
+			};
 			return settings;
 		}
 

@@ -94,7 +94,7 @@ public partial class MainWindow : Window
 		dispatcherTimer = new();
 		int c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
 
-		dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
+		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
 			c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
@@ -159,6 +159,8 @@ public partial class MainWindow : Window
 		Global.ThemePage.LightProgressTxt.Text = $"{progress}%";
 		Global.ThemePage.DarkProgressTxt.Text = $"{progress}%";
 
+		// Notifications
+		if (!Global.Settings.NotificationDays.Value.IsNotificationDay()) return;
 		if (!halfShown && Global.Settings.NotifyHalfDay && progress >= 50)
 		{
 			halfShown = true;
