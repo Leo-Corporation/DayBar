@@ -43,9 +43,25 @@ public partial class MainWindow : Window
 		InitializeComponent();
 
 		Global.MainWindow = this;
+		RefreshNotifications();
 		InitTimer(new(Global.Settings.StartHour, 0, 0), new(Global.Settings.EndHour, 0, 0));
 		InitUI();
 		Hide();
+	}
+	List<int> percentages = new List<int>();
+	List<bool> shown = new List<bool>();
+	internal void RefreshNotifications()
+	{
+		// Calculate the total number of notifications required (100 / NotifyPercentageValue)
+		int totalNotifications = 100 / Global.Settings.NotifyPercentageValue.GetValueOrDefault(25);
+
+		// Fill the percentages list with the desired percentages for notifications
+		for (int i = 0; i < totalNotifications; i++)
+		{
+			int percentage = (i + 1) * Global.Settings.NotifyPercentageValue.GetValueOrDefault(25);
+			percentages.Add(percentage);
+			shown.Add(false);
+		}
 	}
 
 	string lastVersion = "";
@@ -149,20 +165,6 @@ public partial class MainWindow : Window
 
 		if (Global.Settings.NotifyPercentage ?? false)
 		{
-			List<int> percentages = new List<int>();
-			List<bool> shown = new List<bool>();
-
-			// Calculate the total number of notifications required (100 / NotifyPercentageValue)
-			int totalNotifications = 100 / Global.Settings.NotifyPercentageValue.GetValueOrDefault(25);
-
-			// Fill the percentages list with the desired percentages for notifications
-			for (int i = 0; i < totalNotifications; i++)
-			{
-				int percentage = (i + 1) * Global.Settings.NotifyPercentageValue.GetValueOrDefault(25);
-				percentages.Add(percentage);
-				shown.Add(false);
-			}
-
 			// Show notifications when progress reaches the specified percentages
 			for (int i = 0; i < percentages.Count; i++)
 			{

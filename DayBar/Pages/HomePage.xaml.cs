@@ -71,7 +71,7 @@ public partial class HomePage : Page
 			Global.Settings.EndHour = end;
 			SettingsManager.Save();
 			Global.MainWindow.InitTimer(new(start, startMin, 0), new(end, endMin, 0));
-
+			Global.MainWindow.RefreshNotifications();
 			return;
 		}
 		MessageBox.Show(Properties.Resources.WorkHoursError, Properties.Resources.DayBar, MessageBoxButton.OK, MessageBoxImage.Error);
