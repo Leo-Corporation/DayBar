@@ -52,6 +52,8 @@ public partial class MainWindow : Window
 	List<bool> shown = new List<bool>();
 	internal void RefreshNotifications()
 	{
+		percentages.Clear();
+		shown.Clear();
 		// Calculate the total number of notifications required (100 / NotifyPercentageValue)
 		int totalNotifications = 100 / Global.Settings.NotifyPercentageValue.GetValueOrDefault(25);
 
@@ -89,10 +91,10 @@ public partial class MainWindow : Window
 	internal void InitTimer(TimeSpan startWorkHour, TimeSpan endWorkHour)
 	{
 		dispatcherTimer.Stop();
-
+		dispatcherTimer = new();
 		int c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
 
-		dispatcherTimer.Interval = TimeSpan.FromMinutes(1);
+		dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
 		dispatcherTimer.Tick += (o, e) =>
 		{
 			c = CalculatePercentage(DateTime.Now, startWorkHour, endWorkHour);
@@ -166,12 +168,16 @@ public partial class MainWindow : Window
 		if (Global.Settings.NotifyPercentage ?? false)
 		{
 			// Show notifications when progress reaches the specified percentages
-			for (int i = 0; i < percentages.Count; i++)
+			for (int i = percentages.Count - 1; i >= 0; i--)
 			{
-				if (progress >= percentages[i] && !shown[i])
+				if (progress >= percentages[i] && !shown[i] && !shown[^1])
 				{
-					myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, string.Format(Properties.Resources.XDayHasPassed, progress), Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
 					shown[i] = true;
+					for (int j = i - 1; j >= 0; j--)
+					{
+						shown[j] = true;
+					}
+					myNotifyIcon.ShowBalloonTip(Properties.Resources.DayBar, string.Format(Properties.Resources.XDayHasPassed, progress), Hardcodet.Wpf.TaskbarNotification.BalloonIcon.Info);
 					break; // To show only one notification per loop
 				}
 			}
