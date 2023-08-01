@@ -3,7 +3,7 @@
 
 #define MyAppName "DayBar"
 #define MyAppVersion "1.1.0.2308"
-#define MyAppFullVersion "1.1.0.2308-rc1"
+#define MyAppFullVersion "1.1.0.2308"
 #define MyAppPublisher "Léo Corporation"
 #define MyAppURL "https://leocorporation.dev/"
 #define MyAppExeName "DayBar.exe"
