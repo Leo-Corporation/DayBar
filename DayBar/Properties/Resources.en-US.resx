@@ -153,6 +153,9 @@
   <data name="FirstRunQuitMsg" xml:space="preserve">
     <value>Do you want to ignore this window and continue to DayBar?</value>
   </data>
+  <data name="FridayShort" xml:space="preserve">
+    <value>Fri</value>
+  </data>
   <data name="From" xml:space="preserve">
     <value>From</value>
   </data>
@@ -195,6 +198,9 @@
   <data name="Minimize" xml:space="preserve">
     <value>Minimize</value>
   </data>
+  <data name="MondayShort" xml:space="preserve">
+    <value>Mon</value>
+  </data>
   <data name="NeedRestartToApplyChanges" xml:space="preserve">
     <value>DayBar needs to restart to apply the changes. Do you want to restart now?</value>
   </data>
@@ -203,6 +209,9 @@
   </data>
   <data name="Notifications" xml:space="preserve">
     <value>Notifications</value>
+  </data>
+  <data name="NotificationsDays" xml:space="preserve">
+    <value>Show notifications on these days:</value>
   </data>
   <data name="NotifyHalf" xml:space="preserve">
     <value>Show a notification when half of the day has passed</value>
@@ -219,6 +228,9 @@
   <data name="Quit" xml:space="preserve">
     <value>Quit</value>
   </data>
+  <data name="SaturdayShort" xml:space="preserve">
+    <value>Sat</value>
+  </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>
   </data>
@@ -227,6 +239,9 @@
   </data>
   <data name="Startup" xml:space="preserve">
     <value>Startup</value>
+  </data>
+  <data name="SundayShort" xml:space="preserve">
+    <value>Sun</value>
   </data>
   <data name="System" xml:space="preserve">
     <value>System</value>
@@ -240,6 +255,9 @@
   <data name="Themes" xml:space="preserve">
     <value>Themes</value>
   </data>
+  <data name="ThursdayShort" xml:space="preserve">
+    <value>Thu</value>
+  </data>
   <data name="To" xml:space="preserve">
     <value>To</value>
   </data>
@@ -248,6 +266,12 @@
   </data>
   <data name="TrackProgressDesc" xml:space="preserve">
     <value>Effortlessly monitor your progress and stay on top of your goals with DayBar. Keep track of your time, visualize your productivity, and make informed decisions to optimize your daily activities. With its intuitive interface and customizable features, DayBar empowers you to stay focused, efficient, and in control of your progress.</value>
+  </data>
+  <data name="TuesdayShort" xml:space="preserve">
+    <value>Tue</value>
+  </data>
+  <data name="WednesdayShort" xml:space="preserve">
+    <value>Wed</value>
   </data>
   <data name="WelcomeDesc" xml:space="preserve">
     <value>Welcome to DayBar, a simple and useful tool that helps you keep track of your time.</value>

@@ -169,6 +169,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fri.
+        /// </summary>
+        public static string FridayShort {
+            get {
+                return ResourceManager.GetString("FridayShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to From.
         /// </summary>
         public static string From {
@@ -295,6 +304,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mon.
+        /// </summary>
+        public static string MondayShort {
+            get {
+                return ResourceManager.GetString("MondayShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DayBar needs to restart to apply the changes. Do you want to restart now?.
         /// </summary>
         public static string NeedRestartToApplyChanges {
@@ -318,6 +336,15 @@ namespace DayBar.Properties {
         public static string Notifications {
             get {
                 return ResourceManager.GetString("Notifications", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show notifications on these days:.
+        /// </summary>
+        public static string NotificationsDays {
+            get {
+                return ResourceManager.GetString("NotificationsDays", resourceCulture);
             }
         }
         
@@ -367,6 +394,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Sat.
+        /// </summary>
+        public static string SaturdayShort {
+            get {
+                return ResourceManager.GetString("SaturdayShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
         public static string Settings {
@@ -390,6 +426,15 @@ namespace DayBar.Properties {
         public static string Startup {
             get {
                 return ResourceManager.GetString("Startup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sun.
+        /// </summary>
+        public static string SundayShort {
+            get {
+                return ResourceManager.GetString("SundayShort", resourceCulture);
             }
         }
         
@@ -430,6 +475,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Thu.
+        /// </summary>
+        public static string ThursdayShort {
+            get {
+                return ResourceManager.GetString("ThursdayShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To.
         /// </summary>
         public static string To {
@@ -453,6 +507,24 @@ namespace DayBar.Properties {
         public static string TrackProgressDesc {
             get {
                 return ResourceManager.GetString("TrackProgressDesc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tue.
+        /// </summary>
+        public static string TuesdayShort {
+            get {
+                return ResourceManager.GetString("TuesdayShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Wed.
+        /// </summary>
+        public static string WednesdayShort {
+            get {
+                return ResourceManager.GetString("WednesdayShort", resourceCulture);
             }
         }
         
