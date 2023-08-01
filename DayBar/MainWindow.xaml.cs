@@ -44,7 +44,7 @@ public partial class MainWindow : Window
 
 		Global.MainWindow = this;
 		RefreshNotifications();
-		InitTimer(new(Global.Settings.StartHour, 0, 0), new(Global.Settings.EndHour, 0, 0));
+		InitTimer(new(Global.Settings.StartHour, Global.Settings.StartMinute ?? 0, 0), new(Global.Settings.EndHour, Global.Settings.EndMinute ?? 0, 0));
 		InitUI();
 		Hide();
 	}
