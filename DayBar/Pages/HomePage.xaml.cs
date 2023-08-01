@@ -65,7 +65,9 @@ public partial class HomePage : Page
 
 		if (start >= 0)
 		{
+			Global.Settings.StartMinute = startMin;
 			Global.Settings.StartHour = start;
+			Global.Settings.EndMinute = endMin;
 			Global.Settings.EndHour = end;
 			SettingsManager.Save();
 			Global.MainWindow.InitTimer(new(start, startMin, 0), new(end, endMin, 0));
