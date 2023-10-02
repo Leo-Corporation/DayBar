@@ -238,7 +238,7 @@
 
   <ItemGroup>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
-    <PackageReference Include="PeyrSharp.Env" Version="1.8.0.2308" />
+    <PackageReference Include="PeyrSharp.Env" Version="1.10.0.2310" />
   </ItemGroup>
 
   <ItemGroup>
