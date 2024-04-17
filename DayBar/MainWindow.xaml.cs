@@ -154,8 +154,8 @@ public partial class MainWindow : Window
 		Global.HomePage.ProgressTxt.Text = $"{progress}%";
 		Global.HomePage.ProgressBar.Value = progress;
 
-		Global.ThemePage.LightProgressTxt.Text = $"{progress}%";
-		Global.ThemePage.DarkProgressTxt.Text = $"{progress}%";
+		Global.SettingsPage.LightProgressTxt.Text = $"{progress}%";
+		Global.SettingsPage.DarkProgressTxt.Text = $"{progress}%";
 
 		// Notifications
 		if (!Global.Settings.NotificationDays.Value.IsNotificationDay()) return;

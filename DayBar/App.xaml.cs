@@ -40,7 +40,6 @@ public partial class App : Application
 		Global.HomePage = new();
 		Global.SettingsPage = new();
 		Global.NotificationsPage = new();
-		Global.ThemePage = new();
 
 		if (!Global.Settings.IsFirstRun)
 		{
