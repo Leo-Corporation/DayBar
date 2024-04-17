@@ -270,6 +270,12 @@
   <data name="TuesdayShort" xml:space="preserve">
     <value>Mar</value>
   </data>
+  <data name="UpdateAvailable" xml:space="preserve">
+    <value>Des mises à jour sont disponibles</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>Vous utilisez la dernière version disponible.</value>
+  </data>
   <data name="WednesdayShort" xml:space="preserve">
     <value>Mer</value>
   </data>

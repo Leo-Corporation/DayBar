@@ -520,6 +520,24 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Updates are available.
+        /// </summary>
+        public static string UpdateAvailable {
+            get {
+                return ResourceManager.GetString("UpdateAvailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are using the latest version available..
+        /// </summary>
+        public static string UpToDate {
+            get {
+                return ResourceManager.GetString("UpToDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Wed.
         /// </summary>
         public static string WednesdayShort {

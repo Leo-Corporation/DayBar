@@ -270,6 +270,12 @@
   <data name="TuesdayShort" xml:space="preserve">
     <value>Tue</value>
   </data>
+  <data name="UpdateAvailable" xml:space="preserve">
+    <value>Updates are available</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>You are using the latest version available.</value>
+  </data>
   <data name="WednesdayShort" xml:space="preserve">
     <value>Wed</value>
   </data>
