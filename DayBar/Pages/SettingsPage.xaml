@@ -42,5 +42,72 @@
                 FontWeight="ExtraBold"
                 Text="{x:Static lang:Resources.Settings}" />
         </Grid>
+
+        <Border
+            Grid.Row="1"
+            Margin="5"
+            Padding="20"
+            HorizontalAlignment="Center"
+            Background="{DynamicResource CardBackground}"
+            CornerRadius="5">
+            <Border.Effect>
+                <DropShadowEffect
+                    BlurRadius="15"
+                    Opacity="0.5"
+                    ShadowDepth="0"
+                    Color="{DynamicResource LightAccentColor}" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    FontSize="32"
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource Accent}"
+                    Text="{x:Static lang:Resources.DayBar}" />
+
+                <TextBlock
+                    x:Name="VersionTxt"
+                    HorizontalAlignment="Center"
+                    d:Text="2.0.0.2404"
+                    FontSize="11" />
+                <TextBlock
+                    x:Name="UpdateTxt"
+                    HorizontalAlignment="Center"
+                    FontSize="11"
+                    FontWeight="Bold"
+                    Text="{x:Static lang:Resources.UpToDate}" />
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="CheckUpdateBtn"
+                        Margin="5 10"
+                        Padding="5 2"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource Accent}"
+                        BorderThickness="0"
+                        Click="CheckUpdateBtn_Click"
+                        Content="{x:Static lang:Resources.CheckUpdate}"
+                        Cursor="Hand"
+                        FontWeight="ExtraBold"
+                        Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                        Style="{DynamicResource PrimaryButton}" />
+                    <Button
+                        x:Name="SeeLicensesBtn"
+                        Margin="5"
+                        Padding="3"
+                        VerticalAlignment="Center"
+                        Background="{DynamicResource Background3}"
+                        Click="SeeLicensesBtn_Click"
+                        Content="&#xF4A4;"
+                        FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                        FontSize="14"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource PrimaryButton}" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

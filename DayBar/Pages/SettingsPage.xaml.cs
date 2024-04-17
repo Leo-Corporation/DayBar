@@ -22,8 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
+using DayBar.Classes;
+using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,5 +49,43 @@ public partial class SettingsPage : Page
 	public SettingsPage()
 	{
 		InitializeComponent();
+		InitUI();
+	}
+
+	private void InitUI()
+	{
+		VersionTxt.Text = Global.Version;
+	}
+
+	private async void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			string lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
+			if (Update.IsAvailable(Global.Version, lastVersion))
+			{
+				UpdateTxt.Text = Properties.Resources.UpdateAvailable;
+				if (MessageBox.Show(Properties.Resources.AvailableUpdates, $"{Properties.Resources.InstallVersion} {lastVersion}", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.No)
+				{
+					return;
+				}
+
+				// If the user wants to proceed.
+				SettingsManager.Save();
+
+				Sys.ExecuteAsAdmin(Directory.GetCurrentDirectory() + @"\Xalyus Updater.exe"); // Start the updater
+				Application.Current.Shutdown(); // Close
+			}
+		}
+		catch { }
+	}
+
+	private void SeeLicensesBtn_Click(object sender, RoutedEventArgs e)
+	{
+		MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
+			"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
+			"NotifyIcon.Wpf - The Code Project Open License (CPOL) 1.02 - © Hardcodet\n" +
+			"PeyrSharp - MIT License - © 2022-2023 Devyus\n" +
+			"DayBar - MIT License - © 2023 Léo Corporation", $"{Properties.Resources.DayBar} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
 	}
 }
