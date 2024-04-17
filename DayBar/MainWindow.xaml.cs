@@ -231,6 +231,8 @@ public partial class MainWindow : Window
 	private void SettingsMenu_Click(object sender, RoutedEventArgs e)
 	{
 		PageContent.Navigate(Global.SettingsPage);
+		SettingsBtn.IsChecked = true;
+
 		Show();
 	}
 
@@ -247,6 +249,8 @@ public partial class MainWindow : Window
 	private void HomeMenu_Click(object sender, RoutedEventArgs e)
 	{
 		PageContent.Navigate(Global.HomePage);
+		HomeBtn.IsChecked = true;
+
 		Show();
 	}
 }
