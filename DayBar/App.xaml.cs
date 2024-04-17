@@ -39,7 +39,6 @@ public partial class App : Application
 
 		Global.HomePage = new();
 		Global.SettingsPage = new();
-		Global.NotificationsPage = new();
 
 		if (!Global.Settings.IsFirstRun)
 		{
