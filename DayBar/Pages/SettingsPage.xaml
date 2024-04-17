@@ -111,9 +111,9 @@
         </Border>
         <StackPanel Grid.Row="2">
             <Border
-                Margin="5"
+                Margin="10 5 10 0"
                 Padding="10"
-                Background="{DynamicResource Background1}"
+                Background="{DynamicResource CardBackground}"
                 CornerRadius="5">
                 <Grid>
                     <Grid.ColumnDefinitions>
