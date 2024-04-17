@@ -39,7 +39,7 @@ namespace DayBar.Classes
 		public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/DayBar/Version.txt";
 		public static HomePage HomePage { get; set; }
 		public static NotificationsPage NotificationsPage { get; set; }
-		public static AboutPage AboutPage { get; set; }
+		public static SettingsPage SettingsPage { get; set; }
 		public static ThemePage ThemePage { get; set; }
 		public static Settings Settings { get; set; }
 		public static MainWindow MainWindow { get; set; }

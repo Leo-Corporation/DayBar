@@ -156,17 +156,18 @@
                             </ControlTemplate>
                         </ContextMenu.Template>
                         <MenuItem
+                            x:Name="HomeMenu"
+                            Click="HomeMenu_Click"
+                            Foreground="{DynamicResource Foreground1}"
+                            Header="{x:Static lang:Resources.Home}"
+                            Style="{DynamicResource MenuStyle}" />
+                        <MenuItem
                             x:Name="SettingsMenu"
                             Click="SettingsMenu_Click"
                             Foreground="{DynamicResource Foreground1}"
                             Header="{x:Static lang:Resources.Settings}"
                             Style="{DynamicResource MenuStyle}" />
-                        <MenuItem
-                            x:Name="AboutMenu"
-                            Click="AboutMenu_Click"
-                            Foreground="{DynamicResource Foreground1}"
-                            Header="{x:Static lang:Resources.About}"
-                            Style="{DynamicResource MenuStyle}" />
+
                         <Separator Foreground="{DynamicResource Foreground1}" />
                         <MenuItem
                             x:Name="QuitMenu"

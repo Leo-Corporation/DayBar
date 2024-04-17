@@ -38,8 +38,8 @@ public partial class App : Application
 		Global.ChangeLanguage();
 
 		Global.HomePage = new();
+		Global.SettingsPage = new();
 		Global.NotificationsPage = new();
-		Global.AboutPage = new();
 		Global.ThemePage = new();
 
 		if (!Global.Settings.IsFirstRun)

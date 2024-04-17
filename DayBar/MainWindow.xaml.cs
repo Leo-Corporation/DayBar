@@ -230,13 +230,7 @@ public partial class MainWindow : Window
 
 	private void SettingsMenu_Click(object sender, RoutedEventArgs e)
 	{
-		PageContent.Navigate(Global.HomePage);
-		Show();
-	}
-
-	private void AboutMenu_Click(object sender, RoutedEventArgs e)
-	{
-		PageContent.Navigate(Global.AboutPage);
+		PageContent.Navigate(Global.SettingsPage);
 		Show();
 	}
 
@@ -247,6 +241,12 @@ public partial class MainWindow : Window
 
 	private void SettingsBtn_Click(object sender, RoutedEventArgs e)
 	{
+		PageContent.Navigate(Global.SettingsPage);
+	}
 
+	private void HomeMenu_Click(object sender, RoutedEventArgs e)
+	{
+		PageContent.Navigate(Global.HomePage);
+		Show();
 	}
 }
