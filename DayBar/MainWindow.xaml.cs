@@ -71,9 +71,6 @@ public partial class MainWindow : Window
 	{
 		HelloTxt.Text = Global.GetHiSentence;
 
-		UnCheckAll();
-		CheckButton(HomeBtn);
-		PageContent.Navigate(Global.HomePage);
 		try
 		{
 			lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
@@ -83,6 +80,7 @@ public partial class MainWindow : Window
 			}
 		}
 		catch { }
+		HomeBtn.IsChecked = true;
 	}
 
 	DispatcherTimer dispatcherTimer = new();
@@ -223,54 +221,21 @@ public partial class MainWindow : Window
 		WindowState = WindowState.Minimized;
 	}
 
-	private void UnCheckAll()
-	{
-		HomeBtn.Background = Brushes.Transparent;
-		NotificationsBtn.Background = Brushes.Transparent;
-		ThemeBtn.Background = Brushes.Transparent;
-		SettingsBtn.Background = Brushes.Transparent;
 
-		HomeBtn.BorderBrush = Brushes.Transparent;
-		NotificationsBtn.BorderBrush = Brushes.Transparent;
-		ThemeBtn.BorderBrush = Brushes.Transparent;
-		SettingsBtn.BorderBrush = Brushes.Transparent;
-	}
-
-	internal void CheckButton(Button btn)
-	{
-		UnCheckAll();
-		btn.Background = Global.GetSolidColor("Background2");
-		btn.BorderBrush = Global.GetSolidColor("Accent");
-	}
 
 	private void HomeBtn_Click(object sender, RoutedEventArgs e)
 	{
-		CheckButton(HomeBtn);
 		PageContent.Navigate(Global.HomePage);
-	}
-
-	private void NotificationsBtn_Click(object sender, RoutedEventArgs e)
-	{
-		CheckButton(NotificationsBtn);
-		PageContent.Navigate(Global.NotificationsPage);
-	}
-
-	private void SettingsBtn_Click(object sender, RoutedEventArgs e)
-	{
-		CheckButton(SettingsBtn);
-		PageContent.Navigate(Global.AboutPage);
 	}
 
 	private void SettingsMenu_Click(object sender, RoutedEventArgs e)
 	{
-		CheckButton(HomeBtn);
 		PageContent.Navigate(Global.HomePage);
 		Show();
 	}
 
 	private void AboutMenu_Click(object sender, RoutedEventArgs e)
 	{
-		CheckButton(SettingsBtn);
 		PageContent.Navigate(Global.AboutPage);
 		Show();
 	}
@@ -280,9 +245,8 @@ public partial class MainWindow : Window
 		Application.Current.Shutdown(); // Close the application
 	}
 
-	private void ThemeBtn_Click(object sender, RoutedEventArgs e)
+	private void SettingsBtn_Click(object sender, RoutedEventArgs e)
 	{
-		CheckButton(ThemeBtn);
-		PageContent.Navigate(Global.ThemePage);
+
 	}
 }

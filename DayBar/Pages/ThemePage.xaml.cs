@@ -100,7 +100,6 @@ namespace DayBar.Pages
 			Global.Settings.Theme = Themes.Light;
 			SettingsManager.Save();
 			Global.ChangeTheme();
-			Global.MainWindow.CheckButton(Global.MainWindow.ThemeBtn);
 		}
 
 		private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -112,7 +111,6 @@ namespace DayBar.Pages
 			Global.Settings.Theme = Themes.Dark;
 			SettingsManager.Save();
 			Global.ChangeTheme();
-			Global.MainWindow.CheckButton(Global.MainWindow.ThemeBtn);
 
 		}
 
@@ -124,7 +122,6 @@ namespace DayBar.Pages
 			Global.Settings.Theme = Themes.System;
 			SettingsManager.Save();
 			Global.ChangeTheme();
-			Global.MainWindow.CheckButton(Global.MainWindow.ThemeBtn);
 		}
 	}
 }
