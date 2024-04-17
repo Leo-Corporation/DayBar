@@ -358,6 +358,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manage your notifications settings..
+        /// </summary>
+        public static string NotificationsSettings {
+            get {
+                return ResourceManager.GetString("NotificationsSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show a notification when half of the day has passed.
         /// </summary>
         public static string NotifyHalf {

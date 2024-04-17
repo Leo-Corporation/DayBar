@@ -196,6 +196,9 @@
   <data name="NotificationsDays" xml:space="preserve">
     <value>Show notifications on these days:</value>
   </data>
+  <data name="NotificationsSettings" xml:space="preserve">
+    <value>Manage your notifications settings.</value>
+  </data>
   <data name="NotifyHalf" xml:space="preserve">
     <value>Show a notification when half of the day has passed</value>
   </data>

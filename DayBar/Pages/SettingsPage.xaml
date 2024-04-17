@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="SettingsPage"
     d:Background="White"
-    d:DesignHeight="450"
+    d:DesignHeight="650"
     d:DesignWidth="800"
     FontFamily="..\Fonts\#Hauora"
     Foreground="{DynamicResource Foreground1}"
@@ -394,6 +394,132 @@
                     </Border>
                 </StackPanel>
 
+            </Expander>
+            <Expander
+                Margin="10 10 10 0"
+                Background="{DynamicResource CardBackground}"
+                Foreground="{DynamicResource Foreground1}"
+                Style="{DynamicResource ExpanderStyle1}">
+                <Expander.Header>
+                    <StackPanel
+                        Margin="0 10"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Margin="3"
+                            VerticalAlignment="Center"
+                            FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                            FontSize="28"
+                            Text="&#xF115;" />
+                        <StackPanel>
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                FontWeight="ExtraBold"
+                                Text="{x:Static lang:Resources.Notifications}" />
+                            <TextBlock
+                                VerticalAlignment="Center"
+                                Text="{x:Static lang:Resources.NotificationsSettings}"
+                                TextWrapping="Wrap" />
+                        </StackPanel>
+                    </StackPanel>
+                </Expander.Header>
+                <StackPanel>
+                    <CheckBox
+                        x:Name="NotifyUpdatesChk"
+                        Margin="5 0"
+                        Checked="NotifyUpdatesChk_Checked"
+                        Content="{x:Static lang:Resources.NotifyUpdates}"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource CheckBoxStyle1}"
+                        Unchecked="NotifyUpdatesChk_Checked" />
+                    <CheckBox
+                        x:Name="NotifyHalfChk"
+                        Margin="5 0"
+                        Checked="NotifyHalfChk_Checked"
+                        Content="{x:Static lang:Resources.NotifyHalf}"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource CheckBoxStyle1}"
+                        Unchecked="NotifyHalfChk_Checked" />
+                    <CheckBox
+                        x:Name="NotifyPercChk"
+                        Margin="5 0"
+                        Checked="NotifyPercChk_Checked"
+                        Foreground="{DynamicResource Foreground1}"
+                        Style="{DynamicResource CheckBoxStyle1}"
+                        Unchecked="NotifyPercChk_Checked">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{x:Static lang:Resources.NotifyPercent}" />
+                            <TextBox
+                                x:Name="PercentTxt"
+                                Width="25"
+                                Padding="0"
+                                d:Text="10"
+                                Background="Transparent"
+                                BorderBrush="Transparent"
+                                Foreground="{DynamicResource Foreground1}"
+                                MaxLength="2"
+                                PreviewTextInput="PercentTxt_PreviewTextInput"
+                                Style="{DynamicResource RegularTextBoxStyle}"
+                                TextAlignment="Center"
+                                TextChanged="PercentTxt_TextChanged" />
+
+                            <TextBlock Text="%" />
+                        </StackPanel>
+                    </CheckBox>
+                    <TextBlock Margin="10 0 0 10" Text="{x:Static lang:Resources.NotificationsDays}" />
+                    <StackPanel Orientation="Horizontal">
+                        <ToggleButton
+                            x:Name="MonBtn"
+                            Margin="5 0"
+                            Checked="MonBtn_Checked"
+                            Content="{x:Static lang:Resources.MondayShort}"
+                            Style="{DynamicResource DayToggleButtonStyle}"
+                            Unchecked="MonBtn_Checked" />
+                        <ToggleButton
+                            x:Name="TueBtn"
+                            Margin="5 0"
+                            Checked="MonBtn_Checked"
+                            Content="{x:Static lang:Resources.TuesdayShort}"
+                            Style="{DynamicResource DayToggleButtonStyle}"
+                            Unchecked="MonBtn_Checked" />
+                        <ToggleButton
+                            x:Name="WedBtn"
+                            Margin="5 0"
+                            Checked="MonBtn_Checked"
+                            Content="{x:Static lang:Resources.WednesdayShort}"
+                            Style="{DynamicResource DayToggleButtonStyle}"
+                            Unchecked="MonBtn_Checked" />
+                        <ToggleButton
+                            x:Name="ThuBtn"
+                            Margin="5 0"
+                            Checked="MonBtn_Checked"
+                            Content="{x:Static lang:Resources.ThursdayShort}"
+                            Style="{DynamicResource DayToggleButtonStyle}"
+                            Unchecked="MonBtn_Checked" />
+                        <ToggleButton
+                            x:Name="FriBtn"
+                            Margin="5 0"
+                            Checked="MonBtn_Checked"
+                            Content="{x:Static lang:Resources.FridayShort}"
+                            Style="{DynamicResource DayToggleButtonStyle}"
+                            Unchecked="MonBtn_Checked" />
+                        <ToggleButton
+                            x:Name="SatBtn"
+                            Margin="5 0"
+                            Checked="MonBtn_Checked"
+                            Content="{x:Static lang:Resources.SaturdayShort}"
+                            Style="{DynamicResource DayToggleButtonStyle}"
+                            Unchecked="MonBtn_Checked" />
+                        <ToggleButton
+                            x:Name="SunBtn"
+                            Margin="5 0"
+                            Checked="MonBtn_Checked"
+                            Content="{x:Static lang:Resources.SundayShort}"
+                            Style="{DynamicResource DayToggleButtonStyle}"
+                            Unchecked="MonBtn_Checked" />
+
+                    </StackPanel>
+                </StackPanel>
             </Expander>
         </StackPanel>
     </Grid>
