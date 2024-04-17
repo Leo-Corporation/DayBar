@@ -11,6 +11,7 @@
     <SolidColorBrush x:Key="LightAccent" Color="#036305" />
     <SolidColorBrush x:Key="Gray" Color="#5A5A6E" />
     <SolidColorBrush x:Key="DarkGray" Color="#7474B1" />
+    <ImageBrush x:Key="BackgroundImg" ImageSource="/Images/Dark.png" />
     <Color
         x:Key="AccentColor"
         B="20"

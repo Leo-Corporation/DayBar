@@ -119,7 +119,7 @@
     <Border
         Name="WindowBorder"
         Margin="10"
-        Background="{DynamicResource Background1}"
+        Background="{DynamicResource BackgroundImg}"
         BorderThickness="0"
         CornerRadius="5">
         <Grid>
