@@ -52,7 +52,6 @@ public partial class HomePage : Page
 		MinFromTxt.Text = Global.Settings.StartMinute.ToString();
 		MinToTxt.Text = Global.Settings.EndMinute.ToString();
 
-		LangComboBox.SelectedIndex = (int)Global.Settings.Language;
 		LaunchOnStartChk.IsChecked = Global.Settings.LaunchOnStart;
 	}
 
@@ -99,22 +98,4 @@ public partial class HomePage : Page
 		SettingsManager.Save();
 	}
 
-	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
-	{
-		Global.Settings.Language = (Languages)LangComboBox.SelectedIndex;
-		SettingsManager.Save();
-		LangApplyBtn.Visibility = Visibility.Collapsed;
-
-		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
-		{
-			return;
-		}
-		Process.Start(Directory.GetCurrentDirectory() + @"\DayBar.exe");
-		Application.Current.Shutdown();
-	}
-
-	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-	{
-		LangApplyBtn.Visibility = Visibility.Visible;
-	}
 }

@@ -112,6 +112,9 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Change the display language of DayBar.</value>
   </data>
+  <data name="ChangeThemes" xml:space="preserve">
+    <value>Select the appearance of DayBar.</value>
+  </data>
   <data name="CheckUpdate" xml:space="preserve">
     <value>Check for updates</value>
   </data>

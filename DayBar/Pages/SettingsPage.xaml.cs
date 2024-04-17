@@ -23,9 +23,11 @@ SOFTWARE.
 */
 
 using DayBar.Classes;
+using DayBar.Enums;
 using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -55,6 +57,24 @@ public partial class SettingsPage : Page
 	private void InitUI()
 	{
 		VersionTxt.Text = Global.Version;
+		LangComboBox.SelectedIndex = (int)Global.Settings.Language;
+
+		ThemeSelectedBorder = Global.Settings.Theme switch
+		{
+			Themes.Light => LightBorder,
+			Themes.Dark => DarkBorder,
+			_ => SystemBorder
+		};
+
+		Border_MouseEnter(Global.Settings.Theme switch
+		{
+			Themes.Light => LightBorder,
+			Themes.Dark => DarkBorder,
+			_ => SystemBorder
+		}, null);
+
+		DarkRadio.IsChecked = Global.Settings.UseDarkThemeSystemTray;
+		LightRadio.IsChecked = !Global.Settings.UseDarkThemeSystemTray;
 	}
 
 	private async void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
@@ -87,5 +107,87 @@ public partial class SettingsPage : Page
 			"NotifyIcon.Wpf - The Code Project Open License (CPOL) 1.02 - © Hardcodet\n" +
 			"PeyrSharp - MIT License - © 2022-2023 Devyus\n" +
 			"DayBar - MIT License - © 2023 Léo Corporation", $"{Properties.Resources.DayBar} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
+	}
+
+	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
+	{
+		Global.Settings.Language = (Languages)LangComboBox.SelectedIndex;
+		SettingsManager.Save();
+		LangApplyBtn.Visibility = Visibility.Collapsed;
+
+		if (MessageBox.Show(Properties.Resources.NeedRestartToApplyChanges, Properties.Resources.Settings, MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.No)
+		{
+			return;
+		}
+		Process.Start(Directory.GetCurrentDirectory() + @"\DayBar.exe");
+		Application.Current.Shutdown();
+	}
+
+	private void LangComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+	{
+		LangApplyBtn.Visibility = Visibility.Visible;
+	}
+
+	Border ThemeSelectedBorder;
+	private void Border_MouseEnter(object sender, MouseEventArgs e)
+	{
+		((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+	}
+
+	private void Border_MouseLeave(object sender, MouseEventArgs e)
+	{
+		if ((Border)sender == ThemeSelectedBorder) return;
+		((Border)sender).BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+	}
+
+	private void ResetBorders()
+	{
+		LightBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+		DarkBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+		SystemBorder.BorderBrush = new SolidColorBrush { Color = Colors.Transparent };
+	}
+
+	private void LightBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+	{
+		ResetBorders();
+		ThemeSelectedBorder = (Border)sender;
+		((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+
+		Global.Settings.Theme = Themes.Light;
+		SettingsManager.Save();
+		Global.ChangeTheme();
+	}
+
+	private void DarkBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+	{
+		ResetBorders();
+		ThemeSelectedBorder = (Border)sender;
+		((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+
+		Global.Settings.Theme = Themes.Dark;
+		SettingsManager.Save();
+		Global.ChangeTheme();
+
+	}
+
+	private void SystemBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+	{
+		ResetBorders();
+		ThemeSelectedBorder = (Border)sender;
+		((Border)sender).BorderBrush = Global.GetSolidColor("Accent");
+		Global.Settings.Theme = Themes.System;
+		SettingsManager.Save();
+		Global.ChangeTheme();
+	}
+
+	private void RadioButton_Checked(object sender, RoutedEventArgs e)
+	{
+		try
+		{
+			Global.Settings.UseDarkThemeSystemTray = DarkRadio.IsChecked ?? false;
+			Global.MainWindow.InitTimer(new(Global.Settings.StartHour, 0, 0), new(Global.Settings.EndHour, 0, 0));
+			SettingsManager.Save();
+		}
+		catch { }
 	}
 }

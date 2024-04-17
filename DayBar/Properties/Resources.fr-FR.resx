@@ -132,6 +132,9 @@
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Modifier la langue d'affichage de DayBar.</value>
   </data>
+  <data name="ChangeThemes" xml:space="preserve">
+    <value>Sélectionner l'apparence de DayBar.</value>
+  </data>
   <data name="CheckUpdate" xml:space="preserve">
     <value>Rechercher des mises à jour</value>
   </data>

@@ -106,6 +106,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select the appearance of DayBar..
+        /// </summary>
+        public static string ChangeThemes {
+            get {
+                return ResourceManager.GetString("ChangeThemes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Check for updates.
         /// </summary>
         public static string CheckUpdate {
