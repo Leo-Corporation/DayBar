@@ -14,4 +14,9 @@
         B="20"
         G="248"
         R="17" />
+    <Color
+        x:Key="LightAccentColor"
+        B="206"
+        G="253"
+        R="206" />
 </ResourceDictionary>
