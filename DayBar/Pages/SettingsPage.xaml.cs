@@ -122,8 +122,8 @@ public partial class SettingsPage : Page
 		MessageBox.Show($"{Properties.Resources.Licenses}\n\n" +
 			"Fluent System Icons - MIT License - © 2020 Microsoft Corporation\n" +
 			"NotifyIcon.Wpf - The Code Project Open License (CPOL) 1.02 - © Hardcodet\n" +
-			"PeyrSharp - MIT License - © 2022-2023 Devyus\n" +
-			"DayBar - MIT License - © 2023 Léo Corporation", $"{Properties.Resources.DayBar} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
+			"PeyrSharp - MIT License - © 2022-2024 Devyus\n" +
+			"DayBar - MIT License - © 2024 Léo Corporation", $"{Properties.Resources.DayBar} - {Properties.Resources.Licenses}", MessageBoxButton.OK, MessageBoxImage.Information);
 	}
 
 	private void LangApplyBtn_Click(object sender, RoutedEventArgs e)
