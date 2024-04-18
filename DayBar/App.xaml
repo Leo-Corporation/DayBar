@@ -1509,6 +1509,122 @@
                     </Setter.Value>
                 </Setter>
             </Style>
+            <Style x:Key="DatePickerStyle" TargetType="{x:Type DatePicker}">
+                <Setter Property="Foreground" Value="#FF333333" />
+                <Setter Property="IsTodayHighlighted" Value="True" />
+                <Setter Property="SelectedDateFormat" Value="Short" />
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Padding" Value="3 2 0 2" />
+                <!--<Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint=".5,0" StartPoint=".5,1">
+                    <GradientStop Color="#FFA3AEB9" Offset="0"/>
+                    <GradientStop Color="#FF8399A9" Offset="0.375"/>
+                    <GradientStop Color="#FF718597" Offset="0.375"/>
+                    <GradientStop Color="#FF617584" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>-->
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type DatePicker}">
+                            <Border
+                                Padding="{TemplateBinding Padding}"
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                                <Border.Child>
+                                    <Grid
+                                        x:Name="PART_Root"
+                                        HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                        <Grid.Resources>
+                                            <!--  Main DatePicker Brushes  -->
+                                            <SolidColorBrush x:Key="DisabledBrush" Color="#A5FFFFFF" />
+
+                                            <!--  Button Template  -->
+                                            <ControlTemplate x:Key="DropDownButtonTemplate" TargetType="Button">
+                                                <Grid>
+
+
+                                                    <!--  Start UI  -->
+                                                    <TextBlock
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        FontFamily="\Fonts\#FluentSystemIcons-Regular"
+                                                        FontSize="16"
+                                                        Text="&#xF22B;" />
+                                                    <!--  End UI  -->
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </Grid.Resources>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Button
+                                            x:Name="PART_Button"
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            Width="20"
+                                            Margin="3 0 3 0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Top"
+                                            Focusable="False"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Template="{StaticResource DropDownButtonTemplate}" />
+                                        <DatePickerTextBox
+                                            x:Name="PART_TextBox"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            MinHeight="20"
+                                            HorizontalContentAlignment="Stretch"
+                                            VerticalContentAlignment="Center"
+                                            BorderThickness="1"
+                                            Foreground="{TemplateBinding Foreground}"
+                                            Visibility="Collapsed" />
+                                        <Grid
+                                            x:Name="PART_DisabledVisual"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Grid.ColumnSpan="2"
+                                            IsHitTestVisible="False"
+                                            Opacity="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <Rectangle
+                                                Grid.Row="0"
+                                                Grid.Column="0"
+                                                Fill="#A5FFFFFF"
+                                                RadiusX="1"
+                                                RadiusY="1" />
+                                            <Rectangle
+                                                Grid.Row="0"
+                                                Grid.Column="1"
+                                                Width="19"
+                                                Height="18"
+                                                Margin="3 0 3 0"
+                                                Fill="#A5FFFFFF"
+                                                RadiusX="1"
+                                                RadiusY="1" />
+                                            <Popup
+                                                x:Name="PART_Popup"
+                                                AllowsTransparency="True"
+                                                Placement="Bottom"
+                                                PlacementTarget="{Binding ElementName=PART_Button}"
+                                                StaysOpen="False" />
+                                        </Grid>
+                                    </Grid>
+                                </Border.Child>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
         </ResourceDictionary>
 
     </Application.Resources>

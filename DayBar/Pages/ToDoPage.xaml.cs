@@ -22,6 +22,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
+using DayBar.Classes;
+using DayBar.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,5 +48,51 @@ public partial class ToDoPage : Page
 	public ToDoPage()
 	{
 		InitializeComponent();
+		Global.Todos = TodoManager.Load();
+		InitUI();
+	}
+
+	internal void InitUI()
+	{
+		try
+		{
+			DueDatePicker.SelectedDate = DateTime.Now;
+
+			TodayTasksPanel.Children.Clear();
+			OtherTasksPanel.Children.Clear();
+
+			List<TodoTask> today = new();
+			List<TodoTask> other = new();
+
+			for (int i = 0; i < Global.Todos[0].Tasks.Count; i++)
+			{
+				if (Global.Todos[0].Tasks[i].DueDate.Year == DateTime.Now.Year && Global.Todos[0].Tasks[i].DueDate.Month == DateTime.Now.Month && Global.Todos[0].Tasks[i].DueDate.Day == DateTime.Now.Day)
+				{
+					today.Add(Global.Todos[0].Tasks[i]);
+				}
+				else
+				{
+					other.Add(Global.Todos[0].Tasks[i]);
+				}
+			}
+
+			for (int i = 0; i < today.Count; i++)
+			{
+				TodayTasksPanel.Children.Add(new ToDoItem(today[i], TodayTasksPanel));
+			}
+			for (int i = 0; i < other.Count; i++)
+			{
+				OtherTasksPanel.Children.Add(new ToDoItem(other[i], OtherTasksPanel));
+			}
+		}
+		catch { }
+	}
+
+	private void AddBtn_Click(object sender, RoutedEventArgs e)
+	{
+		if (string.IsNullOrEmpty(TaskTitleTxt.Text)) return;
+		Global.Todos[0].Tasks.Add(new(DueDatePicker.SelectedDate ?? DateTime.Now, TaskTitleTxt.Text, false));
+		TodoManager.Save();
+		InitUI();
 	}
 }

@@ -18,6 +18,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
@@ -42,5 +43,68 @@
                 FontWeight="ExtraBold"
                 Text="{x:Static lang:Resources.ToDoList}" />
         </Grid>
+
+        <StackPanel Grid.Row="2">
+            <Border
+                Margin="5"
+                Padding="5 2"
+                HorizontalAlignment="Left"
+                Background="{DynamicResource Background2}"
+                CornerRadius="5">
+                <TextBlock
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DarkGray}"
+                    Text="{x:Static lang:Resources.Today}" />
+            </Border>
+            <StackPanel x:Name="TodayTasksPanel" />
+            <Border
+                Margin="5"
+                Padding="5 2"
+                HorizontalAlignment="Left"
+                Background="{DynamicResource Background2}"
+                CornerRadius="5">
+                <TextBlock
+                    FontWeight="Bold"
+                    Foreground="{DynamicResource DarkGray}"
+                    Text="{x:Static lang:Resources.Other}" />
+            </Border>
+            <StackPanel x:Name="OtherTasksPanel" />
+        </StackPanel>
+
+        <Border
+            Grid.Row="3"
+            Margin="5"
+            Padding="5"
+            Background="{DynamicResource Background2}"
+            CornerRadius="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox
+                    x:Name="TaskTitleTxt"
+                    VerticalContentAlignment="Center"
+                    d:Text="test"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    FontWeight="SemiBold" />
+                <DatePicker
+                    x:Name="DueDatePicker"
+                    Grid.Column="1"
+                    IsTodayHighlighted="True"
+                    Style="{DynamicResource DatePickerStyle}" />
+                <Button
+                    x:Name="AddBtn"
+                    Grid.Column="2"
+                    Padding="5"
+                    BorderThickness="0"
+                    Click="AddBtn_Click"
+                    Content="&#xF10A;"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Style="{DynamicResource ButtonMenu}" />
+            </Grid>
+        </Border>
     </Grid>
 </Page>

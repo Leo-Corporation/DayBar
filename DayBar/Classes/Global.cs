@@ -27,8 +27,10 @@ using Microsoft.Win32;
 using PeyrSharp.Enums;
 using PeyrSharp.Env;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace DayBar.Classes
@@ -42,6 +44,7 @@ namespace DayBar.Classes
 		public static ToDoPage ToDoPage{ get; set; }
 		public static Settings Settings { get; set; }
 		public static MainWindow MainWindow { get; set; }
+		public static List<TodoList> Todos { get; set; }
 
 		public static string GetHiSentence
 		{
