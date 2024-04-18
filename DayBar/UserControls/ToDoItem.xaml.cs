@@ -46,7 +46,7 @@ public partial class ToDoItem : UserControl
 
 	private void InitUI()
 	{
-		TaskTitleTxt.Text = TodoTask.Title;
+		Check.Content = TodoTask.Title;
 		Check.IsChecked = TodoTask.Done;
 	}
 

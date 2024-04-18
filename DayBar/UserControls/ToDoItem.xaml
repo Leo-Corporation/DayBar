@@ -18,25 +18,21 @@
         CornerRadius="5">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
             <CheckBox
                 x:Name="Check"
                 VerticalAlignment="Center"
+                d:Content="Title"
                 Background="Transparent"
                 BorderBrush="{DynamicResource Accent}"
                 Checked="Check_Checked"
+                FontWeight="SemiBold"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource CheckBoxStyle1}"
                 Unchecked="Check_Checked" />
-            <TextBlock
-                x:Name="TaskTitleTxt"
-                Grid.Column="1"
-                VerticalAlignment="Center"
-                d:Text="test"
-                Background="Transparent"
-                FontWeight="SemiBold" />
+
             <Button
                 x:Name="DeleteBtn"
                 Grid.Column="2"

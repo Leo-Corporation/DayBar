@@ -101,5 +101,14 @@ public partial class ToDoPage : Page
 		Global.Todos[0].Tasks.Add(new(DueDatePicker.SelectedDate ?? DateTime.Now, TaskTitleTxt.Text, false));
 		TodoManager.Save();
 		InitUI();
+		TaskTitleTxt.Text = string.Empty;
+	}
+
+	private void TaskTitleTxt_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
+	{
+		if (e.Key == System.Windows.Input.Key.Enter)
+		{
+			AddBtn_Click(sender, e);
+		}
 	}
 }

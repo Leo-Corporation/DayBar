@@ -125,7 +125,8 @@
                     Background="Transparent"
                     BorderThickness="0"
                     FontWeight="SemiBold"
-                    Foreground="{DynamicResource Foreground1}" />
+                    Foreground="{DynamicResource Foreground1}"
+                    KeyUp="TaskTitleTxt_KeyUp" />
                 <DatePicker
                     x:Name="DueDatePicker"
                     Grid.Column="1"
