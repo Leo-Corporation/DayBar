@@ -44,6 +44,7 @@
                 Text="{x:Static lang:Resources.ToDoList}" />
         </Grid>
 
+
         <StackPanel Grid.Row="1">
             <TextBlock
                 x:Name="ProgressTxt"
@@ -70,33 +71,40 @@
                 </ProgressBar.Foreground>
             </ProgressBar>
         </StackPanel>
+        <ScrollViewer
+            Grid.Row="2"
+            MaxHeight="150"
+            HorizontalScrollBarVisibility="Disabled"
+            Style="{DynamicResource ScrollViewerStyle}"
+            VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Border
+                    Margin="5"
+                    Padding="5 2"
+                    HorizontalAlignment="Left"
+                    Background="{DynamicResource Background2}"
+                    CornerRadius="5">
+                    <TextBlock
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.Today}" />
+                </Border>
+                <StackPanel x:Name="TodayTasksPanel" />
+                <Border
+                    Margin="5"
+                    Padding="5 2"
+                    HorizontalAlignment="Left"
+                    Background="{DynamicResource Background2}"
+                    CornerRadius="5">
+                    <TextBlock
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.Other}" />
+                </Border>
+                <StackPanel x:Name="OtherTasksPanel" />
+            </StackPanel>
+        </ScrollViewer>
 
-        <StackPanel Grid.Row="2">
-            <Border
-                Margin="5"
-                Padding="5 2"
-                HorizontalAlignment="Left"
-                Background="{DynamicResource Background2}"
-                CornerRadius="5">
-                <TextBlock
-                    FontWeight="Bold"
-                    Foreground="{DynamicResource DarkGray}"
-                    Text="{x:Static lang:Resources.Today}" />
-            </Border>
-            <StackPanel x:Name="TodayTasksPanel" />
-            <Border
-                Margin="5"
-                Padding="5 2"
-                HorizontalAlignment="Left"
-                Background="{DynamicResource Background2}"
-                CornerRadius="5">
-                <TextBlock
-                    FontWeight="Bold"
-                    Foreground="{DynamicResource DarkGray}"
-                    Text="{x:Static lang:Resources.Other}" />
-            </Border>
-            <StackPanel x:Name="OtherTasksPanel" />
-        </StackPanel>
 
         <Border
             Grid.Row="3"
