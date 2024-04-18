@@ -8,7 +8,7 @@
     <ApplicationIcon>DayBar.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Title>DayBar</Title>
-    <Version>2.0.0.2404-rc1</Version>
+    <Version>2.0.0.2404</Version>
     <Authors>Léo Corporation</Authors>
     <Company>Léo Corporation</Company>
     <Copyright>© 2024</Copyright>
