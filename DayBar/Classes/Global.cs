@@ -27,6 +27,7 @@ using Microsoft.Win32;
 using PeyrSharp.Enums;
 using PeyrSharp.Env;
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
 using System.Windows.Media;
@@ -35,14 +36,14 @@ namespace DayBar.Classes
 {
 	public static class Global
 	{
-		public static string Version => "1.1.0.2308";
+		public static string Version => "2.0.0.2404";
 		public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/DayBar/Version.txt";
 		public static HomePage HomePage { get; set; }
-		public static NotificationsPage NotificationsPage { get; set; }
-		public static AboutPage AboutPage { get; set; }
-		public static ThemePage ThemePage { get; set; }
+		public static SettingsPage SettingsPage { get; set; }
+		public static ToDoPage ToDoPage { get; set; }
 		public static Settings Settings { get; set; }
 		public static MainWindow MainWindow { get; set; }
+		public static List<TodoList> Todos { get; set; }
 
 		public static string GetHiSentence
 		{
@@ -75,7 +76,7 @@ namespace DayBar.Classes
 		public static void ChangeTheme()
 		{
 			App.Current.Resources.MergedDictionaries.Clear();
-			ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
+			ResourceDictionary resourceDictionary = []; // Create a resource dictionary
 
 			bool isDark = Settings.Theme == Themes.Dark;
 			if (Settings.Theme == Themes.System)

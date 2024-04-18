@@ -136,7 +136,7 @@ namespace DayBar.Classes
 		public bool Saturday { get; set; }
 		public bool Sunday { get; set; }
 
-		public bool IsNotificationDay()
+		public readonly bool IsNotificationDay()
 		{
 			return DateTime.Now.DayOfWeek switch
 			{

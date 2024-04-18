@@ -1,0 +1,149 @@
+﻿<Page
+    x:Class="DayBar.Pages.ToDoPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:lang="clr-namespace:DayBar.Properties"
+    xmlns:local="clr-namespace:DayBar.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ToDoPage"
+    d:Background="White"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    FontFamily="..\Fonts\#Hauora"
+    Foreground="{DynamicResource Foreground1}"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+
+        <Grid Grid.ColumnSpan="3" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                VerticalAlignment="Center"
+                FontFamily="../Fonts/#FluentSystemIcons-Regular"
+                FontSize="16"
+                Foreground="{DynamicResource Accent}"
+                Text="&#xF299;" />
+            <TextBlock
+                Grid.Column="1"
+                Margin="5 0 0 0"
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="ExtraBold"
+                Text="{x:Static lang:Resources.ToDoList}" />
+        </Grid>
+
+
+        <StackPanel Grid.Row="1">
+            <TextBlock
+                x:Name="ProgressTxt"
+                Margin="5"
+                HorizontalAlignment="Center"
+                d:Text="0% done"
+                FontSize="24"
+                FontWeight="ExtraBold" />
+            <ProgressBar
+                x:Name="ProgressBar"
+                Width="300"
+                Height="7"
+                Background="{DynamicResource Background2}"
+                BorderThickness="0"
+                Maximum="100"
+                Minimum="0"
+                Style="{DynamicResource RoundedProgressBar}"
+                Value="0">
+                <ProgressBar.Foreground>
+                    <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                        <GradientStop Offset="0" Color="#9DFF00" />
+                        <GradientStop Offset="1" Color="#11F814" />
+                    </LinearGradientBrush>
+                </ProgressBar.Foreground>
+            </ProgressBar>
+        </StackPanel>
+        <ScrollViewer
+            Grid.Row="2"
+            MaxHeight="150"
+            HorizontalScrollBarVisibility="Disabled"
+            Style="{DynamicResource ScrollViewerStyle}"
+            VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <Border
+                    Margin="5"
+                    Padding="5 2"
+                    HorizontalAlignment="Left"
+                    Background="{DynamicResource Background2}"
+                    CornerRadius="5">
+                    <TextBlock
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.Today}" />
+                </Border>
+                <StackPanel x:Name="TodayTasksPanel" />
+                <Border
+                    Margin="5"
+                    Padding="5 2"
+                    HorizontalAlignment="Left"
+                    Background="{DynamicResource Background2}"
+                    CornerRadius="5">
+                    <TextBlock
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource DarkGray}"
+                        Text="{x:Static lang:Resources.Other}" />
+                </Border>
+                <StackPanel x:Name="OtherTasksPanel" />
+            </StackPanel>
+        </ScrollViewer>
+
+
+        <Border
+            Grid.Row="3"
+            Margin="5"
+            Padding="5"
+            Background="{DynamicResource Background2}"
+            CornerRadius="5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox
+                    x:Name="TaskTitleTxt"
+                    VerticalContentAlignment="Center"
+                    d:Text="test"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    FontWeight="SemiBold"
+                    Foreground="{DynamicResource Foreground1}"
+                    KeyUp="TaskTitleTxt_KeyUp" />
+                <DatePicker
+                    x:Name="DueDatePicker"
+                    Grid.Column="1"
+                    IsTodayHighlighted="True"
+                    Style="{DynamicResource DatePickerStyle}" />
+                <Button
+                    x:Name="AddBtn"
+                    Grid.Column="2"
+                    Padding="5"
+                    Background="{DynamicResource Background3}"
+                    BorderThickness="0"
+                    Click="AddBtn_Click"
+                    Content="&#xF10A;"
+                    FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Foreground="{DynamicResource Foreground1}"
+                    Style="{DynamicResource ButtonMenu}" />
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

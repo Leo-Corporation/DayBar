@@ -21,35 +21,48 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
+
 using DayBar.Classes;
-using DayBar.Windows;
 using System.Windows;
+using System.Windows.Controls;
 
-namespace DayBar;
+namespace DayBar.UserControls;
 /// <summary>
-/// Interaction logic for App.xaml
+/// Interaction logic for ToDoItem.xaml
 /// </summary>
-public partial class App : Application
+public partial class ToDoItem : UserControl
 {
-	private void Application_Startup(object sender, StartupEventArgs e)
+	public TodoTask TodoTask { get; }
+	public StackPanel ParentPanel { get; }
+
+	public ToDoItem(TodoTask todoTask, StackPanel parentPanel)
 	{
-		Global.Settings = SettingsManager.Load();
-		Global.Todos = TodoManager.Load();
-		Global.ChangeTheme();
-		Global.ChangeLanguage();
+		InitializeComponent();
+		TodoTask = todoTask;
+		ParentPanel = parentPanel;
 
-		Global.HomePage = new();
-		Global.ToDoPage = new();
-		Global.SettingsPage = new();
+		InitUI();
+	}
 
-		if (!Global.Settings.IsFirstRun)
-		{
-			new MainWindow();
-		}
-		else
-		{
-			new FirstRunWindow().Show();
-			new MainWindow();
-		}
+	private void InitUI()
+	{
+		Check.Content = TodoTask.Title;
+		Check.IsChecked = TodoTask.Done;
+	}
+
+	private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+	{
+		ParentPanel.Children.Remove(this);
+		Global.Todos[0].Tasks.Remove(TodoTask);
+		Global.ToDoPage.InitUI();
+		TodoManager.Save();
+	}
+
+	private void Check_Checked(object sender, RoutedEventArgs e)
+	{
+		Global.Todos[0].Tasks[Global.Todos[0].Tasks.IndexOf(TodoTask)].Done = Check.IsChecked ?? false;
+		TodoManager.Save();
+		if (Global.ToDoPage is null) return;
+		Global.ToDoPage.InitProgressUI();
 	}
 }

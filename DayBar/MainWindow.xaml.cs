@@ -27,8 +27,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -48,8 +46,8 @@ public partial class MainWindow : Window
 		InitUI();
 		Hide();
 	}
-	List<int> percentages = new List<int>();
-	List<bool> shown = new List<bool>();
+	readonly List<int> percentages = [];
+	readonly List<bool> shown = [];
 	internal void RefreshNotifications()
 	{
 		percentages.Clear();
@@ -71,9 +69,6 @@ public partial class MainWindow : Window
 	{
 		HelloTxt.Text = Global.GetHiSentence;
 
-		UnCheckAll();
-		CheckButton(HomeBtn);
-		PageContent.Navigate(Global.HomePage);
 		try
 		{
 			lastVersion = await Update.GetLastVersionAsync(Global.LastVersionLink);
@@ -83,6 +78,7 @@ public partial class MainWindow : Window
 			}
 		}
 		catch { }
+		HomeBtn.IsChecked = true;
 	}
 
 	DispatcherTimer dispatcherTimer = new();
@@ -105,7 +101,7 @@ public partial class MainWindow : Window
 		dispatcherTimer.Start();
 	}
 
-	private int CalculatePercentage(DateTime currentTime, TimeSpan startWorkHour, TimeSpan endWorkHour)
+	private static int CalculatePercentage(DateTime currentTime, TimeSpan startWorkHour, TimeSpan endWorkHour)
 	{
 		// Get the current date and time
 		DateTime currentDate = DateTime.Now;
@@ -156,8 +152,8 @@ public partial class MainWindow : Window
 		Global.HomePage.ProgressTxt.Text = $"{progress}%";
 		Global.HomePage.ProgressBar.Value = progress;
 
-		Global.ThemePage.LightProgressTxt.Text = $"{progress}%";
-		Global.ThemePage.DarkProgressTxt.Text = $"{progress}%";
+		Global.SettingsPage.LightProgressTxt.Text = $"{progress}%";
+		Global.SettingsPage.DarkProgressTxt.Text = $"{progress}%";
 
 		// Notifications
 		if (!Global.Settings.NotificationDays.Value.IsNotificationDay()) return;
@@ -223,55 +219,18 @@ public partial class MainWindow : Window
 		WindowState = WindowState.Minimized;
 	}
 
-	private void UnCheckAll()
-	{
-		HomeBtn.Background = Brushes.Transparent;
-		NotificationsBtn.Background = Brushes.Transparent;
-		ThemeBtn.Background = Brushes.Transparent;
-		SettingsBtn.Background = Brushes.Transparent;
 
-		HomeBtn.BorderBrush = Brushes.Transparent;
-		NotificationsBtn.BorderBrush = Brushes.Transparent;
-		ThemeBtn.BorderBrush = Brushes.Transparent;
-		SettingsBtn.BorderBrush = Brushes.Transparent;
-	}
-
-	internal void CheckButton(Button btn)
-	{
-		UnCheckAll();
-		btn.Background = Global.GetSolidColor("Background2");
-		btn.BorderBrush = Global.GetSolidColor("Accent");
-	}
 
 	private void HomeBtn_Click(object sender, RoutedEventArgs e)
 	{
-		CheckButton(HomeBtn);
 		PageContent.Navigate(Global.HomePage);
-	}
-
-	private void NotificationsBtn_Click(object sender, RoutedEventArgs e)
-	{
-		CheckButton(NotificationsBtn);
-		PageContent.Navigate(Global.NotificationsPage);
-	}
-
-	private void SettingsBtn_Click(object sender, RoutedEventArgs e)
-	{
-		CheckButton(SettingsBtn);
-		PageContent.Navigate(Global.AboutPage);
 	}
 
 	private void SettingsMenu_Click(object sender, RoutedEventArgs e)
 	{
-		CheckButton(HomeBtn);
-		PageContent.Navigate(Global.HomePage);
-		Show();
-	}
+		PageContent.Navigate(Global.SettingsPage);
+		SettingsBtn.IsChecked = true;
 
-	private void AboutMenu_Click(object sender, RoutedEventArgs e)
-	{
-		CheckButton(SettingsBtn);
-		PageContent.Navigate(Global.AboutPage);
 		Show();
 	}
 
@@ -280,9 +239,22 @@ public partial class MainWindow : Window
 		Application.Current.Shutdown(); // Close the application
 	}
 
-	private void ThemeBtn_Click(object sender, RoutedEventArgs e)
+	private void SettingsBtn_Click(object sender, RoutedEventArgs e)
 	{
-		CheckButton(ThemeBtn);
-		PageContent.Navigate(Global.ThemePage);
+		PageContent.Navigate(Global.SettingsPage);
+	}
+
+	private void HomeMenu_Click(object sender, RoutedEventArgs e)
+	{
+		PageContent.Navigate(Global.HomePage);
+		HomeBtn.IsChecked = true;
+
+		Show();
+	}
+
+	private void ToDoBtn_Click(object sender, RoutedEventArgs e)
+	{
+		PageContent.Navigate(Global.ToDoPage);
+		ToDoBtn.IsChecked = true;
 	}
 }

@@ -120,6 +120,9 @@
   <data name="About" xml:space="preserve">
     <value>A propos</value>
   </data>
+  <data name="AddTask" xml:space="preserve">
+    <value>Ajouter une tâche</value>
+  </data>
   <data name="Apply" xml:space="preserve">
     <value>Appliquer</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="ChangeLanguage" xml:space="preserve">
     <value>Modifier la langue d'affichage de DayBar.</value>
+  </data>
+  <data name="ChangeThemes" xml:space="preserve">
+    <value>Sélectionner l'apparence de DayBar.</value>
   </data>
   <data name="CheckUpdate" xml:space="preserve">
     <value>Rechercher des mises à jour</value>
@@ -146,6 +152,9 @@
   </data>
   <data name="DayCompletedFormat" xml:space="preserve">
     <value>{0}% de la journée écoulée</value>
+  </data>
+  <data name="DueDate" xml:space="preserve">
+    <value>Echéance</value>
   </data>
   <data name="Features" xml:space="preserve">
     <value>Fonctionnalités</value>
@@ -213,6 +222,9 @@
   <data name="NotificationsDays" xml:space="preserve">
     <value>Afficher des notifications ces jours :</value>
   </data>
+  <data name="NotificationsSettings" xml:space="preserve">
+    <value>Gérer vos paramètres de notifications.</value>
+  </data>
   <data name="NotifyHalf" xml:space="preserve">
     <value>Afficher une notification lorsque la moitié de la journée s'est écoulée</value>
   </data>
@@ -222,11 +234,17 @@
   <data name="NotifyUpdates" xml:space="preserve">
     <value>Afficher une notification lorsque des mises à jour sont disponibles</value>
   </data>
+  <data name="Other" xml:space="preserve">
+    <value>Autres</value>
+  </data>
   <data name="Progress" xml:space="preserve">
     <value>Progression</value>
   </data>
   <data name="Quit" xml:space="preserve">
     <value>Quitter</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Supprimer</value>
   </data>
   <data name="SaturdayShort" xml:space="preserve">
     <value>Sam</value>
@@ -261,6 +279,15 @@
   <data name="To" xml:space="preserve">
     <value>À</value>
   </data>
+  <data name="Today" xml:space="preserve">
+    <value>Aujourd'hui</value>
+  </data>
+  <data name="ToDoList" xml:space="preserve">
+    <value>Tâches</value>
+  </data>
+  <data name="TodoProgressTxt" xml:space="preserve">
+    <value>{0}% achevé</value>
+  </data>
   <data name="TrackProgress" xml:space="preserve">
     <value>Suivez votre progression</value>
   </data>
@@ -269,6 +296,12 @@
   </data>
   <data name="TuesdayShort" xml:space="preserve">
     <value>Mar</value>
+  </data>
+  <data name="UpdateAvailable" xml:space="preserve">
+    <value>Des mises à jour sont disponibles</value>
+  </data>
+  <data name="UpToDate" xml:space="preserve">
+    <value>Vous utilisez la dernière version disponible.</value>
   </data>
   <data name="WednesdayShort" xml:space="preserve">
     <value>Mer</value>

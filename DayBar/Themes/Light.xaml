@@ -1,13 +1,25 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<SolidColorBrush x:Key="Background1" Color="#FFFFFF"/>
-	<SolidColorBrush x:Key="Background2" Color="#e9e9e9"/>
-	<SolidColorBrush x:Key="Background3" Color="#f5f5f5"/>
-	<SolidColorBrush x:Key="CardBackground" Color="#FFFFFF"/>
-	<SolidColorBrush x:Key="Foreground1" Color="#000000"/>
-	<SolidColorBrush x:Key="WindowButtonsHover1" Color="#E5E5E5"/>
-	<SolidColorBrush x:Key="WindowButtonsPressed1" Color="#DBDBDB"/>
-	<SolidColorBrush x:Key="WindowButtonsHoverForeground1" Color="#FFFFFF"/>
-	<SolidColorBrush x:Key="Accent" Color="#11F814"/>
-    <SolidColorBrush x:Key="LightAccent" Color="#CEFDCE"/>
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="Background1" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Background2" Color="#e9e9e9" />
+    <SolidColorBrush x:Key="Background3" Color="#f5f5f5" />
+    <SolidColorBrush x:Key="CardBackground" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Foreground1" Color="#000000" />
+    <SolidColorBrush x:Key="WindowButtonsHover1" Color="#E5E5E5" />
+    <SolidColorBrush x:Key="WindowButtonsPressed1" Color="#DBDBDB" />
+    <SolidColorBrush x:Key="WindowButtonsHoverForeground1" Color="#FFFFFF" />
+    <SolidColorBrush x:Key="Accent" Color="#11F814" />
+    <SolidColorBrush x:Key="LightAccent" Color="#CEFDCE" />
+    <SolidColorBrush x:Key="Gray" Color="#DEDEDE" />
+    <SolidColorBrush x:Key="DarkGray" Color="#969696" />
+    <ImageBrush x:Key="BackgroundImg" ImageSource="/Images/Light.png" />
+    <Color
+        x:Key="AccentColor"
+        B="20"
+        G="248"
+        R="17" />
+    <Color
+        x:Key="LightAccentColor"
+        B="206"
+        G="253"
+        R="206" />
 </ResourceDictionary>

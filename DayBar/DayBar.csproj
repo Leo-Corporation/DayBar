@@ -2,16 +2,16 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>DayBar.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Title>DayBar</Title>
-    <Version>1.1.0.2308</Version>
+    <Version>2.0.0.2404</Version>
     <Authors>Léo Corporation</Authors>
     <Company>Léo Corporation</Company>
-    <Copyright>© 2023</Copyright>
+    <Copyright>© 2024</Copyright>
     <PackageProjectUrl>https://leocorporation.dev</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Leo-Corporation/DayBar/</RepositoryUrl>
     <Description>DayBar is a simple and useful tool that helps you keep track of your time. It displays the percentage of the day or your work hours that has elapsed in the system tray.</Description>
@@ -228,6 +228,8 @@
     <None Remove="Fonts\FluentSystemIcons-Regular.ttf" />
     <None Remove="Fonts\Hauora-ExtraBold.ttf" />
     <None Remove="Fonts\Hauora-Regular.ttf" />
+    <None Remove="Images\Dark.png" />
+    <None Remove="Images\Light.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -238,7 +240,7 @@
 
   <ItemGroup>
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
-    <PackageReference Include="PeyrSharp.Env" Version="1.8.0.2308" />
+    <PackageReference Include="PeyrSharp.Env" Version="2.1.0.2312" />
   </ItemGroup>
 
   <ItemGroup>
@@ -870,6 +872,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Fonts\Hauora-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Dark.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Light.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
