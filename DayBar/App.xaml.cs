@@ -38,6 +38,7 @@ public partial class App : Application
 		Global.ChangeLanguage();
 
 		Global.HomePage = new();
+		Global.ToDoPage = new();
 		Global.SettingsPage = new();
 
 		if (!Global.Settings.IsFirstRun)

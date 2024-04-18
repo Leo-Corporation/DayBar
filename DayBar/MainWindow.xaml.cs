@@ -253,4 +253,10 @@ public partial class MainWindow : Window
 
 		Show();
 	}
+
+	private void ToDoBtn_Click(object sender, RoutedEventArgs e)
+	{
+		PageContent.Navigate(Global.ToDoPage);
+		ToDoBtn.IsChecked = true;
+	}
 }

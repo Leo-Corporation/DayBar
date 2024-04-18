@@ -322,10 +322,70 @@
                                     <EventTrigger RoutedEvent="MouseEnter">
                                         <BeginStoryboard>
                                             <Storyboard>
+                                                <DoubleAnimation
+                                                    AccelerationRatio="0.5"
+                                                    Storyboard.TargetName="HomeIconTxt"
+                                                    Storyboard.TargetProperty="FontSize"
+                                                    From="0"
+                                                    To="18"
+                                                    Duration="0:0:0.3" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </RadioButton.Triggers>
+                            </RadioButton>
+                            <RadioButton
+                                x:Name="ToDoBtn"
+                                Margin="0 5 0 0"
+                                HorizontalContentAlignment="Left"
+                                Background="Transparent"
+                                BorderThickness="1"
+                                Click="ToDoBtn_Click"
+                                GroupName="Nav"
+                                Style="{DynamicResource NavBarButton}">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Border
+                                        Width="32"
+                                        Height="32"
+                                        Padding="7"
+                                        CornerRadius="5">
+                                        <Border.Background>
+                                            <LinearGradientBrush>
+                                                <GradientStop Offset="0" Color="#F158FF" />
+                                                <GradientStop Offset="1" Color="#55F8FF" />
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock
+                                            x:Name="TaskIconTxt"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="/Fonts/#FluentSystemIcons-Filled"
+                                            FontSize="18"
+                                            Foreground="{DynamicResource WindowButtonsHoverForeground1}"
+                                            Text="&#xF299;" />
+                                    </Border>
+                                    <TextBlock
+                                        Grid.Column="1"
+                                        Margin="10 0 5 0"
+                                        VerticalAlignment="Center"
+                                        FontSize="14"
+                                        FontWeight="Bold"
+                                        Foreground="{DynamicResource Foreground1}"
+                                        Text="{x:Static lang:Resources.ToDoList}" />
+                                </Grid>
+
+                                <RadioButton.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
                                                 <ThicknessAnimationUsingKeyFrames
                                                     AccelerationRatio="0.5"
                                                     BeginTime="00:00:00"
-                                                    Storyboard.TargetName="HomeIconTxt"
+                                                    Storyboard.TargetName="TaskIconTxt"
                                                     Storyboard.TargetProperty="Margin">
                                                     <SplineThicknessKeyFrame KeyTime="00:00:00" Value="10,0,0,0" />
                                                     <SplineThicknessKeyFrame KeyTime="00:00:0.3" Value="0" />
