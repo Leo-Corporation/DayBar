@@ -1555,6 +1555,7 @@
                                                         VerticalAlignment="Center"
                                                         FontFamily="\Fonts\#FluentSystemIcons-Regular"
                                                         FontSize="16"
+                                                        Foreground="{DynamicResource Foreground1}"
                                                         Text="&#xF22B;" />
                                                     <!--  End UI  -->
                                                 </Grid>

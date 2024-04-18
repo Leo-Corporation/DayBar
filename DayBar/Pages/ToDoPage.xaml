@@ -124,7 +124,8 @@
                     d:Text="test"
                     Background="Transparent"
                     BorderThickness="0"
-                    FontWeight="SemiBold" />
+                    FontWeight="SemiBold"
+                    Foreground="{DynamicResource Foreground1}" />
                 <DatePicker
                     x:Name="DueDatePicker"
                     Grid.Column="1"
@@ -134,10 +135,12 @@
                     x:Name="AddBtn"
                     Grid.Column="2"
                     Padding="5"
+                    Background="{DynamicResource Background3}"
                     BorderThickness="0"
                     Click="AddBtn_Click"
                     Content="&#xF10A;"
                     FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                    Foreground="{DynamicResource Foreground1}"
                     Style="{DynamicResource ButtonMenu}" />
             </Grid>
         </Border>

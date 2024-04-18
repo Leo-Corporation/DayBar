@@ -41,10 +41,12 @@
                 x:Name="DeleteBtn"
                 Grid.Column="2"
                 Padding="5"
+                Background="{DynamicResource Background3}"
                 BorderThickness="0"
                 Click="DeleteBtn_Click"
                 Content="&#xF34D;"
                 FontFamily="..\Fonts\#FluentSystemIcons-Regular"
+                Foreground="{DynamicResource Foreground1}"
                 Style="{DynamicResource ButtonMenu}" />
         </Grid>
     </Border>
