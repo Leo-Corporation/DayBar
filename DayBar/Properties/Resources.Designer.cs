@@ -565,6 +565,15 @@ namespace DayBar.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0}% done.
+        /// </summary>
+        public static string TodoProgressTxt {
+            get {
+                return ResourceManager.GetString("TodoProgressTxt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Monitor your progress.
         /// </summary>
         public static string TrackProgress {

@@ -50,42 +50,59 @@ public partial class ToDoPage : Page
 		InitializeComponent();
 		Global.Todos = TodoManager.Load();
 		InitUI();
+		DueDatePicker.SelectedDate = DateTime.Now;
 	}
-
+	List<TodoTask> _today = new();
+	List<TodoTask> _other = new();
 	internal void InitUI()
 	{
+		ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, 0);
 		try
 		{
-			DueDatePicker.SelectedDate = DateTime.Now;
-
 			TodayTasksPanel.Children.Clear();
 			OtherTasksPanel.Children.Clear();
 
-			List<TodoTask> today = new();
-			List<TodoTask> other = new();
+			_today = new();
+			_other = new();
 
 			for (int i = 0; i < Global.Todos[0].Tasks.Count; i++)
 			{
 				if (Global.Todos[0].Tasks[i].DueDate.Year == DateTime.Now.Year && Global.Todos[0].Tasks[i].DueDate.Month == DateTime.Now.Month && Global.Todos[0].Tasks[i].DueDate.Day == DateTime.Now.Day)
 				{
-					today.Add(Global.Todos[0].Tasks[i]);
+					_today.Add(Global.Todos[0].Tasks[i]);
 				}
 				else
 				{
-					other.Add(Global.Todos[0].Tasks[i]);
+					_other.Add(Global.Todos[0].Tasks[i]);
 				}
 			}
+			int todayDone = 0;
+			for (int i = 0; i < _today.Count; i++)
+			{
+				TodayTasksPanel.Children.Add(new ToDoItem(_today[i], TodayTasksPanel));
+				if (_today[i].Done) todayDone++;
+			}
+			for (int i = 0; i < _other.Count; i++)
+			{
+				OtherTasksPanel.Children.Add(new ToDoItem(_other[i], OtherTasksPanel));
+			}
 
-			for (int i = 0; i < today.Count; i++)
-			{
-				TodayTasksPanel.Children.Add(new ToDoItem(today[i], TodayTasksPanel));
-			}
-			for (int i = 0; i < other.Count; i++)
-			{
-				OtherTasksPanel.Children.Add(new ToDoItem(other[i], OtherTasksPanel));
-			}
+			ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, (int)(todayDone / (double)_today.Count * 100d));
+			ProgressBar.Value = (int)(todayDone / (double)_today.Count * 100d);
 		}
 		catch { }
+	}
+
+	internal void InitProgressUI()
+	{
+		int todayDone = 0;
+		for (int i = 0; i < _today.Count; i++)
+		{
+			if (_today[i].Done) todayDone++;
+		}
+
+		ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, (int)(todayDone / (double)_today.Count * 100d));
+		ProgressBar.Value = (int)(todayDone / (double)_today.Count * 100d);
 	}
 
 	private void AddBtn_Click(object sender, RoutedEventArgs e)

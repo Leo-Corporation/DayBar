@@ -285,6 +285,9 @@
   <data name="ToDoList" xml:space="preserve">
     <value>Tâches</value>
   </data>
+  <data name="TodoProgressTxt" xml:space="preserve">
+    <value>{0}% achevé</value>
+  </data>
   <data name="TrackProgress" xml:space="preserve">
     <value>Suivez votre progression</value>
   </data>

@@ -62,5 +62,7 @@ public partial class ToDoItem : UserControl
 	{
 		Global.Todos[0].Tasks[Global.Todos[0].Tasks.IndexOf(TodoTask)].Done = Check.IsChecked ?? false;
 		TodoManager.Save();
+		if (Global.ToDoPage is null) return;
+		Global.ToDoPage.InitProgressUI();
 	}
 }

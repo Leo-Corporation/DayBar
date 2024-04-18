@@ -44,6 +44,33 @@
                 Text="{x:Static lang:Resources.ToDoList}" />
         </Grid>
 
+        <StackPanel Grid.Row="1">
+            <TextBlock
+                x:Name="ProgressTxt"
+                Margin="5"
+                HorizontalAlignment="Center"
+                d:Text="0% done"
+                FontSize="24"
+                FontWeight="ExtraBold" />
+            <ProgressBar
+                x:Name="ProgressBar"
+                Width="300"
+                Height="7"
+                Background="{DynamicResource Background2}"
+                BorderThickness="0"
+                Maximum="100"
+                Minimum="0"
+                Style="{DynamicResource RoundedProgressBar}"
+                Value="0">
+                <ProgressBar.Foreground>
+                    <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 1">
+                        <GradientStop Offset="0" Color="#9DFF00" />
+                        <GradientStop Offset="1" Color="#11F814" />
+                    </LinearGradientBrush>
+                </ProgressBar.Foreground>
+            </ProgressBar>
+        </StackPanel>
+
         <StackPanel Grid.Row="2">
             <Border
                 Margin="5"
