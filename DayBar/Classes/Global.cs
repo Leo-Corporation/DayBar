@@ -30,7 +30,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Windows;
-using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace DayBar.Classes
@@ -41,7 +40,7 @@ namespace DayBar.Classes
 		public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/DayBar/Version.txt";
 		public static HomePage HomePage { get; set; }
 		public static SettingsPage SettingsPage { get; set; }
-		public static ToDoPage ToDoPage{ get; set; }
+		public static ToDoPage ToDoPage { get; set; }
 		public static Settings Settings { get; set; }
 		public static MainWindow MainWindow { get; set; }
 		public static List<TodoList> Todos { get; set; }
@@ -77,7 +76,7 @@ namespace DayBar.Classes
 		public static void ChangeTheme()
 		{
 			App.Current.Resources.MergedDictionaries.Clear();
-			ResourceDictionary resourceDictionary = new(); // Create a resource dictionary
+			ResourceDictionary resourceDictionary = []; // Create a resource dictionary
 
 			bool isDark = Settings.Theme == Themes.Dark;
 			if (Settings.Theme == Themes.System)

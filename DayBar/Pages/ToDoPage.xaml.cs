@@ -26,18 +26,8 @@ using DayBar.Classes;
 using DayBar.UserControls;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace DayBar.Pages;
 /// <summary>
@@ -52,8 +42,8 @@ public partial class ToDoPage : Page
 		InitUI();
 		DueDatePicker.SelectedDate = DateTime.Now;
 	}
-	List<TodoTask> _today = new();
-	List<TodoTask> _other = new();
+	List<TodoTask> _today = [];
+	List<TodoTask> _other = [];
 	internal void InitUI()
 	{
 		ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, 0);
@@ -62,8 +52,8 @@ public partial class ToDoPage : Page
 			TodayTasksPanel.Children.Clear();
 			OtherTasksPanel.Children.Clear();
 
-			_today = new();
-			_other = new();
+			_today = [];
+			_other = [];
 
 			for (int i = 0; i < Global.Todos[0].Tasks.Count; i++)
 			{

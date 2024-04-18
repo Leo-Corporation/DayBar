@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
-using DayBar.Pages;
 using PeyrSharp.Env;
 using System;
 using System.Collections.Generic;
@@ -35,11 +34,11 @@ public class TodoList
 	public string Title { get; set; }
 	public List<TodoTask> Tasks { get; set; }
 
-    public TodoList()
-    {
-        Tasks = new List<TodoTask>();
+	public TodoList()
+	{
+		Tasks = [];
 		Title = string.Empty;
-    }
+	}
 
 	public TodoList(string title, List<TodoTask> tasks)
 	{
@@ -57,15 +56,15 @@ public class TodoTask
 		Done = done;
 	}
 
-    public TodoTask()
-    {
-        DueDate = DateTime.Now;
+	public TodoTask()
+	{
+		DueDate = DateTime.Now;
 		Title = string.Empty;
 		Done = false;
-    }
+	}
 
-    public DateTime DueDate { get; set; }
-	public string Title { get; set; }	
+	public DateTime DueDate { get; set; }
+	public string Title { get; set; }
 	public bool Done { get; set; }
 }
 
@@ -82,21 +81,21 @@ public static class TodoManager
 
 		if (!File.Exists(TodoPath))
 		{
-			Global.Todos = new() { new(Properties.Resources.ToDoList, new()) };
-			
+			Global.Todos = [new(Properties.Resources.ToDoList, [])];
+
 			// Serialize to XML
 			XmlSerializer xmlSerializer = new(typeof(List<TodoList>));
 			StreamWriter streamWriter = new(TodoPath);
 			xmlSerializer.Serialize(streamWriter, Global.Todos);
 			streamWriter.Dispose();
-			return new();
+			return [];
 		}
 
 		// Deserialize from xml
 		XmlSerializer xmlDeserializer = new(typeof(List<TodoList>));
 
 		StreamReader streamReader = new(TodoPath);
-		var todos = (List<TodoList>?)xmlDeserializer.Deserialize(streamReader) ?? new();
+		var todos = (List<TodoList>?)xmlDeserializer.Deserialize(streamReader) ?? [];
 		streamReader.Dispose();
 
 		return todos;

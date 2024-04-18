@@ -33,10 +33,10 @@ namespace DayBar.Windows
 	/// </summary>
 	public partial class FirstRunWindow : Window
 	{
-		private WelcomePage welcomePage;
-		private FeaturesPage featuresPage;
-		private CustomizePage customizePage;
-		private JumpInPage jumpInPage;
+		private readonly WelcomePage welcomePage;
+		private readonly FeaturesPage featuresPage;
+		private readonly CustomizePage customizePage;
+		private readonly JumpInPage jumpInPage;
 
 		public FirstRunWindow()
 		{

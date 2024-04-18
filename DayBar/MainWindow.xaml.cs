@@ -27,8 +27,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -48,8 +46,8 @@ public partial class MainWindow : Window
 		InitUI();
 		Hide();
 	}
-	List<int> percentages = new List<int>();
-	List<bool> shown = new List<bool>();
+	readonly List<int> percentages = [];
+	readonly List<bool> shown = [];
 	internal void RefreshNotifications()
 	{
 		percentages.Clear();
@@ -103,7 +101,7 @@ public partial class MainWindow : Window
 		dispatcherTimer.Start();
 	}
 
-	private int CalculatePercentage(DateTime currentTime, TimeSpan startWorkHour, TimeSpan endWorkHour)
+	private static int CalculatePercentage(DateTime currentTime, TimeSpan startWorkHour, TimeSpan endWorkHour)
 	{
 		// Get the current date and time
 		DateTime currentDate = DateTime.Now;
