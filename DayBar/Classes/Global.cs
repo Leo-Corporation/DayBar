@@ -36,7 +36,7 @@ namespace DayBar.Classes
 {
 	public static class Global
 	{
-		public static string Version => "2.0.0.2404";
+		public static string Version => "2.0.1.2408";
 		public static string LastVersionLink => "https://raw.githubusercontent.com/Leo-Corporation/LeoCorp-Docs/master/Liens/Update%20System/DayBar/Version.txt";
 		public static HomePage HomePage { get; set; }
 		public static SettingsPage SettingsPage { get; set; }
