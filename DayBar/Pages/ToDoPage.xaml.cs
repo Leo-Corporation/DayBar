@@ -77,7 +77,7 @@ public partial class ToDoPage : Page
 				OtherTasksPanel.Children.Add(new ToDoItem(_other[i], OtherTasksPanel));
 			}
 
-			ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, (int)(todayDone / (double)_today.Count * 100d));
+			ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, (int)(todayDone / ((double)_today.Count == 0 ? 1 : (double)_today.Count) * 100d));
 			ProgressBar.Value = (int)(todayDone / (double)_today.Count * 100d);
 		}
 		catch { }
@@ -91,7 +91,7 @@ public partial class ToDoPage : Page
 			if (_today[i].Done) todayDone++;
 		}
 
-		ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, (int)(todayDone / (double)_today.Count * 100d));
+		ProgressTxt.Text = string.Format(Properties.Resources.TodoProgressTxt, (int)(todayDone / ((double)_today.Count == 0 ? 1 : (double)_today.Count) * 100d));
 		ProgressBar.Value = (int)(todayDone / (double)_today.Count * 100d);
 	}
 

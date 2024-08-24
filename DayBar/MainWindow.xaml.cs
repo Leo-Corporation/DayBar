@@ -27,6 +27,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows;
+using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 
@@ -256,5 +257,13 @@ public partial class MainWindow : Window
 	{
 		PageContent.Navigate(Global.ToDoPage);
 		ToDoBtn.IsChecked = true;
+	}
+
+	private void TaskMenu_Click(object sender, RoutedEventArgs e)
+	{
+		PageContent.Navigate(Global.ToDoPage);
+		ToDoBtn.IsChecked = true;
+
+		Show();
 	}
 }

@@ -2,8 +2,8 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "DayBar"
-#define MyAppVersion "2.0.0.2404"
-#define MyAppFullVersion "2.0.0.2404"
+#define MyAppVersion "2.0.1.2408"
+#define MyAppFullVersion "2.0.1.2408"
 #define MyAppPublisher "Léo Corporation"
 #define MyAppURL "https://leocorporation.dev/"
 #define MyAppExeName "DayBar.exe"
