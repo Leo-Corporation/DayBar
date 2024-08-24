@@ -162,6 +162,12 @@
                             Header="{x:Static lang:Resources.Home}"
                             Style="{DynamicResource MenuStyle}" />
                         <MenuItem
+                            x:Name="TaskMenu"
+                            Click="TaskMenu_Click"
+                            Foreground="{DynamicResource Foreground1}"
+                            Header="{x:Static lang:Resources.ToDoList}"
+                            Style="{DynamicResource MenuStyle}" />
+                        <MenuItem
                             x:Name="SettingsMenu"
                             Click="SettingsMenu_Click"
                             Foreground="{DynamicResource Foreground1}"
